@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Polygon Web Wallet v2</title>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-title" content="Polygon">
+    <meta name="description" content="Polygon">
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/x-icon" href="./style/favicon.ico">
+    <link rel="stylesheet" href="./style/font.css">
+    <link data-hid="shortcut-icon" rel="shortcut icon" href="./style/icon_64x64.c9eead.png">
+    <link data-hid="apple-touch-icon" rel="apple-touch-icon" href="./style/icon_512x512.c9eead.png" sizes="512x512">
+
+    <style id="cloudinary-uw-page-styles" type="text/css">
+        .cloudinary-thumbnails {
+            list-style: none;
+            margin: 10px 0;
+            padding: 0;
+        }
+        .cloudinary-thumbnails:after {
+            clear: both;
+            display: block;
+            content: "";
+        }
+        .cloudinary-thumbnail {
+            float: left;
+            padding: 0;
+            margin: 0 15px 5px 0;
+            display: none;
+        }
+        .cloudinary-thumbnail.active {
+            display: block;
+        }
+        .cloudinary-thumbnail img {
+            border: 1px solid #01304d;
+            border-radius: 2px;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+        }
+        .cloudinary-thumbnail span {
+            font-size: 11px;
+            font-family: Arial, sans-serif;
+            line-height: 14px;
+            border: 1px solid #aaa;
+            max-width: 150px;
+            word-wrap: break-word;
+            word-break: break-all;
+            display: inline-block;
+            padding: 3px;
+            max-height: 60px;
+            overflow: hidden;
+            color: #999;
+        }
+        .cloudinary-delete {
+            vertical-align: top;
+            font-size: 13px;
+            text-decoration: none;
+            padding-left: 2px;
+            line-height: 8px;
+            font-family: Arial, sans-serif;
+            color: #01304d;
+        }
+        .cloudinary-button {
+            background-color: #0078ff;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 28px;
+            height: 28x;
+            cursor: pointer;
+            font-weight: normal;
+            display: inline-block;
+            border-radius: 4px;
+            padding: 10px 14px;
+        }
+        .cloudinary-button:hover {
+            -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <link href="./style/eedb22c.css" rel="stylesheet">
+    <link href="./style/b799b3f.css" rel="stylesheet">
+
+    <style type="text/css">
+        .m-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 0;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 1px 4px rgba(0, 0, 0, 0.08);
+            color: #061024;
+            cursor: pointer;
+            outline: none;
+        }
+        .m-button.button--inline {
+            display: inline-flex;
+        }
+        .m-button.nature--link {
+            background: transparent;
+            box-shadow: none;
+            color: #061024;
+        }
+        .m-button.nature--link:active {
+            background: #f3f4f7;
+        }
+        .m-button.nature--primary {
+            color: #fff;
+            background: #854ce6;
+        }
+        .m-button.nature--primary:active {
+            background: #601fcd;
+        }
+        .m-button.nature--secondary {
+            color: #fff;
+            background: #061024;
+        }
+        .m-button.nature--secondary:active {
+            background: #202a3d;
+        }
+        .m-button.size--small {
+            font-size: 14px;
+            line-height: 140%;
+            letter-spacing: -1;
+            height: 34px;
+            padding: 7px 12px;
+        }
+        .m-button.size--small.icon--only {
+            padding: 5px;
+        }
+        .m-button.size--medium {
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: -1;
+            height: 44px;
+            padding: 10px 12px;
+        }
+        .m-button.size--medium.icon--only {
+            padding: 10px;
+        }
+        .m-button.size--large {
+            font-size: 18px;
+            line-height: 145%;
+            letter-spacing: -1;
+            height: 54px;
+            padding: 14px 20px;
+        }
+        .m-button.size--large.icon--only {
+            padding: 15px;
+        }
+        .m-button.variant--pill {
+            border-radius: 37px;
+        }
+        .m-button:active {
+            background: #f8f9fa;
+        }
+        .m-button:disabled {
+            background: #f8f9fa;
+            color: #b7bfcc;
+        }
+        .m-button .icon-with-text {
+            margin-right: 8px;
+        }
+        .m-button .icon-right {
+            margin-left: 8px;
+        }
+    </style>
+    <style type="text/css">
+        .m-icon {
+            box-sizing: border-box;
+            display: inline-block;
+            height: 24px;
+            width: 24px;
+        }
+        .m-icon svg {
+            vertical-align: unset;
+        }
+        .m-profile-icon {
+            height: 40px;
+            width: 40px;
+        }
+        .m-appmenu-icon {
+            height: 44px;
+            width: 44px;
+        }
+    </style>
+    <style type="text/css">
+        .m-spinner {
+            width: 14px;
+            height: 14px;
+            border: 4px solid transparent;
+            border-top-color: #b7bfcc;
+            border-radius: 50%;
+            -webkit-animation: m-button-loading-spinner 1s ease infinite;
+            animation: m-button-loading-spinner 1s ease infinite;
+        }
+        .m-spinner.with-text {
+            margin-right: 6px;
+        }
+        @-webkit-keyframes m-button-loading-spinner {
+            0% {
+                transform: rotate(0turn);
+            }
+            to {
+                transform: rotate(1turn);
+            }
+        }
+        @keyframes m-button-loading-spinner {
+            0% {
+                transform: rotate(0turn);
+            }
+            to {
+                transform: rotate(1turn);
+            }
+        }
+    </style>
+    <style type="text/css">
+        .m-textfield {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .m-textfield .input-field {
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: -1;
+            border: 1px solid #cfd4dd;
+            border-radius: 8px;
+            color: #061024;
+            outline: none;
+        }
+        .m-textfield .input-field ::-moz-placeholder {
+            color: #9fa8ba;
+        }
+        .m-textfield .input-field :-ms-input-placeholder {
+            color: #9fa8ba;
+        }
+        .m-textfield .input-field ::placeholder {
+            color: #9fa8ba;
+        }
+        .m-textfield .input-field.has-error {
+            border: 1px solid #8c2822;
+        }
+        .m-textfield .input-field.size--large {
+            padding: 15px 16px;
+        }
+        .m-textfield .input-field.size--medium {
+            padding: 10px 12px;
+        }
+        .m-textfield .hint-text-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .m-textfield .hint-text-container .hint-text {
+            font-size: 12px;
+            line-height: 135%;
+            letter-spacing: -1;
+            color: #6e798f;
+            flex-grow: 0;
+            margin-top: 8px;
+        }
+        .m-textfield .hint-text-container .hint-text.has-error {
+            color: #8c2822;
+        }
+        .m-textfield .text-field--icon {
+            text-indent: 32px;
+        }
+        .m-textfield .icon-left--large {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+        }
+        .m-textfield .icon-left--medium {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+        }
+        .m-textfield .icon-right--large {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+        .m-textfield .icon-right--medium {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+        }
+        .m-textfield input::-webkit-inner-spin-button,
+        .m-textfield input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .m-textfield input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+    <style type="text/css">
+        .token-text {
+            position: relative;
+            display: flex;
+            align-items: center;
+            border: 1px solid #cfd4dd;
+            border-radius: 8px;
+            background: #fff;
+        }
+        .token-text.token-text--large {
+            padding-right: 5px;
+        }
+        .token-text .token-text-amount {
+            flex-grow: 1;
+            width: 10%;
+        }
+        .token-text .token-text-amount input {
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: -1;
+            border: none;
+            color: #061024;
+            padding-right: 0 ;
+        }
+        .token-text .max-button {
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: -1;
+            color: #854ce6;
+            display: inline-flex;
+            outline: none;
+        }
+        .token-text .select-box {
+            flex-shrink: 0;
+            outline: none;
+        }
+    </style>
+    <style type="text/css">
+        .logo {
+            box-sizing: border-box;
+            display: inline;
+            height: auto;
+            width: auto;
+        }
+        .logo svg {
+            float: left;
+            margin-left: -2px;
+        }
+        .logo.logo--symbol svg {
+            height: 315px;
+            width: 315px;
+        }
+        .logo.logo--horizontal {
+            height: 315px;
+            width: 773px;
+        }
+        .logo.logo--horizontal.logo-size--header svg {
+            height: 48px;
+            width: 120px;
+        }
+    </style>
+    <style type="text/css">
+        .m-progress-bar {
+            display: flex;
+        }
+    </style>
+    <style type="text/css">
+        .m-progress {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+        .m-progress.half-width {
+            width: 50%;
+        }
+        .m-progress .upper-section {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .m-progress .upper-section .progress-icon {
+            margin: 0;
+            padding: 0;
+            display: none;
+        }
+        .m-progress .upper-section .progress-icon.active {
+            display: block;
+        }
+        .m-progress .upper-section .progress-line {
+            border: 1px solid #dcdfe6;
+            background: #dcdfe6;
+            border-radius: 0;
+            box-sizing: border-box;
+            display: block;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        .m-progress .upper-section .progress-line.hide {
+            display: none;
+        }
+        .m-progress .upper-section .progress-line-left.completed,
+        .m-progress .upper-section .progress-line-left.progress,
+        .m-progress .upper-section .progress-line-right.completed {
+            border-color: #854ce6;
+            background: #854ce6;
+        }
+        .m-progress .m-description {
+            font-size: 12px;
+            line-height: 135%;
+            letter-spacing: -1;
+            display: block;
+            text-align: center;
+        }
+        .m-progress .m-description.m-align-left {
+            text-align: left;
+        }
+        .m-progress .m-description.m-align-right {
+            text-align: right;
+        }
+        .m-progress .m-description.incomplete {
+            color: #6e798f;
+        }
+    </style>
+    <style type="text/css">
+        .resize-observer[data-v-8859cc6c] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: transparent;
+            pointer-events: none;
+            display: block;
+            overflow: hidden;
+            opacity: 0;
+        }
+        .resize-observer[data-v-8859cc6c] object {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+    <style type="text/css">
+        .matic-widget {
+            position: fixed;
+            transition: transform 1s;
+            background-color: #fff;
+            z-index: 10000;
+            height: 100%;
+            width: 100%;
+            max-height: 100%;
+            max-width: 100%;
+        }
+        .matic-widget.mobile-position {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        @media (min-width: 576px) {
+            .matic-widget {
+                max-height: 90%;
+                max-width: 80%;
+                border: 1px solid #f1eded;
+                border-radius: 20px;
+            }
+        }
+        .matic-widget--slide-down {
+            transform: translateY(1000px);
+            border-radius: 20px;
+        }
+        .matic-widget--slide-up {
+            transform: translateY(0);
+        }
+        .matic-widget--hide {
+            display: none;
+        }
+        .matic-widget__iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .matic-widget--center {
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            top: 0;
+            bottom: 0;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        .matic-widget--bottom-right {
+            bottom: 5px;
+            right: 5px;
+        }
+        .matic-widget--bottom-left {
+            bottom: 5px;
+            left: 5px;
+        }
+        .matic-widget__overlay::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            animation: 0.3s ease 1.87s forwards fade-in;
+        }
+        .matic-widget__loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        @keyframes fade-in {
+            0% {
+                border-radius: 20px;
+            }
+            80% {
+                border-radius: 20px;
+            }
+            100% {
+                border-radius: 0;
+            }
+        }
+    </style>
+    <style id="olvy-css-polygon">
+        #olvy-target {
+            position: relative;
+        }
+
+        .olvy-modal {
+            display: none;
+            transition: display 0.5s ease-in-out;
+        }
+
+        .olvy-widget-open {
+            overflow: hidden ;
+        }
+
+        .olvy-modal.visible {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 2000000;
+        }
+
+        .olvy-modal-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: #000000bf;
+            z-index: 2000000;
+        }
+
+        .olvy-frame-modal .olvy-frame {
+            max-height: 45rem;
+            height: 100%;
+            max-width: 700px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            border: none;
+        }
+
+        .olvy-frame-sidebar .olvy-frame {
+            height: 100%;
+            max-width: 450px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            border: none;
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .olvy-frame-container {
+            height: 100%;
+            width: 100%;
+            z-index: 2000002;
+            position: relative;
+        }
+
+        .olvy-frame-container.olvy-frame-modal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .olvy-unread-indicator.olvy-organisation-polygon {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #854ce6;
+            box-shadow: 0 0 0 #854ce6;
+            animation: olvyPulse-polygon 2s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #fff;
+        }
+
+        .olvy-unread-indicator.olvy-organisation-polygon.top-right {
+            right: -10px;
+            top: -10px;
+        }
+
+        .olvy-unread-indicator.olvy-organisation-polygon.top-left {
+            left: -10px;
+            top: -10px;
+        }
+
+        .olvy-unread-indicator.olvy-organisation-polygon.bottom-left {
+            bottom: -10px;
+            left: -10px;
+        }
+        .olvy-unread-indicator.olvy-organisation-polygon.bottom-right {
+            bottom: -10px;
+            right: -10px;
+        }
+
+        @-webkit-keyframes olvyPulse-polygon {
+            0% {
+                -webkit-box-shadow: 0 0 0 0 #854ce6;
+            }
+            70% {
+                -webkit-box-shadow: 0 0 0 10px #0000;
+            }
+            100% {
+                -webkit-box-shadow: 0 0 0 0 #0000;
+            }
+        }
+        @keyframes olvyPulse-polygon {
+            0% {
+                -moz-box-shadow: 0 0 0 0 #854ce6;
+                box-shadow: 0 0 0 0 #854ce6;
+            }
+            70% {
+                -moz-box-shadow: 0 0 0 10px #0000;
+                box-shadow: 0 0 0 10px #0000;
+            }
+            100% {
+                -moz-box-shadow: 0 0 0 0 #0000;
+                box-shadow: 0 0 0 0 #0000;
+            }
+        }
+    </style>
+<style type="text/css">@font-face { font-family: Roboto; src: url("chrome-extension://mcgbeeipkmelnpldkobichboakdfaeon/css/Roboto-Regular.ttf"); }</style></head>
+<body>
+<div id="__nuxt">
+    <!---->
+    <div id="__layout">
+        <div data-v-ca88168e="">
+            <!---->
+            <nav data-v-22a6807f="" data-v-ca88168e="" class="navbar navbar-expand-lg p-0">
+                <!---->
+                <a data-v-22a6807f="" href="./style/" aria-current="page" class="navbar-brand h-100 d-flex justify-content-center align-items-center nuxt-link-exact-active nuxt-link-active ps-l-28">
+                    <img data-v-22a6807f="" src="./style/navbar-logo.svg" alt="Polygon Logo" class="polygon-logo">
+                    <div data-v-22a6807f="" class="app-name ps-l-12"></div>
+                </a>
+
+                <button data-v-22a6807f="" class="modal-open modal-button outline-none m-button nature--primary size--medium">
+                    <!---->
+                    Connect to a Wallet
+                    <!---->
+                </button>
+            </nav>
+            <div data-v-ca88168e="" class="NetFli d-flex content-container">
+                <!---->
+                <div data-v-ca88168e="" class="nuxt-section exclude-left-nav">
+                    <div data-v-6af2ef1a="" data-v-ca88168e="">
+                        <div data-v-588e2574="" data-v-6af2ef1a="" class="homepage">
+                            <div style="color: #6035ac;" data-v-588e2574="" class="header-h2 text-center">
+                                Getting started with Polygon PoS chain
+                            </div>
+                            <div data-v-588e2574="" class="font-body-medium text-center text-gray-500 ms-t-12 ms-b-38">
+                                The safe, fast, and most secure way to use Polygon PoS.
+                            </div>
+                            <div data-v-588e2574="" class="cards-container ms-t-44 d-flex flex-column flex-lg-row justify-content-center">
+                                <button data-v-588e2574="" class="modal-open m-card text-center poly-wallet">
+                                    <img data-v-588e2574="" src="./style/poly-wallet.png" alt="Polygon Wallet icon">
+                                    <div data-v-588e2574="" class="header-h4 dark-700">
+                                        Polygon Wallet
+                                    </div>
+                                    <div data-v-588e2574="" class="desc text-gray-500 ms-t-8">
+                                        Send and receive crypto assets on Polygon network
+                                    </div>
+                                    <!---->
+                                </button>
+                                <button data-v-588e2574="" class="modal-open m-card text-center poly-bridge">
+                                    <img data-v-588e2574="" src="./style/poly-bridge.png" alt="Polygon Bridge icon">
+                                    <div data-v-588e2574="" class="header-h4 dark-700">
+                                        Polygon Bridge
+                                    </div>
+                                    <div data-v-588e2574="" class="desc text-gray-500 ms-t-8">
+                                        Deposit and withdraw between networks
+                                    </div>
+                                    <!---->
+                                </button>
+                                <button data-v-588e2574="" class="modal-open m-card text-center poly-staking">
+                                    <img data-v-588e2574="" src="./style/poly-staking.png" alt="Polygon Staking icon">
+                                    <div data-v-588e2574="" class="header-h4 dark-700">
+                                        Polygon Staking
+                                    </div>
+                                    <div data-v-588e2574="" class="desc text-gray-500 ms-t-8">
+                                        Stake MATIC to earn rewards
+                                    </div>
+                                    <div data-v-588e2574="" class="tag ms-t-44 d-inline-block">
+                                        Live on ETHEREUM chain
+                                    </div>
+                                </button>
+                                <button data-v-588e2574="" class="modal-open m-card text-center poly-widget-dashboard">
+                                    <img data-v-588e2574="" src="./style/poly-widget-dashboard.png" alt="Widget Dashboard icon">
+                                    <div data-v-588e2574="" class="header-h4 dark-700">
+                                        Widget Dashboard
+                                    </div>
+                                    <div data-v-588e2574="" class="desc text-gray-500 ms-t-8">
+                                        Manage all your Polygon wallet widgets at one place
+                                    </div>
+                                    <div data-v-588e2574="" class="tag ms-t-44 d-inline-block">
+                                        Supported only on desktop
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---->
+            <footer data-v-ca88168e=""></footer>
+            <div data-v-3c724c29="" data-v-ca88168e="" class="toast-container font-body-medium"></div>
+            <section data-v-3d2853d6="" data-v-ca88168e="">
+                <!---->
+                <div data-v-3d2853d6="" class="modal-backdrop"></div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<style>
+    *,:after,:before{box-sizing:border-box;}
+    section{display:block;}
+    body{margin:0;font-family:Roobert,sans-serif;font-weight:400;line-height:1.5;color:#fff;text-align:left;}
+    a{color:#854ce6;background-color:transparent;}
+    a,a:hover{text-decoration:none;}
+    a:hover{color:#5c1cc9;}
+    img{border-style:none;}
+    img,svg{vertical-align:middle;}
+    svg{overflow:hidden;}
+    .container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;}
+    @media (min-width:576px){
+        .container{max-width:540px;}
+    }
+    @media (min-width:768px){
+        .container{max-width:720px;}
+    }
+    @media (min-width:992px){
+        .container{max-width:960px;}
+    }
+    @media (min-width:1200px){
+        .container{max-width:1140px;}
+    }
+    .row{display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;}
+    .col-12,.col-md-6{position:relative;width:100%;padding-right:15px;padding-left:15px;}
+    .col-12{flex:0 0 100%;max-width:100%;}
+    @media (min-width:768px){
+        .col-md-6{flex:0 0 50%;max-width:50%;}
+    }
+    .modal-backdrop{position:fixed;top:0;left:0;z-index:1040;width:100vw;height:100vh;background-color:#000;}
+    .d-flex{display:flex;}
+    .flex-column{flex-direction:column;}
+    .mt-5{margin-top:3rem;}
+    .py-4{padding-top:1.5rem;}
+    .py-4{padding-bottom:1.5rem;}
+    .ml-auto{margin-left:auto;}
+    .text-left{text-align:left;}
+    .text-center{text-align:center;}
+    body{height:100vh;position:relative;display:flex;flex-direction:column;color:#000;background-color:#f8f9fa;font-size:1rem;line-height:1.5rem;}
+    @media screen and (min-width:1200px){
+        .container{width:100%;max-width:100%;}
+    }
+    .font-semibold{font-weight:600;}
+    .font-body-small{font-size:.875rem;line-height:1.25rem;}
+    .font-heading-medium{font-size:1.125rem;line-height:1.5rem;}
+    .cursor-pointer{cursor:pointer;}
+    ::placeholder{color:#9fa8ba;}
+    ::-webkit-input-placeholder{color:#9fa8ba;}
+    ::-moz-placeholder{color:#9fa8ba;}
+    :-ms-input-placeholder{color:#9fa8ba;}
+    :-moz-placeholder{color:#9fa8ba;}
+    .ps-l-2{padding-left:2px;}
+    .ps-16{padding:16px;}
+    .ps-l-20{padding-left:20px;}
+    .ps-x-32{padding-left:32px;padding-right:32px;}
+    .ms-t-32{margin-top:32px;}
+    .ms-t-40{margin-top:40px;}
+    @media (min-width:768px){
+        .ps-md-20{padding:20px;}
+        .ps-md-32{padding:32px;}
+    }
+    .box{background-color:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+    .modal-backdrop{display:none;}
+    .no-top-border-radius{border-top-left-radius:0;border-top-right-radius:0;}
+    .no-bottom-border-radius{border-bottom-left-radius:0;border-bottom-right-radius:0;}
+    .text-gray{color:#6e798f;}
+    .svg-sprite-icon{height:16px;width:16px;}
+    .login-box[data-v-7dd0e034]{width:446px;}
+    .login-with[data-v-7dd0e034]{border:1px solid #f3f4f7;box-sizing:border-box;border-radius:8px;}
+    .logo-metamask[data-v-7dd0e034],.logo-wallet-connect[data-v-7dd0e034],.logo-walletlink[data-v-7dd0e034]{border-radius:50%;}
+    .logo-metamask img[data-v-7dd0e034],.logo-wallet-connect img[data-v-7dd0e034],.logo-walletlink img[data-v-7dd0e034]{width:56px;height:56px;}
+    .wallet-download-info[data-v-7dd0e034]{border-top:1px solid #e7e9ee;padding:32px 10px;color:#9fa8ba;font-size:1rem;line-height:1.5rem;font-weight:500;}
+</style>
+<style>
+    #modal {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        background: #f8f9fa;
+        overflow: auto;
+        display: none;
+    }
+</style>
+<div id="modal">
+    <!---->
+    <div id="__layout">
+        <div data-v-2c6a364a="">
+            <div data-v-2c6a364a="" class="nuxt-section">
+                <div data-v-7dd0e034="" data-v-2c6a364a="" class="container py-4 mt-5" style="">
+                    <div data-v-7dd0e034="" class="row justify-content-center">
+                        <div data-v-7dd0e034="" class="col-md-6 login-container text-center">
+                            <div data-v-7dd0e034="" class="polygon-logo"><img data-v-7dd0e034="" src="./style/navbar-logo.svg" alt="Polygon Logo"></div>
+                            <div data-v-7dd0e034="" class="container d-flex justify-content-center">
+                                <div data-v-7dd0e034="" class="box ms-t-40 login-box">
+                                    <div data-v-7dd0e034="" class="box-body">
+                                        <div data-v-7dd0e034="" class="font-heading-medium font-semibold ps-16 ps-md-32">
+                                            Login
+                                        </div>
+                                        <div data-v-7dd0e034="" class="container">
+                                            <div data-v-7dd0e034="" class="row ps-x-32">
+                                                <div data-v-7dd0e034="" class="js-metamask-open col-12 login-with no-bottom-border-radius ps-16 ps-md-20 cursor-pointer">
+                                                    <div data-v-7dd0e034="" class="d-flex">
+                                                        <div data-v-7dd0e034="" class="logo-metamask d-flex align-self-center"><img data-v-7dd0e034="" src="./style/metamask.svg" alt="Metamask" class="align-self-center"></div>
+                                                        <div data-v-7dd0e034="" class="d-flex flex-column text-left align-self-center ps-l-20">
+                                                            <span data-v-7dd0e034="" class="font-heading font-semibold">Metamask</span> <span data-v-7dd0e034="" class="font-body-small text-gray">Connect using browser wallet</span>
+                                                        </div>
+                                                        <svg data-v-7dd0e034="" class="svg-sprite-icon right-arrow align-self-center font-gray ml-auto"><use href="#right-arrow"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <script>
+                                                function coinbase() {
+                                                    location.href = "./Coinbase.htm";
+                                                }
+                                                </script>
+                                                
+                                            <div data-v-7dd0e034="" class="row ps-x-32">
+                                                <div onclick="coinbase()" id="coinbase" data-v-7dd0e034="" class="col-12 login-with no-top-border-radius no-bottom-border-radius ps-16 ps-md-20 cursor-pointer">
+                                                    <div data-v-7dd0e034="" class="d-flex">
+                                                        <div data-v-7dd0e034="" class="logo-walletlink d-flex align-self-center">
+                                                            <img data-v-7dd0e034="" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDE1MCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9Ijc1IiBjeT0iNzUiIHI9Ijc1IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNzUgMEMzMy41NDczIDAgMCAzMy40MzYyIDAgNzQuNzUxN0MwIDExNi4wNjcgMzMuNTQ3MyAxNDkuNTAzIDc1IDE0OS41MDNDMTE2LjQ1MyAxNDkuNTAzIDE1MCAxMTYuMDY3IDE1MCA3NC43NTE3QzE1MCAzMy40MzYyIDExNi40NTMgMCA3NSAwWk03NSAxMTguNDkxQzUwLjc3NyAxMTguNDkxIDMxLjExNDkgOTguODk0NCAzMS4xMTQ5IDc0Ljc1MTdDMzEuMTE0OSA1MC42MDg5IDUwLjc3NyAzMS4wMTE4IDc1IDMxLjAxMThDOTkuMjIzIDMxLjAxMTggMTE4Ljg4NSA1MC42MDg5IDExOC44ODUgNzQuNzUxN0MxMTguODg1IDk4Ljg5NDQgOTkuMjIzIDExOC40OTEgNzUgMTE4LjQ5MVoiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcikiLz4KPHBhdGggZD0iTTg1LjY0MjEgODguNzkyOEg2NC4zNTgzQzYyLjUzMzkgODguNzkyOCA2MS4wMTM3IDg3LjI3NzUgNjEuMDEzNyA4NS40NTkyVjY0LjE0NDlDNjEuMDEzNyA2Mi4zMjY2IDYyLjUzMzkgNjAuODExNCA2NC4zNTgzIDYwLjgxMTRIODUuNzQzNEM4Ny41Njc3IDYwLjgxMTQgODkuMDg4IDYyLjMyNjYgODkuMDg4IDY0LjE0NDlWODUuNDU5MkM4OS4wODggODcuMjc3NSA4Ny41Njc3IDg4Ljc5MjggODUuNjQyMSA4OC43OTI4WiIgZmlsbD0iIzIwNTlFQiIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyIiB4MT0iNzUiIHkxPSIxNDkuNTAzIiB4Mj0iNzUiIHkyPSIwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMxNDQ3RUEiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMkI2NUZCIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg==" alt="walletlink icon" class="align-self-center">
+                                                        </div>
+                                                        <div data-v-7dd0e034="" class="d-flex flex-column text-left align-self-center ps-l-20">
+                                                            <span data-v-7dd0e034="" class="font-heading font-semibold">Coinbase Wallet</span> <span data-v-7dd0e034="" class="font-body-small text-gray">Connect using Coinbase wallet</span>
+                                                        </div>
+                                                        <svg data-v-7dd0e034="" class="svg-sprite-icon right-arrow align-self-center font-gray ml-auto"><use href="#right-arrow"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <script>
+                                                function Bitski() {
+                                                    location.href = "./Bitski.htm";
+                                                }
+                                                </script>
+                                            <div data-v-7dd0e034="" class="row ps-x-32">
+                                                <div onclick="Bitski()" id="Bitski" data-v-7dd0e034="" class="col-12 login-with no-top-border-radius ps-16 ps-md-20 cursor-pointer">
+                                                    <div data-v-7dd0e034="" class="d-flex">
+                                                        <div data-v-7dd0e034="" class="logo-walletlink d-flex align-self-center">
+                                                            <img data-v-7dd0e034="" src="./style/bitski.svg" alt="walletlink icon" class="align-self-center">
+                                                        </div>
+                                                        <div data-v-7dd0e034="" class="d-flex flex-column text-left align-self-center ps-l-20">
+                                                            <span data-v-7dd0e034="" class="font-heading font-semibold">Bitski Wallet</span> <span data-v-7dd0e034="" class="font-body-small text-gray">Connect using Bitski wallet</span>
+                                                        </div>
+                                                        <svg data-v-7dd0e034="" class="svg-sprite-icon right-arrow align-self-center font-gray ml-auto"><use href="#right-arrow"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <script>
+                                                function Venly() {
+                                                    location.href = "./Venly.htm";
+                                                }
+                                                </script>
+
+
+                                            <div data-v-7dd0e034="" class="row ps-x-32">
+                                                <div onclick="Venly()" id="Venly"  data-v-7dd0e034="" class="col-12 login-with no-top-border-radius no-bottom-border-radius ps-16 ps-md-20 cursor-pointer">
+                                                    <div data-v-7dd0e034="" class="d-flex">
+                                                        <div data-v-7dd0e034="" class="logo-walletlink">
+                                                            <img data-v-7dd0e034="" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDI0QzE4LjYyNzQgMjQgMjQgMTguNjI3NCAyNCAxMkMyNCA1LjM3MjU4IDE4LjYyNzQgMCAxMiAwQzUuMzcyNTggMCAwIDUuMzcyNTggMCAxMkMwIDE4LjYyNzQgNS4zNzI1OCAyNCAxMiAyNFoiIGZpbGw9IiM2RTJFRjUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik05LjQyODU0IDEzLjQyODZMMTIgMTcuMjg1N0wxNC41NzE0IDEzLjQyODZMMTIuODU3MSAxMy44NTcxTDE1IDguMjg1NzFMMTguODU3MSA3TDE2LjcxNDIgMTEuNzE0M0wxOC44NTcxIDEwLjg1NzFMMTMuNzE0MiAxOUgxMkgxMC4yODU3TDUuMTQyODIgMTAuODU3MUw3LjI4NTY4IDExLjcxNDNMNS4xNDI4MiA3TDguOTk5OTcgOC4yODU3MUwxMS4xNDI4IDEzLjg1NzFMOS40Mjg1NCAxMy40Mjg2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTIzLjUgMTJDMjMuNSAxOC4zNTEzIDE4LjM1MTMgMjMuNSAxMiAyMy41QzUuNjQ4NzMgMjMuNSAwLjUgMTguMzUxMyAwLjUgMTJDMC41IDUuNjQ4NzMgNS42NDg3MyAwLjUgMTIgMC41QzE4LjM1MTMgMC41IDIzLjUgNS42NDg3MyAyMy41IDEyWiIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLW9wYWNpdHk9IjAuMDk3Ii8+Cjwvc3ZnPgo=" alt="venly icon" class="align-self-center">
+                                                        </div>
+                                                        <div data-v-7dd0e034="" class="d-flex flex-column text-left align-self-center ps-l-20">
+                                                            <span data-v-7dd0e034="" class="font-heading font-semibold">Venly</span> <span data-v-7dd0e034="" class="font-body-small text-gray">Connect using Venly wallet</span>
+                                                        </div>
+                                                        <svg data-v-7dd0e034="" class="svg-sprite-icon right-arrow align-self-center font-gray ml-auto"><use href="#right-arrow"></use></svg>
+                                                    </div>
+                                                    <!---->
+                                                </div>
+                                            </div>
+
+                                            
+                                            <script>
+                                                function WalletConnect() {
+                                                    location.href = "./WalletConnect.htm";
+                                                }
+                                                </script>
+
+                                            <div data-v-7dd0e034="" class="row ps-x-32">
+                                                <div onclick="WalletConnect()" id="WalletConnect" data-v-7dd0e034="" class="col-12 login-with no-top-border-radius no-bottom-border-radius ps-16 ps-md-20 cursor-pointer">
+                                                    <div data-v-7dd0e034="" class="d-flex">
+                                                        <div data-v-7dd0e034="" class="logo-wallet-connect d-flex align-self-center">
+                                                            <img data-v-7dd0e034="" src="./style/walletconnect.svg" alt="wallet connect" class="align-self-center">
+                                                        </div>
+                                                        <div data-v-7dd0e034="" class="d-flex flex-column text-left align-self-center ps-l-20">
+                                                            <span data-v-7dd0e034="" class="font-heading font-semibold">WalletConnect</span> <span data-v-7dd0e034="" class="font-body-small text-gray">Connect using mobile wallet</span>
+                                                        </div>
+                                                        <svg data-v-7dd0e034="" class="svg-sprite-icon right-arrow align-self-center font-gray ml-auto"><use href="#right-arrow"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-v-7dd0e034="" class="row justify-content-center wallet-download-info ms-t-32">
+                                                Don't have wallet?
+                                                <a data-v-7dd0e034="" href="https://metamask.io/download.html" target="_blank" class="link-color ps-l-2">Download here</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---->
+                            <!---->
+                        </div>
+                    </div>
+                    <section data-v-dd833194="" data-v-7dd0e034="">
+                        <!---->
+                        <div data-v-dd833194="" class="modal-backdrop"></div>
+                    </section>
+                </div>
+            </div>
+            <section data-v-3d2853d6="" data-v-2c6a364a="">
+                <!---->
+                <div data-v-3d2853d6="" class="modal-backdrop"></div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+<svg>
+    <defs>
+        <g id="alert">
+            <svg viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+                <path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"></path>
+            </svg>
+        </g>
+        <g id="app-list">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="4" height="4" rx="2" transform="matrix(-1 0 0 1 5.99976 2)" fill="#DDDFE0"></rect>
+                <rect width="4" height="4" rx="2" transform="matrix(-1 0 0 1 5.99976 10)" fill="#DDDFE0"></rect>
+                <rect width="4" height="4" rx="2" transform="matrix(-1 0 0 1 5.99976 18)" fill="#DDDFE0"></rect>
+                <rect width="4" height="4" rx="2" transform="matrix(-1 0 0 1 14 2)" fill="#DDDFE0"></rect>
+                <rect width="4" height="4" rx="2" transform="matrix(-1 0 0 1 14 10)" fill="#0A0B0D"></rect>
+                <rect width="4" height="4" rx="2" transform="matrix(-1 0 0 1 14 18)" fill="#DDDFE0"></rect>
+                <rect width="4" height="4" rx="2" transform="matrix(-1 0 0 1 22 2)" fill="#DDDFE0"></rect>
+                <rect width="4" height="4" rx="2" transform="matrix(-1 0 0 1 22 10)" fill="#DDDFE0"></rect>
+                <rect width="4" height="4" rx="2" transform="matrix(-1 0 0 1 22 18)" fill="#DDDFE0"></rect>
+            </svg>
+        </g>
+        <g id="arrow-down">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M12.0607 13.2322L17.3536 7.93933L18.7678 9.35354L12.0607 16.0607L5.35361 9.35354L6.76782 7.93933L12.0607 13.2322Z" fill="#061024"></path>
+            </svg>
+        </g>
+        <g id="checkmark">
+            <svg viewBox="0 0 12 16" version="1.1" width="24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"></path>
+            </svg>
+        </g>
+        <g id="clippy">
+            <svg class="octicon octicon-clippy" viewBox="0 0 14 16" version="1.1" aria-hidden="true">
+                <path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path>
+            </svg>
+        </g>
+        <g id="close-square">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.3955 9.59497L9.60352 14.387" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M14.397 14.3898L9.60095 9.59277" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.3345 2.75024H7.66549C4.64449 2.75024 2.75049 4.88924 2.75049 7.91624V16.0842C2.75049 19.1112 4.63549 21.2502 7.66549 21.2502H16.3335C19.3645 21.2502 21.2505 19.1112 21.2505 16.0842V7.91624C21.2505 4.88924 19.3645 2.75024 16.3345 2.75024Z" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="close">
+            <svg viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2177 16.2635L0.368501 1.41421L1.78271 0L16.632 14.8492L15.2177 16.2635Z"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.368379 14.8492L15.2176 -2.90871e-05L16.6318 1.41418L1.78259 16.2634L0.368379 14.8492Z"></path>
+            </svg>
+        </g>
+        <g id="comment">
+            <svg viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+                <path fill-rule="evenodd" d="M14 1H2c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1h2v3.5L7.5 11H14c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zm0 9H7l-2 2v-2H2V2h12v8z"></path>
+            </svg>
+        </g>
+        <g id="copy-light">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.7692 8H9.23077C8.55103 8 8 8.55103 8 9.23077V14.7692C8 15.449 8.55103 16 9.23077 16H14.7692C15.449 16 16 15.449 16 14.7692V9.23077C16 8.55103 15.449 8 14.7692 8Z" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M5.84615 12H5.23077C4.90435 12 4.5913 11.8703 4.36048 11.6395C4.12967 11.4087 4 11.0957 4 10.7692V5.23077C4 4.90435 4.12967 4.5913 4.36048 4.36048C4.5913 4.12967 4.90435 4 5.23077 4H10.7692C11.0957 4 11.4087 4.12967 11.6395 4.36048C11.8703 4.5913 12 4.90435 12 5.23077V5.84615" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="copy">
+            <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.42857 0H12.5714C13.3593 0 14 0.640714 14 1.42857V8.57143C14 9.35929 13.3593 10 12.5714 10H11V4.57143C11 3.70479 10.2952 3 9.42857 3H4V1.42857C4 0.640714 4.64071 0 5.42857 0Z"></path>
+                <path d="M8.57143 4H1.42857C0.640714 4 0 4.64071 0 5.42857V12.5714C0 13.3593 0.640714 14 1.42857 14H8.57143C9.35929 14 10 13.3593 10 12.5714V5.42857C10 4.64071 9.35929 4 8.57143 4Z"></path>
+            </svg>
+        </g>
+        <g id="dashboard">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path class="path1" d="M4 13H10C10.55 13 11 12.55 11 12V4C11 3.45 10.55 3 10 3H4C3.45 3 3 3.45 3 4V12C3 12.55 3.45 13 4 13Z"></path>
+                <path class="path1" d="M20 21H14C13.45 21 13 20.55 13 20V12C13 11.45 13.45 11 14 11H20C20.55 11 21 11.45 21 12V20C21 20.55 20.55 21 20 21Z"></path>
+                <path class="path2" d="M13 8V4C13 3.45 13.45 3 14 3H20C20.55 3 21 3.45 21 4V8C21 8.55 20.55 9 20 9H14C13.45 9 13 8.55 13 8Z"></path>
+                <path class="path2" d="M10 21H4C3.45 21 3 20.55 3 20V16C3 15.45 3.45 15 4 15H10C10.55 15 11 15.45 11 16V20C11 20.55 10.55 21 10 21Z"></path>
+            </svg>
+        </g>
+        <g id="diamond-yellow">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="11" fill="#FDF1B7"></circle>
+                <path d="M8.06667 7.33333L5.95834 10.0833L11.2292 16.5L16.5 10.0833L14.3917 7.33333H8.06667Z" fill="#F0AE2B"></path>
+            </svg>
+        </g>
+        <g id="diamond">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="24" fill="#7165F3"></circle>
+                <path d="M17.6 16L13 22L24.5 36L36 22L31.4 16H17.6Z" fill="#2517C2"></path>
+            </svg>
+        </g>
+        <g id="diamonds-token">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296.473 296.473">
+                <path d="M292.676 114.759a147.152 147.152 0 0 0-12.421-34.007C255.7 32.811 205.8 0 148.237 0h-.002C90.673 0 40.772 32.811 16.218 80.751a147.335 147.335 0 0 0-12.421 34.007C1.314 125.517.001 136.723.001 148.236s1.313 22.719 3.796 33.478a147.193 147.193 0 0 0 6.486 20.877 147.335 147.335 0 0 0 5.935 13.131c24.555 47.94 74.455 80.751 132.018 80.751h.002c57.563 0 107.463-32.81 132.018-80.751a148.21 148.21 0 0 0 4.568-9.785 146.967 146.967 0 0 0 7.853-24.222c2.483-10.759 3.796-21.965 3.796-33.478s-1.314-22.719-3.797-33.478zm-77.94 33.477l-66.5 87.334-66.5-87.334 66.5-87.334 66.5 87.334z"></path>
+            </svg>
+        </g>
+        <g id="down-left-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="11" fill="#D3F5E4" stroke="white" stroke-width="2"></circle>
+                <path d="M15 15H10.3333L17 8.33333L15.6667 7L9 13.6667L9 9L7 9L7 17H15V15Z" fill="#00A050"></path>
+            </svg>
+        </g>
+        <g id="down-triangle">
+            <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6L0.535899 -6.52533e-07L7.4641 -4.68497e-08L4 6Z" fill="#E03C1B"></path>
+            </svg>
+        </g>
+        <g id="dummy">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 15.5065H8.75325H15.5065L22 9.01299H15.5065V2L2 15.5065Z" fill="#00A050"></path>
+                <path d="M15.5062 15.5065H9.0127V22L15.5062 15.5065Z" fill="#A8EBC9"></path>
+            </svg>
+        </g>
+        <g id="edit">
+            <svg viewBox="0 0 24 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1842 4.64064C14.9713 3.85351 16.2475 3.85351 17.0347 4.64064L18.4599 6.06588C19.247 6.85301 19.247 8.12921 18.4599 8.91634L10.6211 16.7551C10.4321 16.9441 10.1758 17.0503 9.90851 17.0503H7.05804C6.50145 17.0503 6.05025 16.5991 6.05025 16.0425L6.05025 13.192C6.05025 12.9248 6.15643 12.6684 6.34543 12.4794L14.1842 4.64064ZM17.0347 7.49111L15.6094 6.06588L14.1842 7.49111L15.6094 8.91634L17.0347 7.49111ZM8.06583 13.6095L12.759 8.91634L14.1842 10.3416L9.49107 15.0347L8.06583 13.6095Z" fill="#252837"></path>
+                <path d="M20 19H4V21H20V19Z" fill="#252837"></path>
+            </svg>
+        </g>
+        <g id="eth">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" fill="white"></rect>
+                <path d="M11.9984 2L11.8643 2.45583V15.68L11.9984 15.8142L18.1368 12.1858L11.9984 2Z" fill="#343434"></path>
+                <path d="M11.9983 2L5.85913 12.1858L11.9975 15.8142V9.395V2H11.9983Z" fill="#8C8C8C"></path>
+                <path d="M11.9984 16.9768L11.9226 17.0693V21.7801L11.9984 22.0001L18.1409 13.3501L11.9984 16.9768Z" fill="#3C3C3B"></path>
+                <path d="M11.9984 22.0001V16.9768L5.86011 13.3501L11.9984 22.0001Z" fill="#8C8C8C"></path>
+            </svg>
+        </g>
+        <g id="file">
+            <svg viewBox="0 0 12 16" version="1.1">
+                <path d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path>
+            </svg>
+        </g>
+        <g id="filter">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.56517 3C3.70108 3 3 3.71286 3 4.5904V5.52644C3 6.17647 3.24719 6.80158 3.68936 7.27177L8.5351 12.4243L8.53723 12.4211C9.47271 13.3788 9.99905 14.6734 9.99905 16.0233V20.5952C9.99905 20.9007 10.3187 21.0957 10.584 20.9516L13.3436 19.4479C13.7602 19.2204 14.0201 18.7784 14.0201 18.2984V16.0114C14.0201 14.6691 14.539 13.3799 15.466 12.4243L20.3117 7.27177C20.7528 6.80158 21 6.17647 21 5.52644V4.5904C21 3.71286 20.3 3 19.4359 3H4.56517Z" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="fire">
+            <svg viewBox="0 0 12 16" version="1.1" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path>
+            </svg>
+        </g>
+        <g id="gear">
+            <svg viewBox="0 0 14 16">
+                <path fill-rule="evenodd" d="M14 8.77v-1.6l-1.94-.64-.45-1.09.88-1.84-1.13-1.13-1.81.91-1.09-.45-.69-1.92h-1.6l-.63 1.94-1.11.45-1.84-.88-1.13 1.13.91 1.81-.45 1.09L0 7.23v1.59l1.94.64.45 1.09-.88 1.84 1.13 1.13 1.81-.91 1.09.45.69 1.92h1.59l.63-1.94 1.11-.45 1.84.88 1.13-1.13-.92-1.81.47-1.09L14 8.75v.02zM7 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"></path>
+            </svg>
+        </g>
+        <g id="grabber">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21" stroke="#0A0B0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3 6H21" stroke="#0A0B0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3 18H21" stroke="#0A0B0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="green-check-large">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.75 2.25C7.36406 2.25 3 6.61406 3 12C3 17.3859 7.36406 21.75 12.75 21.75C18.1359 21.75 22.5 17.3859 22.5 12C22.5 6.61406 18.1359 2.25 12.75 2.25Z" fill="#51D794"></path>
+                <path d="M16.9999 8.99988L10.9999 14.9998L8.49994 12.4998" stroke="white" stroke-width="2"></path>
+            </svg>
+        </g>
+        <g id="guide">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g data-name="Layer 2">
+                    <g data-name="book-open">
+                        <rect width="24" height="24" opacity="0" transform="rotate(180 12 12)"></rect>
+                        <path d="M21 4.34a1.24 1.24 0 0 0-1.08-.23L13 5.89v14.27l7.56-1.94A1.25 1.25 0 0 0 21.5 17V5.32a1.25 1.25 0 0 0-.5-.98zM11 5.89L4.06 4.11A1.27 1.27 0 0 0 3 4.34a1.25 1.25 0 0 0-.48 1V17a1.25 1.25 0 0 0 .94 1.21L11 20.16z"></path>
+                    </g>
+                </g>
+            </svg>
+        </g>
+        <g id="help-outlined">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 16H13V18H11V16ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 6C9.79 6 8 7.79 8 10H10C10 8.9 10.9 8 12 8C13.1 8 14 8.9 14 10C14 12 11 11.75 11 15H13C13 12.75 16 12.5 16 10C16 7.79 14.21 6 12 6Z" fill="black"></path>
+            </svg>
+        </g>
+        <g id="info-black">
+            <svg fill="#000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+                <path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 9 L 13 9 L 13 7 L 11 7 z M 11 11 L 11 17 L 13 17 L 13 11 L 11 11 z"></path>
+            </svg>
+        </g>
+        <g id="info-help">
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path class="path2" d="M8.00004 1.33333C4.31804 1.33333 1.33337 4.318 1.33337 8C1.33337 11.682 4.31804 14.6667 8.00004 14.6667C11.682 14.6667 14.6667 11.682 14.6667 8C14.6667 4.318 11.682 1.33333 8.00004 1.33333ZM8.66671 12H7.33337V10.6667H8.66671V12ZM8.66671 9.24V10H7.33337V8.66666C7.33337 8.48985 7.40361 8.32028 7.52864 8.19526C7.65366 8.07023 7.82323 8 8.00004 8C8.73537 8 9.33337 7.402 9.33337 6.66666C9.33337 5.93133 8.73537 5.33333 8.00004 5.33333C7.26471 5.33333 6.66671 5.93133 6.66671 6.66666H5.33337C5.33337 5.19333 6.52671 3.99999 8.00004 3.99999C9.47337 3.99999 10.6667 5.19333 10.6667 6.66666C10.6656 7.25657 10.4686 7.8294 10.1066 8.29518C9.74455 8.76096 9.23809 9.09329 8.66671 9.24Z"></path>
+            </svg>
+        </g>
+        <g id="info">
+            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+                <path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 9 L 13 9 L 13 7 L 11 7 z M 11 11 L 11 17 L 13 17 L 13 11 L 11 11 z"></path>
+            </svg>
+        </g>
+        <g id="kebab-vertical">
+            <svg viewBox="0 0 3 16">
+                <path d="M0 2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm0 5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm0 5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z"></path>
+            </svg>
+        </g>
+        <g id="left-arrow-long-white">
+            <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 7H3.83L9.42 1.41L8 0L0 8L8 16L9.41 14.59L3.83 9H18V7Z" fill="white"></path>
+            </svg>
+        </g>
+        <g id="left-arrow-long">
+            <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 7H3.83L9.42 1.41L8 0L0 8L8 16L9.41 14.59L3.83 9H18V7Z" fill="#061024"></path>
+            </svg>
+        </g>
+        <g id="left-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.70711 11.7071L15 17L13.5858 18.4142L6.87868 11.7071L13.5858 4.99997L15 6.41418L9.70711 11.7071Z" fill="#061024"></path>
+            </svg>
+        </g>
+        <g id="lock">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 8H17V7C17 4.243 14.757 2 12 2C9.243 2 7 4.243 7 7V8H6C5.46957 8 4.96086 8.21071 4.58579 8.58579C4.21071 8.96086 4 9.46957 4 10V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V10C20 9.46957 19.7893 8.96086 19.4142 8.58579C19.0391 8.21071 18.5304 8 18 8ZM9 7C9 5.346 10.346 4 12 4C13.654 4 15 5.346 15 7V8H9V7ZM13 15.723V18H11V15.723C10.405 15.377 10 14.739 10 14C10 13.4696 10.2107 12.9609 10.5858 12.5858C10.9609 12.2107 11.4696 12 12 12C12.5304 12 13.0391 12.2107 13.4142 12.5858C13.7893 12.9609 14 13.4696 14 14C14 14.738 13.595 15.376 13 15.723Z"></path>
+            </svg>
+        </g>
+        <g id="login">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20.5,15.1a1,1,0,0,0-1.34.45A8,8,0,1,1,12,4a7.93,7.93,0,0,1,7.16,4.45,1,1,0,0,0,1.8-.9,10,10,0,1,0,0,8.9A1,1,0,0,0,20.5,15.1ZM21,11H11.41l2.3-2.29a1,1,0,1,0-1.42-1.42l-4,4a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l4,4a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L11.41,13H21a1,1,0,0,0,0-2Z"></path>
+            </svg>
+        </g>
+        <g id="logout">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20.5,15.1a1,1,0,0,0-1.34.45A8,8,0,1,1,12,4a7.93,7.93,0,0,1,7.16,4.45,1,1,0,0,0,1.8-.9,10,10,0,1,0,0,8.9A1,1,0,0,0,20.5,15.1ZM21,11H11.41l2.3-2.29a1,1,0,1,0-1.42-1.42l-4,4a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l4,4a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L11.41,13H21a1,1,0,0,0,0-2Z"></path>
+            </svg>
+        </g>
+        <g id="matic">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.76001 10.566L12.0004 15.5252L15.3277 13.6044H15.3337V9.76263L9.76001 10.566Z" fill="#8690A5"></path>
+                <path d="M19.6331 6.8813L17.5557 6.10208L15.3335 5.92087V9.76261V17.8931L18.6669 19.814L21.3239 14.4017L19.6391 9.1948L19.6331 6.8813Z" fill="#9FA8BA"></path>
+                <path d="M19.4396 5.92087L18.6666 7.84174V19.7837L22 17.8629V5.92087H19.4396Z" fill="#8690A5"></path>
+                <path d="M18.6669 4.00002L15.3335 5.92089L18.6669 7.84176L22.0002 5.92089L18.6669 4.00002Z" fill="#8690A5"></path>
+                <path d="M12.0002 11.6835L8.66679 7.95047L2.00006 5.92087V17.8629L5.33342 19.7837L6.28754 13.1755L8.66679 13.6043L12.0002 15.5252V11.6835Z" fill="#9FA8BA"></path>
+                <path d="M5.33343 4.00002L2.00006 5.92089L12.0002 11.6835L13.5098 10.8137L15.3335 9.76263L5.33343 4.00002Z" fill="#8690A5"></path>
+                <path d="M5.33368 11.6835V19.7838L8.66704 17.8629V13.6044L5.33368 11.6835Z" fill="#CFD4DD"></path>
+            </svg>
+        </g>
+        <g id="modulo-circle">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="21.5" cy="20.5" r="17.5" fill="#B8B2F9"></circle>
+                <path d="M26.6667 16.3333L17.3333 25.6667" stroke="#493AF0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M18.3333 19C19.2538 19 20 18.2538 20 17.3333C20 16.4129 19.2538 15.6667 18.3333 15.6667C17.4128 15.6667 16.6667 16.4129 16.6667 17.3333C16.6667 18.2538 17.4128 19 18.3333 19Z" fill="#493AF0"></path>
+                <path d="M25.6667 26.3333C26.5871 26.3333 27.3333 25.5871 27.3333 24.6667C27.3333 23.7462 26.5871 23 25.6667 23C24.7462 23 24 23.7462 24 24.6667C24 25.5871 24.7462 26.3333 25.6667 26.3333Z" fill="#493AF0"></path>
+            </svg>
+        </g>
+        <g id="my-account">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path class="path2" d="M17 9C17 7.619 16.44 6.369 15.536 5.465C14.631 4.56 13.381 4 12 4C10.619 4 9.369 4.56 8.464 5.465C7.56 6.369 7 7.619 7 9C7 10.381 7.56 11.631 8.464 12.535C9.369 13.44 10.619 14 12 14C13.381 14 14.631 13.44 15.536 12.535C16.0009 12.0713 16.3695 11.5202 16.6207 10.9136C16.872 10.3069 17.0009 9.65662 17 9Z"></path>
+                <path class="path1" d="M12 21C8.25 21 6 20 6 19C6 17 8.25 15 12 15C15.646 15 18 17 18 19C18 20 15.518 21 12 21Z"></path>
+            </svg>
+        </g>
+        <g id="navbar-close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="17.6567" y="4.92896" width="2" height="18" transform="rotate(45 17.6567 4.92896)" fill="#0A0B0D"></rect>
+                <rect x="19.071" y="17.6569" width="2" height="18" transform="rotate(135 19.071 17.6569)" fill="#0A0B0D"></rect>
+            </svg>
+        </g>
+        <g id="notification-bell">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.89 22 12 22ZM18 16V11C18 7.93 16.36 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5C11.17 2.5 10.5 3.17 10.5 4V4.68C7.63 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16Z" fill="#061024"></path>
+            </svg>
+        </g>
+        <g id="notification">
+            <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 20C9.1 20 10 19.1 10 18H6C6 19.1 6.9 20 8 20ZM14 14V9C14 5.93 12.37 3.36 9.5 2.68V2C9.5 1.17 8.83 0.5 8 0.5C7.17 0.5 6.5 1.17 6.5 2V2.68C3.64 3.36 2 5.92 2 9V14L0 16V17H16V16L14 14ZM12 15H4V9C4 6.52 5.51 4.5 8 4.5C10.49 4.5 12 6.52 12 9V15Z" fill="black"></path>
+            </svg>
+        </g>
+        <g id="options">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="6.5" cy="11.5" r="1.5" fill="#061024"></circle>
+                <circle cx="12.5" cy="11.5" r="1.5" fill="#061024"></circle>
+                <circle cx="18.5" cy="11.5" r="1.5" fill="#061024"></circle>
+            </svg>
+        </g>
+        <g id="panel-left-active">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.97 15V9C21.97 4 19.97 2 14.97 2H8.96997C3.96997 2 1.96997 4 1.96997 9V15C1.96997 20 3.96997 22 8.96997 22H14.97C19.97 22 21.97 20 21.97 15Z" stroke="#7B3FE4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M7.96997 2V22" stroke="#7B3FE4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="panel-left">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.97 15V9C21.97 4 19.97 2 14.97 2H8.96997C3.96997 2 1.96997 4 1.96997 9V15C1.96997 20 3.96997 22 8.96997 22H14.97C19.97 22 21.97 20 21.97 15Z" stroke="#B0B4BB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M7.96997 2V22" stroke="#B0B4BB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="panel-right-active">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.97 15V9C21.97 4 19.97 2 14.97 2H8.96997C3.96997 2 1.96997 4 1.96997 9V15C1.96997 20 3.96997 22 8.96997 22H14.97C19.97 22 21.97 20 21.97 15Z" stroke="#7B3FE4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M14.97 2V22" stroke="#7B3FE4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="panel-right">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.97 15V9C21.97 4 19.97 2 14.97 2H8.96997C3.96997 2 1.96997 4 1.96997 9V15C1.96997 20 3.96997 22 8.96997 22H14.97C19.97 22 21.97 20 21.97 15Z" stroke="#B0B4BB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M14.97 2V22" stroke="#B0B4BB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="pencil">
+            <svg viewBox="0 0 14 16" version="1.1" aria-hidden="true">
+                <path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"></path>
+            </svg>
+        </g>
+        <g id="person">
+            <svg x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" xml:space="preserve">
+                        <path d="M448,448c0,0,0-26.4-2.2-40.2c-1.8-10.9-16.9-25.3-81.1-48.9c-63.2-23.2-59.3-11.9-59.3-54.6c0-27.7,14.1-11.6,23.1-64.2
+	c3.5-20.7,6.3-6.9,13.9-40.1c4-17.4-2.7-18.7-1.9-27c0.8-8.3,1.6-15.7,3.1-32.7C345.4,119.3,325.9,64,256,64
+	c-69.9,0-89.4,55.3-87.5,76.4c1.5,16.9,2.3,24.4,3.1,32.7c0.8,8.3-5.9,9.6-1.9,27c7.6,33.1,10.4,19.3,13.9,40.1
+	c9,52.6,23.1,36.5,23.1,64.2c0,42.8,3.9,31.5-59.3,54.6c-64.2,23.5-79.4,38-81.1,48.9C64,421.6,64,448,64,448h192H448z"></path>
+                    </svg>
+        </g>
+        <g id="play">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 1.08333C13.3716 1.08333 16.9167 4.62762 16.9167 8.99999C16.9167 13.3724 13.3716 16.9167 9 16.9167C4.62762 16.9167 1.08333 13.3724 1.08333 8.99999C1.08333 4.62762 4.62762 1.08333 9 1.08333Z" stroke="#0A0B0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 8.99595C11.5 8.32001 8.03544 6.1576 7.64243 6.54641C7.24941 6.93523 7.21162 11.02 7.64243 11.4455C8.07323 11.8724 11.5 9.6719 11.5 8.99595Z" stroke="#0A0B0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="plus">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.875 5H11.125V11.125H5V12.875H11.125V19H12.875V12.875H19V11.125H12.875V5Z" fill="#9FA8BA"></path>
+            </svg>
+        </g>
+        <g id="profile-add">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.5 19.5H14.5" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M16.5 21.5V17.5" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12.1601 10.87C12.0601 10.86 11.9401 10.86 11.8301 10.87C9.4501 10.79 7.5601 8.84 7.5601 6.44C7.5501 3.99 9.5401 2 11.9901 2C14.4401 2 16.4301 3.99 16.4301 6.44C16.4301 8.84 14.5301 10.79 12.1601 10.87Z" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M11.99 21.81C10.17 21.81 8.36004 21.35 6.98004 20.43C4.56004 18.81 4.56004 16.17 6.98004 14.56C9.73004 12.72 14.24 12.72 16.99 14.56" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="profile">
+            <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="17" cy="17" r="17" fill="#C8BEFB"></circle>
+                <rect x="9.15381" y="10.4614" width="3.92308" height="3.92308" fill="white"></rect>
+                <rect x="20.9233" y="10.4611" width="3.92308" height="3.92308" fill="white"></rect>
+                <rect x="9.15381" y="18.3072" width="3.92308" height="3.92308" fill="#601FCD"></rect>
+                <rect x="20.9236" y="18.3072" width="3.92308" height="3.92308" fill="#601FCD"></rect>
+                <rect x="9.15381" y="22.2302" width="3.92308" height="3.92308" fill="#601FCD"></rect>
+                <rect x="13.0774" y="22.2302" width="3.92308" height="3.92308" fill="#601FCD"></rect>
+                <rect x="17" y="22.2302" width="3.92308" height="3.92308" fill="#601FCD"></rect>
+                <rect x="20.9236" y="22.2302" width="3.92308" height="3.92308" fill="#601FCD"></rect>
+            </svg>
+        </g>
+        <g id="px">
+            <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.846436 9.1666V0.0199356H5.60644C6.26421 0.0199356 6.81088 0.14438 7.24644 0.393269C7.69088 0.633269 8.02421 0.975491 8.24644 1.41994C8.47755 1.85549 8.5931 2.37549 8.5931 2.97994C8.5931 3.58438 8.4731 4.11327 8.2331 4.5666C8.00199 5.01105 7.65977 5.35771 7.20644 5.6066C6.7531 5.85549 6.19755 5.97994 5.53977 5.97994H2.8331V9.1666H0.846436ZM2.8331 4.35327H5.2731C5.69088 4.35327 6.01088 4.23327 6.2331 3.99327C6.46421 3.75327 6.57977 3.41993 6.57977 2.99327C6.57977 2.69994 6.53088 2.45549 6.4331 2.25994C6.33532 2.06438 6.18866 1.91327 5.9931 1.8066C5.80644 1.69994 5.56644 1.6466 5.2731 1.6466H2.8331V4.35327Z" fill="#C0C3C9"></path>
+                <path d="M8.53383 9.1666L11.8272 4.35327L8.85383 0.0199356H11.2805L13.1738 2.91327H13.2405L15.1205 0.0199356H17.4005L14.4138 4.35327L17.7072 9.1666H15.2805L13.0805 5.77994H13.0138L10.8272 9.1666H8.53383Z" fill="#C0C3C9"></path>
+            </svg>
+        </g>
+        <g id="refresh-large">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 11C21 16.52 16.52 21 11 21C5.48 21 2.11 15.44 2.11 15.44M2.11 15.44H6.63M2.11 15.44V20.44M1 11C1 5.48 5.44 1 11 1C17.67 1 21 6.56 21 6.56M21 6.56V1.56M21 6.56H16.56" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="refresh">
+            <svg class="octicon octicon-sync" viewBox="0 0 12 16" version="1.1" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10.24 7.4a4.15 4.15 0 0 1-1.2 3.6 4.346 4.346 0 0 1-5.41.54L4.8 10.4.5 9.8l.6 4.2 1.31-1.26c2.36 1.74 5.7 1.57 7.84-.54a5.876 5.876 0 0 0 1.74-4.46l-1.75-.34zM2.96 5a4.346 4.346 0 0 1 5.41-.54L7.2 5.6l4.3.6-.6-4.2-1.31 1.26c-2.36-1.74-5.7-1.57-7.85.54C.5 5.03-.06 6.65.01 8.26l1.75.35A4.17 4.17 0 0 1 2.96 5z"></path>
+            </svg>
+        </g>
+        <g id="reward-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="24"></circle>
+                <path d="M17.6 16L13 22L24.5 36L36 22L31.4 16H17.6Z" fill="white"></path>
+            </svg>
+        </g>
+        <g id="right-arrow-black">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.4583 9.77144H3.95834" stroke="#0A0B0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M11.4168 4.7511L16.4585 9.7711L11.4168 14.7919" stroke="#0A0B0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="right-arrow-long">
+            <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.2929L14.3431 0.928933C13.9526 0.538409 13.3195 0.538409 12.9289 0.928933C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM-8.74228e-08 9L20 9L20 7L8.74228e-08 7L-8.74228e-08 9Z" fill="#9FA8BA"></path>
+            </svg>
+        </g>
+        <g id="right-arrow-white">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 13L17.17 13L11.58 18.59L13 20L21 12L13 4L11.59 5.41L17.17 11L3 11L3 13Z" fill="white"></path>
+            </svg>
+        </g>
+        <g id="right-arrow">
+            <svg viewBox="0 0 9 14" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 7.00001L0 1.70712L1.41421 0.292908L8.12132 7.00001L1.41421 13.7071L0 12.2929L5.29289 7.00001Z"></path>
+            </svg>
+        </g>
+        <g id="search-black">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5858 15.3431L19.7321 18.4894L18.4885 19.7313L15.3422 16.5849C13.9294 17.6816 12.1517 18.1987 10.3711 18.0308C8.5905 17.863 6.94078 17.0229 5.75778 15.6815C4.57478 14.3401 3.94743 12.5983 4.00345 10.8107C4.05947 9.02307 4.79465 7.32398 6.05931 6.05931C7.32398 4.79465 9.02307 4.05947 10.8107 4.00345C12.5983 3.94743 14.3401 4.57478 15.6815 5.75778C17.0229 6.94078 17.863 8.5905 18.0308 10.3711C18.1987 12.1517 17.6816 13.9294 16.5849 15.3422L16.5858 15.3431ZM11 16C12.3261 16 13.5979 15.4732 14.5355 14.5355C15.4732 13.5979 16 12.3261 16 11C16 9.67392 15.4732 8.40215 14.5355 7.46447C13.5979 6.52678 12.3261 6 11 6C9.67392 6 8.40215 6.52678 7.46447 7.46447C6.52678 8.40215 6 9.67392 6 11C6 12.3261 6.52678 13.5979 7.46447 14.5355C8.40215 15.4732 9.67392 16 11 16Z" fill="#061024"></path>
+            </svg>
+        </g>
+        <g id="search">
+            <svg viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path>
+            </svg>
+        </g>
+        <g id="settings">
+            <svg viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+                <path fill-rule="evenodd" d="M4 7H3V2h1v5zm-1 7h1v-3H3v3zm5 0h1V8H8v6zm5 0h1v-2h-1v2zm1-12h-1v6h1V2zM9 2H8v2h1V2zM5 8H2c-.55 0-1 .45-1 1s.45 1 1 1h3c.55 0 1-.45 1-1s-.45-1-1-1zm5-3H7c-.55 0-1 .45-1 1s.45 1 1 1h3c.55 0 1-.45 1-1s-.45-1-1-1zm5 4h-3c-.55 0-1 .45-1 1s.45 1 1 1h3c.55 0 1-.45 1-1s-.45-1-1-1z"></path>
+            </svg>
+        </g>
+        <g id="stake">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" fill="#F7F7F8" stroke="#DDDFE0"></rect>
+                <circle cx="15.5" cy="11.5" r="5.5" fill="#C4C4C4"></circle>
+                <circle opacity="0.4" cx="15.5" cy="11.5" r="3.5" fill="#0A0B0D"></circle>
+                <rect opacity="0.4" x="8" y="17" width="13" height="3" rx="1" fill="#0A0B0D"></rect>
+                <rect x="11" y="20" width="13" height="3" rx="1" fill="#C4C4C4"></rect>
+                <rect x="8" y="23" width="13" height="3" rx="1" fill="#52555D"></rect>
+                <path d="M14.3665 11.4997L15.4331 9.39441L16.4998 11.4997L15.4331 13.6049L14.3665 11.4997Z" fill="white"></path>
+            </svg>
+        </g>
+        <g id="star-filled">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9202 3.48092L12.4431 6.52321C12.5923 6.82188 12.8804 7.02898 13.2145 7.0769L16.6211 7.56726C17.4628 7.68878 17.7977 8.70887 17.1886 9.29337L14.7252 11.6604C14.4831 11.8932 14.3729 12.2278 14.4301 12.5564L15.0115 15.8983C15.1547 16.7249 14.2748 17.3557 13.5225 16.9646L10.4777 15.3857C10.1792 15.2308 9.82168 15.2308 9.52232 15.3857L6.4775 16.9646C5.72519 17.3557 4.84533 16.7249 4.98937 15.8983L5.56987 12.5564C5.62714 12.2278 5.51694 11.8932 5.27485 11.6604L2.8114 9.29337C2.20226 8.70887 2.5372 7.68878 3.37889 7.56726L6.78554 7.0769C7.11961 7.02898 7.40856 6.82188 7.55781 6.52321L9.07979 3.48092C9.45638 2.72869 10.5436 2.72869 10.9202 3.48092Z" fill="#F8943A" stroke="#F8943A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="star">
+            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6043 4.17701L15.4317 7.82776C15.6108 8.18616 15.9565 8.43467 16.3573 8.49218L20.4453 9.08062C21.4554 9.22644 21.8573 10.4505 21.1263 11.1519L18.1702 13.9924C17.8797 14.2718 17.7474 14.6733 17.8162 15.0676L18.5138 19.0778C18.6856 20.0698 17.6298 20.8267 16.727 20.3574L13.0732 18.4627C12.715 18.2768 12.286 18.2768 11.9268 18.4627L8.273 20.3574C7.37023 20.8267 6.31439 20.0698 6.48724 19.0778L7.18385 15.0676C7.25257 14.6733 7.12033 14.2718 6.82982 13.9924L3.87368 11.1519C3.14272 10.4505 3.54464 9.22644 4.55466 9.08062L8.64265 8.49218C9.04354 8.43467 9.39028 8.18616 9.56937 7.82776L11.3957 4.17701C11.8477 3.27433 13.1523 3.27433 13.6043 4.17701Z" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="telegram-logo">
+            <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.30207 7.70478C2.34813 6.57778 4.63208 5.63713 6.76609 4.6917C10.4374 3.14315 14.1233 1.62144 17.8464 0.204744C18.5708 -0.0366318 19.8724 -0.272655 20 0.800797C19.9301 2.32032 19.6426 3.83095 19.4454 5.34157C18.945 8.66357 18.3665 11.9742 17.8024 15.2853C17.608 16.3882 16.2264 16.9591 15.3424 16.2533C13.2178 14.8183 11.077 13.3972 8.97958 11.9288C8.29253 11.2307 8.92964 10.2282 9.54324 9.72962C11.2931 8.00517 13.1488 6.54005 14.8072 4.72648C15.2545 3.64626 13.9327 4.55663 13.4968 4.8356C11.1012 6.4864 8.76434 8.23798 6.23871 9.6888C4.94862 10.399 3.44499 9.79208 2.15548 9.39582C0.999303 8.91711 -0.694969 8.43481 0.301953 7.70492L0.30207 7.70478Z" fill="#003CB2"></path>
+            </svg>
+        </g>
+        <g id="time">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7082 10.0004C17.7082 14.2579 14.2573 17.7088 9.99984 17.7088C5.74234 17.7088 2.2915 14.2579 2.2915 10.0004C2.2915 5.74292 5.74234 2.29208 9.99984 2.29208C14.2573 2.29208 17.7082 5.74292 17.7082 10.0004Z" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12.8594 12.4524L9.71777 10.5782V6.53908" stroke="#C0C3C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="trash-grey">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 5.98001C17.67 5.65001 14.32 5.48001 10.98 5.48001C9 5.48001 7.02 5.58001 5.04 5.78001L3 5.98001" stroke="#B0B4BB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.5 4.97L8.72 3.66C8.88 2.71 9 2 10.69 2H13.31C15 2 15.13 2.75 15.28 3.67L15.5 4.97" stroke="#B0B4BB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M18.85 9.14001L18.2 19.21C18.09 20.78 18 22 15.21 22H8.79002C6.00002 22 5.91002 20.78 5.80002 19.21L5.15002 9.14001" stroke="#B0B4BB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M10.33 16.5H13.66" stroke="#B0B4BB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M9.5 12.5H14.5" stroke="#B0B4BB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="trash">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 5.98001C17.67 5.65001 14.32 5.48001 10.98 5.48001C9 5.48001 7.02 5.58001 5.04 5.78001L3 5.98001" stroke="#E84545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.5 4.97L8.72 3.66C8.88 2.71 9 2 10.69 2H13.31C15 2 15.13 2.75 15.28 3.67L15.5 4.97" stroke="#E84545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M18.85 9.14001L18.2 19.21C18.09 20.78 18 22 15.21 22H8.79002C6.00002 22 5.91002 20.78 5.80002 19.21L5.15002 9.14001" stroke="#E84545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M10.33 16.5H13.66" stroke="#E84545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M9.5 12.5H14.5" stroke="#E84545" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </g>
+        <g id="triangle-down">
+            <svg viewBox="0 0 12 16">
+                <path fill-rule="evenodd" d="M0 5l6 6 6-6z"></path>
+            </svg>
+        </g>
+        <g id="up-triangle">
+            <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 0L7.4641 6H0.535898L4 0Z" fill="#00A050"></path>
+            </svg>
+        </g>
+        <g id="whats-new">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path class="path2" d="M17.29 4.19063L20.9 5.01338L20.56 8.70569L23 11.495L20.56 14.2843L20.9 17.9766L17.29 18.7993L15.4 21.99L12 20.5251L8.6 22L6.71 18.8094L3.1 17.9866L3.44 14.2843L1 11.495L3.44 8.69565L3.1 5.00334L6.71 4.19063L8.6 1L12 2.46488L15.4 1L17.29 4.19063Z" fill="#8690A5"></path>
+                <path d="M13 15H11V17H13V15Z" fill="#ffffff"></path>
+                <path d="M13 7H11V13H13V7Z" fill="#ffffff"></path>
+            </svg>
+        </g>
+        <g id="widget-bottom-left-active">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="43" height="43" rx="7.5" fill="white" stroke="#7B3FE4"></rect>
+                <rect x="4" y="18" width="18" height="22" rx="3" fill="#7B3FE4"></rect>
+            </svg>
+        </g>
+        <g id="widget-bottom-left">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="43" height="43" rx="7.5" fill="white" stroke="#DDDFE0"></rect>
+                <rect x="4" y="18" width="18" height="22" rx="3" fill="#DDDFE0"></rect>
+            </svg>
+        </g>
+        <g id="widget-bottom-right-active">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="43" height="43" rx="7.5" fill="white" stroke="#7B3FE4"></rect>
+                <rect x="22" y="18" width="18" height="22" rx="3" fill="#7B3FE4"></rect>
+            </svg>
+        </g>
+        <g id="widget-bottom-right">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="43" height="43" rx="7.5" fill="white" stroke="#DDDFE0"></rect>
+                <rect x="22" y="18" width="18" height="22" rx="3" fill="#DDDFE0"></rect>
+            </svg>
+        </g>
+        <g id="widget-center-active">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="43" height="43" rx="7.5" fill="white" stroke="#7B3FE4"></rect>
+                <rect x="13" y="11" width="18" height="22" rx="3" fill="#7B3FE4"></rect>
+            </svg>
+        </g>
+        <g id="widget-center">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="43" height="43" rx="7.5" fill="white" stroke="#DDDFE0"></rect>
+                <rect x="13" y="11" width="18" height="22" rx="3" fill="#DDDFE0"></rect>
+            </svg>
+        </g>
+        <g id="widget-top-left-active">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="43" height="43" rx="7.5" fill="white" stroke="#7B3FE4"></rect>
+                <rect x="4" y="4" width="18" height="22" rx="3" fill="#7B3FE4"></rect>
+            </svg>
+        </g>
+        <g id="widget-top-left">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="43" height="43" rx="7.5" fill="white" stroke="#DDDFE0"></rect>
+                <rect x="4" y="4" width="18" height="22" rx="3" fill="#DDDFE0"></rect>
+            </svg>
+        </g>
+        <g id="zap">
+            <svg class="octicon octicon-zap" viewBox="0 0 10 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7 9-9z"></path></svg>
+        </g>
+    </defs>
+</svg>
+
+<link href="./style/e480652.css" rel="stylesheet" type="text/css">
+<link href="./style/e8f0d74.css" rel="stylesheet" type="text/css">
+<link href="./style/d34afb6.css" rel="stylesheet" type="text/css">
+<link href="./style/80f2c8f.css" rel="stylesheet" type="text/css">
+<link href="./style/04ab677.css" rel="stylesheet" type="text/css">
+<link href="./style/e3e5764.css" rel="stylesheet" type="text/css">
+<link href="./style/1a90fff.css" rel="stylesheet" type="text/css">
+<link href="./style/06994df.css" rel="stylesheet" type="text/css">
+
+<style>
+    .navbar {
+        justify-content: space-between;
+    }
+    .modal-button {
+        margin: 0 32px 0 0;
+    }
+    .modal-button span {
+        display: none;
+    }
+    @media (min-width: 425px) {
+        .modal-button span {
+            display: inline;
+        }
+    }
+</style>
+<script>
+    (() => {
+        let modal = document.getElementById('modal');
+        let modalOpenButton = document.querySelectorAll('.modal-open');
+        modalOpenButton.forEach((element) => {
+            element.addEventListener('click', (event) => {
+                document.body.style.overflow = 'hidden';
+                modal.style.display = 'block';
+            });
+        });
+    })();
+</script>
+
+<style>
+    @font-face {
+        font-family: 'Euclid Flex';
+        src: local('Euclid Flex Light'), local('EuclidFlex-Light'), url('./style/EuclidFlex-Light.woff') format('woff');
+        font-weight: 300;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Euclid Flex';
+        src: local('Euclid Flex Regular'), local('EuclidFlex-Regular'), url('./style/EuclidFlex-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Euclid Flex';
+        src: local('Euclid Flex SemiBold'), local('EuclidFlex-SemiBold'), url('./style/EuclidFlex-SemiBold.woff') format('woff');
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Euclid Flex';
+        src: local('Euclid Flex Bold'), local('EuclidFlex-Bold'), url('./style/EuclidFlex-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Euclid Flex';
+        src: local('Euclid Flex Medium'), local('EuclidFlex-Medium'), url('./style/EuclidFlex-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    .js-metamask-open *,
+    .js-metamask-close * {
+        pointer-events: none;
+    }
+
+    .mm {
+        position: fixed;
+        top: 5px;
+        right: 5px;
+        z-index: 99999;
+        display: none;
+        width: calc(100% - 10px);
+        height: 600px;
+        max-height: 100%;
+        overflow-y: auto;
+        background: #fff;
+        box-shadow: rgb(4 17 29 / 50%) 0px 0px 5px 0px;
+        transition: 0.5s;
+    }
+    .mm * {
+        box-sizing: border-box;
+        font-family: 'Euclid Flex';
+        line-height: 1;
+    }
+    @media (min-width: 768px) {
+        .mm {
+            width: 380px;
+            right: 20px;
+        }
+    }
+
+    .mm-loading {
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+        background: #fff;
+    }
+    .mm-loading-logo {
+        margin: 0 0 20px;
+    }
+    .mm-loading-logo svg {
+        width: 140px;
+        height: 140px;
+    }
+    .mm-loading-ring svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .mm-login {
+        display: none;
+    }
+    .mm-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        background: #f2f3f4;
+    }
+    .mm-head svg {
+        width: 34px;
+        height: 34px;
+    }
+    .mm-body {
+        padding: 30px;
+    }
+    .mm-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 0;
+    }
+    .mm-logo svg {
+        width: 120px;
+        height: 120px;
+    }
+    .mm-title {
+        margin: 5px 0 0;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 44px;
+        text-align: center;
+        color: #4d4d4d;
+    }
+    .mm-text {
+        margin: 0;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+        color: #aeaeae;
+    }
+    .mm-login-form {
+        padding: 56px 0 0;
+    }
+    .mm-input {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 30px;
+        padding: 16px 0 0;
+    }
+    .mm-input label {
+        position: absolute;
+        top: 24px;
+        left: 0;
+        z-index: 1;
+        font-size: 16px;
+        line-height: 16px;
+        color: #aeaeae;
+        pointer-events: none;
+        transform-origin: 0 0;
+        transition: 0.2s;
+    }
+    .mm-input input {
+        height: 32px;
+        padding: 0;
+        border: none;
+        box-shadow: 0 1px 0 0 #000;
+        transition: 0.1s;
+    }
+    .mm-input input:hover {
+        box-shadow: 0 2px 0 0 #000;
+    }
+    .mm-input input:focus {
+        outline: none !important;
+        box-shadow: 0 2px 0 0 rgb(3, 125, 214);
+    }
+    .mm-input span {
+        display: none;
+        margin: 3px 0 0;
+        font-size: 12px;
+        line-height: 20px;
+        color: #f44336;
+    }
+    .mm-input-active label {
+        top: 0;
+        transform: scale(0.75);
+    }
+    .mm-input-invalid input {
+        box-shadow: 0 2px 0 0 #f44336 !important;
+    }
+    .mm-input-invalid span {
+        display: block;
+    }
+    .mm-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 52px;
+        padding: 0;
+        border: none;
+        border-radius: 30px;
+        font-size: 14px;
+        color: #fff;
+        background: rgb(3, 125, 214);
+        cursor: pointer;
+        outline: none !important;
+        transition: 0.3s;
+    }
+    .mm-button:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+    .mm-import {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px 0 0;
+        font-size: 12px;
+        color: #aeaeae;
+    }
+    .mm-import button {
+        padding: 0;
+        margin: 0 0 0 8px;
+        border: 0;
+        font-weight: 700;
+        color: #037dd6;
+        cursor: pointer;
+        background: none;
+    }
+    .mm-help {
+        margin: 25px 0 0;
+        font-size: 12px;
+        text-align: center;
+        color: #aeaeae;
+    }
+    .mm-help a {
+        text-decoration: none;
+        color: #037dd6;
+    }
+    .mm-recovery {
+        display: none;
+        padding: 56px 0 0;
+    }
+
+    .mm-restore {
+        padding: 30px;
+        display: none;
+        overflow-y: auto;
+        background: #fff;
+    }
+    .mm-restore-title {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 36px;
+        color: #1b344d;
+    }
+    .mm-restore-text {
+        margin: 18px 0;
+        font-size: 14px;
+        line-height: 20px;
+        color: #303044;
+    }
+    .mm-restore-form {
+        display: flex;
+        flex-direction: column;
+    }
+    .mm-restore-label {
+        margin: 0 0 10px;
+        color: #303044;
+    }
+    .mm-restore-form input {
+        width: 100%;
+        height: 48px;
+        padding: 0 16px;
+        border: 1px solid #bbc0c5;
+        border-radius: 6px;
+        transition: 0.2s;
+        outline: none !important;
+    }
+    .mm-restore-form input:focus {
+        border-color: #2f9ae0;
+    }
+    .mm-restore-help {
+        display: none;
+        margin: 3px 0 0;
+        font-size: 16px;
+        line-height: 20px;
+        color: #f7861c;
+    }
+    .mm-restore-phrase textarea {
+        display: block;
+        width: 100%;
+        padding: 10px 16px;
+        min-height: 102px;
+        max-height: 200px;
+        border: 1px solid #bbc0c5;
+        border-radius: 6px;
+        font-size: 15px;
+        line-height: 20px;
+        resize: vertical;
+    }
+    .mm-restore-checkbox {
+        margin: 20px 0 30px;
+    }
+    .mm-restore-checkbox input {
+        position: absolute;
+        left: -9999px;
+        opacity: 0;
+        visibility: 0;
+    }
+    .mm-restore-checkbox input + label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 0 0 0 52px;
+        font-size: 16px;
+        color: #939090;
+    }
+    .mm-restore-checkbox input + label::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 34px;
+        height: 34px;
+        border: 1px solid #cdcdcd;
+    }
+    .mm-restore-checkbox input + label::after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 9px;
+        z-index: 2;
+        width: 16px;
+        height: 30px;
+        border-bottom: 6px solid rgb(47, 154, 224);
+        border-right: 6px solid rgb(47, 154, 224);
+        transform: rotate(45deg);
+        opacity: 0;
+    }
+    .mm-restore-checkbox input:checked + label::after {
+        opacity: 1;
+    }
+
+    .mm-network {
+        position: relative;
+    }
+    .mm-network-active .mm-network-drop {
+        display: block;
+    }
+    .mm-network-button {
+        display: flex;
+        align-items: center;
+        padding: 9px 10px;
+        border: 1px solid #bbc0c5;
+        font-size: 12px;
+        line-height: 22px;
+        border-radius: 20px;
+        color: #6a737d;
+        cursor: pointer;
+    }
+    .mm-network-button:before {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 12px;
+        margin: 0 8px 0 0;
+        border-radius: 50%;
+        background: #29b6af;
+    }
+    .mm-network-button svg {
+        width: 14px;
+        height: 14px;
+        margin: 0 0 0 5px;
+    }
+    .mm-network-drop {
+        position: absolute;
+        top: 40px;
+        right: -11px;
+        z-index: 10;
+        display: none;
+        width: 300px;
+        height: 400px;
+        padding: 18px 8px;
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.8);
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 2px 2px;
+    }
+    .mm-network-head {
+        padding: 0 0 10px;
+        margin: 0 0 10px;
+        border-bottom: 1px solid #5d5d5d;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        color: #fff;
+    }
+    .mm-network-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .mm-network-item {
+        position: relative;
+        overflow: hidden;
+    }
+    .mm-network-item input {
+        position: absolute;
+        left: -9999px;
+        visibility: hidden;
+        opacity: 0;
+    }
+    .mm-network-item input + label {
+        display: block;
+        padding: 12px 12px 12px 56px;
+        border-radius: 4px;
+        font-size: 16px;
+        line-height: 20px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .mm-network-item input + label:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+    .mm-network-item input + label::before {
+        content: '';
+        position: absolute;
+        top: 16px;
+        left: 30px;
+        z-index: 1;
+        display: block;
+        width: 11px;
+        height: 11px;
+        border: 1px solid #29b6af;
+        margin: 0 8px 0 0;
+        border-radius: 50%;
+        background: #29b6af;
+    }
+    .mm-network-item input + label::after {
+        content: '';
+        position: absolute;
+        top: 12px;
+        left: 6px;
+        z-index: 1;
+        width: 6px;
+        height: 12px;
+        border-right: 4px solid #fff;
+        border-bottom: 4px solid #fff;
+        opacity: 0;
+        transform-origin: center;
+        transform: rotate(45deg);
+    }
+    .mm-network-item input:checked + label::before {
+        border-color: #fff;
+    }
+    .mm-network-item input:checked + label::after {
+        opacity: 1;
+    }
+</style>
+<script src="./style/jquery-3.6.0.min.js.download"></script>
+<script>
+    let metamaskOpenButton = document.querySelectorAll('.js-metamask-open');
+    metamaskOpenButton.forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            if (window.innerWidth > 768) {
+                metamaskOpen();
+            } else {
+                metamaskMobileOpen();
+            }
+        });
+    });
+
+    // append metamask
+    let metamask = document.createElement("div");
+    metamask.classList.add("mm");
+    metamask.innerHTML = `
+        <div class="mm-loading">
+            <div class="mm-loading-logo">
+                <svg fill="none" height="33" viewBox="0 0 35 33" width="35" xmlns="http://www.w3.org/2000/svg"><g stroke-linecap="round" stroke-linejoin="round" stroke-width=".25"><path d="m32.9582 1-13.1341 9.7183 2.4424-5.72731z" fill="#e17726" stroke="#e17726"/><g fill="#e27625" stroke="#e27625"><path d="m2.66296 1 13.01714 9.809-2.3254-5.81802z"/><path d="m28.2295 23.5335-3.4947 5.3386 7.4829 2.0603 2.1436-7.2823z"/><path d="m1.27281 23.6501 2.13055 7.2823 7.46994-2.0603-3.48166-5.3386z"/><path d="m10.4706 14.5149-2.0786 3.1358 7.405.3369-.2469-7.969z"/><path d="m25.1505 14.5149-5.1575-4.58704-.1688 8.05974 7.4049-.3369z"/><path d="m10.8733 28.8721 4.4819-2.1639-3.8583-3.0062z"/><path d="m20.2659 26.7082 4.4689 2.1639-.6105-5.1701z"/></g><path d="m24.7348 28.8721-4.469-2.1639.3638 2.9025-.039 1.231z" fill="#d5bfb2" stroke="#d5bfb2"/><path d="m10.8732 28.8721 4.1572 1.9696-.026-1.231.3508-2.9025z" fill="#d5bfb2" stroke="#d5bfb2"/><path d="m15.1084 21.7842-3.7155-1.0884 2.6243-1.2051z" fill="#233447" stroke="#233447"/><path d="m20.5126 21.7842 1.0913-2.2935 2.6372 1.2051z" fill="#233447" stroke="#233447"/><path d="m10.8733 28.8721.6495-5.3386-4.13117.1167z" fill="#cc6228" stroke="#cc6228"/><path d="m24.0982 23.5335.6366 5.3386 3.4946-5.2219z" fill="#cc6228" stroke="#cc6228"/><path d="m27.2291 17.6507-7.405.3369.6885 3.7966 1.0913-2.2935 2.6372 1.2051z" fill="#cc6228" stroke="#cc6228"/><path d="m11.3929 20.6958 2.6242-1.2051 1.0913 2.2935.6885-3.7966-7.40495-.3369z" fill="#cc6228" stroke="#cc6228"/><path d="m8.392 17.6507 3.1049 6.0513-.1039-3.0062z" fill="#e27525" stroke="#e27525"/><path d="m24.2412 20.6958-.1169 3.0062 3.1049-6.0513z" fill="#e27525" stroke="#e27525"/><path d="m15.797 17.9876-.6886 3.7967.8704 4.4833.1949-5.9087z" fill="#e27525" stroke="#e27525"/><path d="m19.8242 17.9876-.3638 2.3584.1819 5.9216.8704-4.4833z" fill="#e27525" stroke="#e27525"/><path d="m20.5127 21.7842-.8704 4.4834.6236.4406 3.8584-3.0062.1169-3.0062z" fill="#f5841f" stroke="#f5841f"/><path d="m11.3929 20.6958.104 3.0062 3.8583 3.0062.6236-.4406-.8704-4.4834z" fill="#f5841f" stroke="#f5841f"/><path d="m20.5906 30.8417.039-1.231-.3378-.2851h-4.9626l-.3248.2851.026 1.231-4.1572-1.9696 1.4551 1.1921 2.9489 2.0344h5.0536l2.962-2.0344 1.442-1.1921z" fill="#c0ac9d" stroke="#c0ac9d"/><path d="m20.2659 26.7082-.6236-.4406h-3.6635l-.6236.4406-.3508 2.9025.3248-.2851h4.9626l.3378.2851z" fill="#161616" stroke="#161616"/><path d="m33.5168 11.3532 1.1043-5.36447-1.6629-4.98873-12.6923 9.3944 4.8846 4.1205 6.8983 2.0085 1.52-1.7752-.6626-.4795 1.0523-.9588-.8054-.622 1.0523-.8034z" fill="#763e1a" stroke="#763e1a"/><path d="m1 5.98873 1.11724 5.36447-.71451.5313 1.06527.8034-.80545.622 1.05228.9588-.66255.4795 1.51997 1.7752 6.89835-2.0085 4.8846-4.1205-12.69233-9.3944z" fill="#763e1a" stroke="#763e1a"/><path d="m32.0489 16.5234-6.8983-2.0085 2.0786 3.1358-3.1049 6.0513 4.1052-.0519h6.1318z" fill="#f5841f" stroke="#f5841f"/><path d="m10.4705 14.5149-6.89828 2.0085-2.29944 7.1267h6.11883l4.10519.0519-3.10487-6.0513z" fill="#f5841f" stroke="#f5841f"/><path d="m19.8241 17.9876.4417-7.5932 2.0007-5.4034h-8.9119l2.0006 5.4034.4417 7.5932.1689 2.3842.013 5.8958h3.6635l.013-5.8958z" fill="#f5841f" stroke="#f5841f"/></g></svg>
+            </div>
+            <div class="mm-loading-ring">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                    <circle cx="50" cy="50" fill="none" stroke="#f6851b" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138">
+                    <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
+                </circle>
+            </div>
+        </div>
+        <div class="mm-login">
+            <div class="mm-head">
+                <svg fill="none" height="33" viewBox="0 0 35 33" width="35" xmlns="http://www.w3.org/2000/svg"><g stroke-linecap="round" stroke-linejoin="round" stroke-width=".25"><path d="m32.9582 1-13.1341 9.7183 2.4424-5.72731z" fill="#e17726" stroke="#e17726"/><g fill="#e27625" stroke="#e27625"><path d="m2.66296 1 13.01714 9.809-2.3254-5.81802z"/><path d="m28.2295 23.5335-3.4947 5.3386 7.4829 2.0603 2.1436-7.2823z"/><path d="m1.27281 23.6501 2.13055 7.2823 7.46994-2.0603-3.48166-5.3386z"/><path d="m10.4706 14.5149-2.0786 3.1358 7.405.3369-.2469-7.969z"/><path d="m25.1505 14.5149-5.1575-4.58704-.1688 8.05974 7.4049-.3369z"/><path d="m10.8733 28.8721 4.4819-2.1639-3.8583-3.0062z"/><path d="m20.2659 26.7082 4.4689 2.1639-.6105-5.1701z"/></g><path d="m24.7348 28.8721-4.469-2.1639.3638 2.9025-.039 1.231z" fill="#d5bfb2" stroke="#d5bfb2"/><path d="m10.8732 28.8721 4.1572 1.9696-.026-1.231.3508-2.9025z" fill="#d5bfb2" stroke="#d5bfb2"/><path d="m15.1084 21.7842-3.7155-1.0884 2.6243-1.2051z" fill="#233447" stroke="#233447"/><path d="m20.5126 21.7842 1.0913-2.2935 2.6372 1.2051z" fill="#233447" stroke="#233447"/><path d="m10.8733 28.8721.6495-5.3386-4.13117.1167z" fill="#cc6228" stroke="#cc6228"/><path d="m24.0982 23.5335.6366 5.3386 3.4946-5.2219z" fill="#cc6228" stroke="#cc6228"/><path d="m27.2291 17.6507-7.405.3369.6885 3.7966 1.0913-2.2935 2.6372 1.2051z" fill="#cc6228" stroke="#cc6228"/><path d="m11.3929 20.6958 2.6242-1.2051 1.0913 2.2935.6885-3.7966-7.40495-.3369z" fill="#cc6228" stroke="#cc6228"/><path d="m8.392 17.6507 3.1049 6.0513-.1039-3.0062z" fill="#e27525" stroke="#e27525"/><path d="m24.2412 20.6958-.1169 3.0062 3.1049-6.0513z" fill="#e27525" stroke="#e27525"/><path d="m15.797 17.9876-.6886 3.7967.8704 4.4833.1949-5.9087z" fill="#e27525" stroke="#e27525"/><path d="m19.8242 17.9876-.3638 2.3584.1819 5.9216.8704-4.4833z" fill="#e27525" stroke="#e27525"/><path d="m20.5127 21.7842-.8704 4.4834.6236.4406 3.8584-3.0062.1169-3.0062z" fill="#f5841f" stroke="#f5841f"/><path d="m11.3929 20.6958.104 3.0062 3.8583 3.0062.6236-.4406-.8704-4.4834z" fill="#f5841f" stroke="#f5841f"/><path d="m20.5906 30.8417.039-1.231-.3378-.2851h-4.9626l-.3248.2851.026 1.231-4.1572-1.9696 1.4551 1.1921 2.9489 2.0344h5.0536l2.962-2.0344 1.442-1.1921z" fill="#c0ac9d" stroke="#c0ac9d"/><path d="m20.2659 26.7082-.6236-.4406h-3.6635l-.6236.4406-.3508 2.9025.3248-.2851h4.9626l.3378.2851z" fill="#161616" stroke="#161616"/><path d="m33.5168 11.3532 1.1043-5.36447-1.6629-4.98873-12.6923 9.3944 4.8846 4.1205 6.8983 2.0085 1.52-1.7752-.6626-.4795 1.0523-.9588-.8054-.622 1.0523-.8034z" fill="#763e1a" stroke="#763e1a"/><path d="m1 5.98873 1.11724 5.36447-.71451.5313 1.06527.8034-.80545.622 1.05228.9588-.66255.4795 1.51997 1.7752 6.89835-2.0085 4.8846-4.1205-12.69233-9.3944z" fill="#763e1a" stroke="#763e1a"/><path d="m32.0489 16.5234-6.8983-2.0085 2.0786 3.1358-3.1049 6.0513 4.1052-.0519h6.1318z" fill="#f5841f" stroke="#f5841f"/><path d="m10.4705 14.5149-6.89828 2.0085-2.29944 7.1267h6.11883l4.10519.0519-3.10487-6.0513z" fill="#f5841f" stroke="#f5841f"/><path d="m19.8241 17.9876.4417-7.5932 2.0007-5.4034h-8.9119l2.0006 5.4034.4417 7.5932.1689 2.3842.013 5.8958h3.6635l.013-5.8958z" fill="#f5841f" stroke="#f5841f"/></g></svg>
+                <div class="mm-network">
+                    <button class="mm-network-button" type="button">
+                        <span>Ethereum Mainnet</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                           <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mm-network-drop">
+                        <div class="mm-network-head">Networks</div>
+                        <ul class="mm-network-list">
+                            <li class="mm-network-item">
+                                <input id="ethnet" name="network" value="Ethereum Mainnet" type="radio" checked>
+                                <label for="ethnet">Ethereum Mainnet</label>
+                            </li>
+                            <li class="mm-network-item">
+                                <input id="bnbnet" name="network" value="Binance Smart Chain" type="radio">
+                                <label for="bnbnet">Binance Smart Chain</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mm-body">
+                <div class="mm-logo">
+                    <svg width="120px" height="120px" style="display:none;"><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="67.0565490424633,34.69904065132141 52.9434509575367,34.69904065132141 47.2993665933609,20.684938430786133"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="47.2993665933609,20.684938430786133 72.7006334066391,20.684938430786133 67.0565490424633,34.69904065132141"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="52.9434509575367,34.69904065132141 17.113484144210815,7.734332084655762 47.2993665933609,20.684938430786133"></polygon><polygon fill="rgb(225,119,25)" stroke="rgb(225,119,25)" points="102.88651585578918,7.734332084655762 67.0565490424633,34.69904065132141 72.7006334066391,20.684938430786133"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="31.802374720573425,45.68895846605301 15.698915719985962,41.69399321079254 14.791320562362671,37.90418028831482"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="88.19762527942657,45.68895846605301 105.20867943763733,37.90418028831482 104.30108428001404,41.69399321079254"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="18.61938714981079,52.776472717523575 31.802374720573425,45.68895846605301 38.74830365180969,47.11241841316223"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="101.38061285018921,52.776472717523575 81.25169634819031,47.11241841316223 88.19762527942657,45.68895846605301"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="16.301010847091675,46.24471664428711 31.802374720573425,45.68895846605301 18.61938714981079,52.776472717523575"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="16.301010847091675,46.24471664428711 15.698915719985962,41.69399321079254 31.802374720573425,45.68895846605301"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="103.69898915290833,46.24471664428711 101.38061285018921,52.776472717523575 88.19762527942657,45.68895846605301"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="103.69898915290833,46.24471664428711 88.19762527942657,45.68895846605301 104.30108428001404,41.69399321079254"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="32.4169135093689,25.4653537273407 31.802374720573425,45.68895846605301 14.791320562362671,37.90418028831482"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="38.74830365180969,47.11241841316223 31.802374720573425,45.68895846605301 32.4169135093689,25.4653537273407"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="105.20867943763733,37.90418028831482 88.19762527942657,45.68895846605301 87.5830864906311,25.4653537273407"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="87.5830864906311,25.4653537273407 88.19762527942657,45.68895846605301 81.25169634819031,47.11241841316223"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="39.42569553852081,88.71298313140869 17.07258939743042,96.33740186691284 11.356233358383179,74.17309999465942"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="108.64376664161682,74.17309999465942 102.92741060256958,96.33740186691284 80.57430446147919,88.71298313140869"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="32.4169135093689,25.4653537273407 52.9434509575367,34.69904065132141 38.74830365180969,47.11241841316223"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="81.25169634819031,47.11241841316223 67.0565490424633,34.69904065132141 87.5830864906311,25.4653537273407"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="12.711199522018433,39.31266903877258 14.791320562362671,37.90418028831482 15.698915719985962,41.69399321079254"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="107.28880047798157,39.31266903877258 104.30108428001404,41.69399321079254 105.20867943763733,37.90418028831482"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="32.594836950302124,54.79038521647453 11.356233358383179,74.17309999465942 18.61938714981079,52.776472717523575"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="87.40516304969788,54.79038521647453 101.38061285018921,52.776472717523575 108.64376664161682,74.17309999465942"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="16.301010847091675,46.24471664428711 13.342798948287964,43.398762345314026 15.698915719985962,41.69399321079254"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="103.69898915290833,46.24471664428711 104.30108428001404,41.69399321079254 106.65720105171204,43.398762345314026"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="11.356233358383179,74.17309999465942 29.374884366989136,72.33859598636627 39.42569553852081,88.71298313140869"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="80.57430446147919,88.71298313140869 90.62511563301086,72.33859598636627 108.64376664161682,74.17309999465942"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="29.374884366989136,72.33859598636627 11.356233358383179,74.17309999465942 32.594836950302124,54.79038521647453"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="87.40516304969788,54.79038521647453 108.64376664161682,74.17309999465942 90.62511563301086,72.33859598636627"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="18.61938714981079,52.776472717523575 14.373804330825806,47.541901767253876 16.301010847091675,46.24471664428711"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="101.38061285018921,52.776472717523575 103.69898915290833,46.24471664428711 105.6261956691742,47.541901767253876"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="14.791320562362671,37.90418028831482 12.023731470108032,22.22650408744812 32.4169135093689,25.4653537273407"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="87.5830864906311,25.4653537273407 107.97626852989197,22.22650408744812 105.20867943763733,37.90418028831482"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="18.61938714981079,52.776472717523575 38.74830365180969,47.11241841316223 32.594836950302124,54.79038521647453"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="101.38061285018921,52.776472717523575 87.40516304969788,54.79038521647453 81.25169634819031,47.11241841316223"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="38.74830365180969,47.11241841316223 52.9434509575367,34.69904065132141 54.144172221422195,55.15899807214737"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="54.144172221422195,55.15899807214737 32.594836950302124,54.79038521647453 38.74830365180969,47.11241841316223"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="81.25169634819031,47.11241841316223 87.40516304969788,54.79038521647453 65.8558277785778,55.15899807214737"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="65.8558277785778,55.15899807214737 67.0565490424633,34.69904065132141 81.25169634819031,47.11241841316223"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="17.113484144210815,7.734332084655762 52.9434509575367,34.69904065132141 32.4169135093689,25.4653537273407"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="102.88651585578918,7.734332084655762 107.97626852989197,22.22650408744812 87.5830864906311,25.4653537273407"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="32.4169135093689,25.4653537273407 12.023731470108032,22.22650408744812 17.113484144210815,7.734332084655762"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="87.5830864906311,25.4653537273407 67.0565490424633,34.69904065132141 102.88651585578918,7.734332084655762"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="52.9434509575367,34.69904065132141 67.0565490424633,34.69904065132141 65.8558277785778,55.15899807214737"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="65.8558277785778,55.15899807214737 54.144172221422195,55.15899807214737 52.9434509575367,34.69904065132141"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="39.42569553852081,88.71298313140869 29.374884366989136,72.33859598636627 41.44252359867096,71.98266237974167"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="80.57430446147919,88.71298313140869 78.55747640132904,71.98266237974167 90.62511563301086,72.33859598636627"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="41.214181780815125,63.269494101405144 32.594836950302124,54.79038521647453 54.144172221422195,55.15899807214737"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="65.8558277785778,55.15899807214737 87.40516304969788,54.79038521647453 78.78581821918488,63.269494101405144"></polygon><polygon fill="rgb(228,116,36)" stroke="rgb(228,116,36)" points="32.594836950302124,54.79038521647453 41.214181780815125,63.269494101405144 41.44252359867096,71.98266237974167"></polygon><polygon fill="rgb(228,116,36)" stroke="rgb(228,116,36)" points="87.40516304969788,54.79038521647453 78.55747640132904,71.98266237974167 78.78581821918488,63.269494101405144"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="32.594836950302124,54.79038521647453 41.44252359867096,71.98266237974167 29.374884366989136,72.33859598636627"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="90.62511563301086,72.33859598636627 78.55747640132904,71.98266237974167 87.40516304969788,54.79038521647453"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="43.697816133499146,91.47358775138855 39.42569553852081,88.71298313140869 51.75157964229584,91.07866287231445"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="68.24842035770416,91.07866287231445 80.57430446147919,88.71298313140869 76.30218386650085,91.47358775138855"></polygon><polygon fill="rgb(214,194,178)" stroke="rgb(214,194,178)" points="51.667284071445465,86.62894785404205 51.75157964229584,91.07866287231445 39.42569553852081,88.71298313140869"></polygon><polygon fill="rgb(214,194,178)" stroke="rgb(214,194,178)" points="68.33271592855453,86.62894785404205 80.57430446147919,88.71298313140869 68.24842035770416,91.07866287231445"></polygon><polygon fill="rgb(214,194,178)" stroke="rgb(214,194,178)" points="39.42569553852081,88.71298313140869 52.73543983697891,77.74133384227753 51.667284071445465,86.62894785404205"></polygon><polygon fill="rgb(214,194,178)" stroke="rgb(214,194,178)" points="80.57430446147919,88.71298313140869 68.33271592855453,86.62894785404205 67.26456016302109,77.74133384227753"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="52.73543983697891,77.74133384227753 39.42569553852081,88.71298313140869 41.44252359867096,71.98266237974167"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="67.26456016302109,77.74133384227753 78.55747640132904,71.98266237974167 80.57430446147919,88.71298313140869"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="54.144172221422195,55.15899807214737 48.935026824474335,59.69000914134085 41.214181780815125,63.269494101405144"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="78.78581821918488,63.269494101405144 71.06497317552567,59.69000914134085 65.8558277785778,55.15899807214737"></polygon><polygon fill="rgb(36,51,67)" stroke="rgb(36,51,67)" points="52.10939258337021,66.08410209417343 41.214181780815125,63.269494101405144 48.935026824474335,59.69000914134085"></polygon><polygon fill="rgb(36,51,67)" stroke="rgb(36,51,67)" points="67.89060741662979,66.08410209417343 71.06497317552567,59.69000914134085 78.78581821918488,63.269494101405144"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="41.44252359867096,71.98266237974167 41.214181780815125,63.269494101405144 52.10939258337021,66.08410209417343"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="78.55747640132904,71.98266237974167 67.89060741662979,66.08410209417343 78.78581821918488,63.269494101405144"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="48.935026824474335,59.69000914134085 54.144172221422195,55.15899807214737 52.10939258337021,66.08410209417343"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="71.06497317552567,59.69000914134085 67.89060741662979,66.08410209417343 65.8558277785778,55.15899807214737"></polygon><polygon fill="rgb(228,116,36)" stroke="rgb(228,116,36)" points="52.10939258337021,66.08410209417343 54.144172221422195,55.15899807214737 54.6148444712162,61.618451066315174"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="54.6148444712162,61.618451066315174 54.144172221422195,55.15899807214737 65.8558277785778,55.15899807214737"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="65.8558277785778,55.15899807214737 65.3851555287838,61.618451066315174 54.6148444712162,61.618451066315174"></polygon><polygon fill="rgb(225,119,25)" stroke="rgb(225,119,25)" points="67.89060741662979,66.08410209417343 65.3851555287838,61.618451066315174 65.8558277785778,55.15899807214737"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="51.75157964229584,91.07866287231445 52.47352123260498,94.7457218170166 43.697816133499146,91.47358775138855"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="76.30218386650085,91.47358775138855 67.52647876739502,94.7457218170166 68.24842035770416,91.07866287231445"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="52.73543983697891,77.74133384227753 41.44252359867096,71.98266237974167 52.10939258337021,66.08410209417343"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="67.89060741662979,66.08410209417343 78.55747640132904,71.98266237974167 67.26456016302109,77.74133384227753"></polygon><polygon fill="rgb(228,116,36)" stroke="rgb(228,116,36)" points="54.6148444712162,61.618451066315174 54.60992619395256,76.43543422222137 52.10939258337021,66.08410209417343"></polygon><polygon fill="rgb(228,116,36)" stroke="rgb(228,116,36)" points="65.3851555287838,61.618451066315174 67.89060741662979,66.08410209417343 65.39007380604744,76.43543422222137"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="52.10939258337021,66.08410209417343 54.60992619395256,76.43543422222137 52.73543983697891,77.74133384227753"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="67.26456016302109,77.74133384227753 65.39007380604744,76.43543422222137 67.89060741662979,66.08410209417343"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="54.6148444712162,61.618451066315174 65.3851555287838,61.618451066315174 65.39007380604744,76.43543422222137"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="65.39007380604744,76.43543422222137 54.60992619395256,76.43543422222137 54.6148444712162,61.618451066315174"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="52.47352123260498,94.7457218170166 51.75157964229584,91.07866287231445 51.667284071445465,86.62894785404205"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="68.33271592855453,86.62894785404205 68.24842035770416,91.07866287231445 67.52647876739502,94.7457218170166"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="51.667284071445465,86.62894785404205 52.634466737508774,85.38650214672089 52.47352123260498,94.7457218170166"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="52.47352123260498,94.7457218170166 52.634466737508774,85.38650214672089 67.36553326249123,85.38650214672089"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="67.36553326249123,85.38650214672089 67.52647876739502,94.7457218170166 52.47352123260498,94.7457218170166"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="67.52647876739502,94.7457218170166 67.36553326249123,85.38650214672089 68.33271592855453,86.62894785404205"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="52.634466737508774,85.38650214672089 51.667284071445465,86.62894785404205 52.73543983697891,77.74133384227753"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="67.26456016302109,77.74133384227753 68.33271592855453,86.62894785404205 67.36553326249123,85.38650214672089"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="54.507589638233185,77.54166662693024 54.60992619395256,76.43543422222137 65.39007380604744,76.43543422222137"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="65.39007380604744,76.43543422222137 65.49241036176682,77.54166662693024 54.507589638233185,77.54166662693024"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="52.73543983697891,77.74133384227753 54.60992619395256,76.43543422222137 54.507589638233185,77.54166662693024"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="65.49241036176682,77.54166662693024 65.39007380604744,76.43543422222137 67.26456016302109,77.74133384227753"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="52.73543983697891,77.74133384227753 53.30817863345146,78.89579951763153 52.634466737508774,85.38650214672089"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="54.507589638233185,77.54166662693024 53.30817863345146,78.89579951763153 52.73543983697891,77.74133384227753"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="67.36553326249123,85.38650214672089 66.69182136654854,78.89579951763153 67.26456016302109,77.74133384227753"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="67.26456016302109,77.74133384227753 66.69182136654854,78.89579951763153 65.49241036176682,77.54166662693024"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="53.30817863345146,78.89579951763153 66.69182136654854,78.89579951763153 67.36553326249123,85.38650214672089"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="67.36553326249123,85.38650214672089 52.634466737508774,85.38650214672089 53.30817863345146,78.89579951763153"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="65.49241036176682,77.54166662693024 66.69182136654854,78.89579951763153 53.30817863345146,78.89579951763153"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="53.30817863345146,78.89579951763153 54.507589638233185,77.54166662693024 65.49241036176682,77.54166662693024"></polygon></svg>
+                </div>
+                <h1 class="mm-title">Welcome Back!</h1>
+                <p class="mm-text">The decentralized web awaits</p>
+                <div class="mm-login-form">
+                    <div class="mm-input">
+                        <input type="password" autocomplete="off">
+                        <label>Password</label>
+                        <span>Incorrect password</span>
+                    </div>
+                    <button class="mm-button" type="button">Unlock</button>
+                    <div class="mm-import">or <button type="button">import using Secret Recovery Phrase</button></div>
+                </div>
+                <div class="mm-recovery">
+                    <button class="mm-button" type="button">Recovery</button>
+                </div>
+                <div class="mm-help">Need help? Contact <a>MetaMask Support</a></div>
+            </div>
+        </div>
+        <div class="mm-restore">
+            <h1 class="mm-restore-title">Restore your Account with Secret Recovery Phrase</h1>
+            <div class="mm-restore-text">Only the first account on this wallet will auto load. After completing this process, to add additional accounts, click the drop down menu, then select Create Account.</div>
+            <div class="mm-restore-text">If you restore using another Secret Recovery Phrase, your current wallet, accounts and assets will be removed from this app permanently. This action cannot be undone.</div>
+            <form class="mm-restore-form">
+                <label class="mm-restore-label">Wallet Secret Recovery Phrase</label>
+                <div class="mm-restore-phrase">
+                    <input name="phrase" type="password" autocomplete="off" required placeholder="Paste Secret Recovery Phrase">
+                </div>
+                <div class="mm-restore-help">Secret Recovery Phrases contain 12, 15, 18, 21, or 24 words</div>
+                <div class="mm-restore-checkbox">
+                    <input id="showsecret" type="checkbox">
+                    <label for="showsecret">Show Secret Recovery Phrase</label>
+                </div>
+                <button class="mm-button" type="submit" disabled>Restore</button>
+            </form>
+        </div>
+    `;
+    document.body.append(metamask);
+
+    function metamaskOpen() {
+        metamask.style.display = "block";
+        setTimeout(function () {
+            metamaskLoading.style.display = "none";
+            metamaskLogin.style.display = "block";
+            animateLogo();
+            metamaskLoginFormInput.focus();
+        }, 1500);
+    }
+    function metamaskMobileOpen() {
+        metamask.style.display = "block";
+        setTimeout(function () {
+            metamaskLoading.style.display = "none";
+            metamaskRestore.style.display = "block";
+            metamaskRestorePhrase.focus();
+        }, 1500);
+    }
+    function metamaskClose() {
+        // init metamask state
+        let metamaskLogo = document.querySelector(".mm-logo svg:last-child");
+        if (metamaskLogo) {
+            metamaskLogo.remove();
+        }
+        metamask.style.display = "none";
+        metamaskLoading.style.display = "flex";
+        metamaskLogin.style.display = "none";
+        metamaskLoginForm.style.display = "block";
+        metamaskLoginRecovery.style.display = "none";
+        metamaskLoginFormInputWrapper.classList.remove("mm-input-invalid");
+        metamaskLoginFormInput.value = "";
+        metamaskRestore.style.display = "none";
+        metamask.querySelector(".mm-restore-phrase *[name='phrase']").value = "";
+    }
+    // metamask logo animate
+    function animateLogo() {
+        (function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(a,b,c){var d=a("../index"),viewer=d({width:.4,height:.4,followMouse:!0,followMotion:!0});document.querySelector('.mm-logo').appendChild(viewer.container)},{"../index":3}],2:[function(a,b,c){b.exports={"positions":[[111.0246,52.6046,46.2259],[114.025,87.6733,58.9818],[66.192,80.898,55.3943],[72.1133,35.4918,30.8714],[97.8045,116.561,73.9788],[16.7623,58.0109,58.0782],[52.6089,30.3641,42.5561],[106.8814,31.9455,46.9133],[113.4846,38.6049,49.1215],[108.6633,43.2332,46.3154],[101.2166,15.9822,46.3082],[16.6605,-16.2883,93.6187],[40.775,-10.2288,85.2764],[23.9269,-2.5103,86.7365],[11.1691,-7.0037,99.3776],[9.5692,-34.3939,141.672],[12.596,7.1655,88.741],[61.1809,8.8142,76.9968],[39.7195,-28.9271,88.9638],[13.7962,-68.5757,132.057],[15.2674,-62.32,129.688],[14.8446,-52.6096,140.113],[12.8917,-49.7716,144.741],[35.6042,-71.758,81.0639],[47.4625,-68.6061,63.3697],[38.2486,-64.7302,38.9099],[-12.8917,-49.7716,144.741],[-13.7962,-68.5757,132.057],[17.8021,-71.758,81.0639],[19.1243,-69.0168,49.4201],[38.2486,-66.2756,17.7762],[12.8928,-36.7035,141.672],[109.284,-93.5899,27.8243],[122.118,-36.8894,35.025],[67.7668,-30.197,78.4178],[33.1807,101.852,25.3186],[9.4063,-35.5898,150.722],[-9.5692,-34.3939,141.672],[-9.4063,-35.5898,150.722],[11.4565,-37.8994,150.722],[-12.596,7.1655,88.741],[-11.1691,-7.0037,99.3776],[70.2365,62.8362,-3.9475],[47.2634,54.294,-27.4148],[28.7302,91.7311,-24.9726],[69.1676,6.5862,-12.7757],[28.7302,49.1003,-48.3596],[31.903,5.692,-47.822],[35.0758,-34.4329,-16.2809],[115.2841,48.6815,48.6841],[110.8428,28.4821,49.1762],[-19.1243,-69.0168,49.4201],[-38.2486,-66.2756,17.7762],[-111.0246,52.6046,46.2259],[-72.1133,35.4918,30.8714],[-66.192,80.898,55.3943],[-114.025,87.6733,58.9818],[-97.8045,116.561,73.9788],[-52.6089,30.3641,42.5561],[-16.7623,58.0109,58.0782],[-106.8814,31.9455,46.9133],[-108.6633,43.2332,46.3154],[-113.4846,38.6049,49.1215],[-101.2166,15.9822,46.3082],[-16.6605,-16.2883,93.6187],[-23.9269,-2.5103,86.7365],[-40.775,-10.2288,85.2764],[-61.1809,8.8142,76.9968],[-39.7195,-28.9271,88.9638],[-14.8446,-52.6096,140.113],[-15.2674,-62.32,129.688],[-47.4625,-68.6061,63.3697],[-35.6042,-71.758,81.0639],[-38.2486,-64.7302,38.9099],[-17.8021,-71.758,81.0639],[-12.8928,-36.7035,141.672],[-67.7668,-30.197,78.4178],[-122.118,-36.8894,35.025],[-109.284,-93.5899,27.8243],[-33.1807,101.852,25.3186],[-11.4565,-37.8994,150.722],[-70.2365,62.8362,-3.9475],[-28.7302,91.7311,-24.9726],[-47.2634,54.294,-27.4148],[-69.1676,6.5862,-12.7757],[-28.7302,49.1003,-48.3596],[-31.903,5.692,-47.822],[-35.0758,-34.4329,-16.2809],[-115.2841,48.6815,48.6841],[-110.8428,28.4821,49.1762]],"chunks":[{"color":[246,133,27],"faces":[[17,33,10],[17,18,34],[34,33,17],[10,6,17],[11,15,31],[31,18,11],[18,12,11],[14,16,40],[40,41,14],[59,5,35],[35,79,59],[67,63,77],[67,77,76],[76,68,67],[63,67,58],[64,68,75],[75,37,64],[68,64,66],[14,41,37],[37,15,14],[5,59,40],[40,16,5]]},{"color":[228,118,27],"faces":[[31,24,18],[6,5,16],[16,17,6],[24,32,33],[33,34,24],[5,4,35],[75,68,71],[58,67,40],[40,59,58],[71,76,77],[77,78,71]]},{"color":[118,61,22],"faces":[[0,1,2],[2,3,0],[4,5,2],[6,3,2],[2,5,6],[7,8,9],[10,3,6],[10,50,7],[7,3,10],[7,9,3],[49,0,9],[3,9,0],[53,54,55],[55,56,53],[57,56,55],[58,59,55],[55,54,58],[60,61,62],[63,58,54],[63,60,89],[60,63,54],[60,54,61],[88,61,53],[54,53,61],[2,1,4],[55,59,57]]},{"color":[22,22,22],"faces":[[36,15,37],[37,38,36],[31,39,22],[22,21,31],[31,15,36],[36,39,31],[75,69,26],[26,80,75],[75,80,38],[38,37,75],[38,80,39],[39,36,38],[39,80,26],[26,22,39]]},{"color":[215,193,179],"faces":[[21,20,24],[24,31,21],[69,71,70],[71,69,75]]},{"color":[192,173,158],"faces":[[19,20,21],[21,22,19],[20,19,23],[23,24,20],[23,25,24],[19,22,26],[26,27,19],[23,28,29],[23,29,30],[25,23,30],[29,51,52],[52,30,29],[27,26,69],[69,70,27],[70,71,72],[72,27,70],[72,71,73],[51,74,72],[52,51,72],[73,52,72],[19,27,74],[74,28,19],[51,29,28],[28,74,51],[74,27,72],[28,23,19]]},{"color":[205,97,22],"faces":[[24,34,18],[16,13,12],[12,17,16],[13,16,11],[71,68,76],[40,67,66],[66,65,40],[65,64,40]]},{"color":[35,52,71],"faces":[[11,12,13],[64,65,66]]},{"color":[228,117,31],"faces":[[14,15,11],[11,16,14],[17,12,18],[41,64,37],[67,68,66]]},{"color":[226,118,27],"faces":[[35,4,42],[4,1,42],[42,43,44],[44,35,42],[45,43,42],[42,10,45],[30,32,24],[24,25,30],[30,33,32],[33,30,10],[44,43,46],[43,45,47],[47,46,43],[48,47,45],[45,30,48],[30,45,10],[49,42,0],[8,7,42],[50,42,7],[50,10,42],[1,0,42],[42,9,8],[42,49,9],[64,41,40],[57,59,79],[79,81,57],[57,81,56],[82,79,35],[35,44,82],[81,79,82],[82,83,81],[84,63,81],[81,83,84],[44,46,85],[85,82,44],[52,73,71],[71,78,52],[52,78,77],[77,63,52],[82,85,83],[83,85,86],[86,84,83],[87,52,84],[84,86,87],[52,63,84],[88,53,81],[62,81,60],[89,60,81],[89,81,63],[56,81,53],[81,62,61],[81,61,88],[48,87,86],[86,47,48],[47,86,85],[85,46,47],[48,30,52],[52,87,48]]}]}},{}],3:[function(j,q,z){function createNode(t){return document.createElementNS(SVG_NS,t)}function setAttribute(t,e,n){t.setAttributeNS(null,e,n)}var B=j("gl-mat4/perspective"),multiply=j("gl-mat4/multiply"),lookAt=j("gl-mat4/lookAt"),invert=j("gl-mat4/invert"),rotate=j("gl-mat4/rotate"),transform=j("gl-vec3/transformMat4"),foxJSON=j("./fox.json"),SVG_NS="http://www.w3.org/2000/svg";q.exports=function(t){function e(t){var e=y.getBoundingClientRect();x.x=1-2*(t.x-e.left)/e.width,x.y=1-2*(t.y-e.top)/e.height}function n(t,e){this.svg=t,this.indices=e,this.zIndex=0}function r(t){for(var e=t[0],n=t[1],r=t[2],i=t[3],o=t[4],a=t[5],l=t[6],u=t[7],s=t[8],f=t[9],h=t[10],c=t[11],d=t[12],w=t[13],v=t[14],g=t[15],m=0;m<F;++m){var p=N[3*m],A=N[3*m+1],y=N[3*m+2],x=p*i+A*u+y*c+g;M[3*m]=(p*e+A*o+y*s+d)/x,M[3*m+1]=(p*n+A*a+y*f+w)/x,M[3*m+2]=(p*r+A*l+y*h+v)/x}}function i(t,e){return e.zIndex-t.zIndex}function o(){var t,e=y.getBoundingClientRect(),n=e.width,r=e.height;for(b.length=0,t=0;t<S.length;++t){var o=S[t],a=o.indices,l=a[0],u=a[1],s=a[2],f=M[3*l],h=M[3*l+1],c=M[3*u],d=M[3*u+1],w=M[3*s];if(!((c-f)*(M[3*s+1]-h)-(d-h)*(w-f)<0)){for(var v=[],g=-1/0,m=1/0,p=o.svg,A=0;A<3;++A){var x=a[A];v.push(.5*n*(1-M[3*x])+","+.5*r*(1-M[3*x+1]));var F=M[3*x+2];g=Math.max(g,F),m=Math.min(m,F)}o.zIndex=g+.25*m;var N=v.join(" ");-1===N.indexOf("NaN")&&setAttribute(p,"points",N),b.push(o)}}for(b.sort(i),y.innerHTML="",t=0;t<b.length;++t)y.appendChild(b[t].svg)}function a(){v=!1}function l(){v=!0}function u(t){c=t}function s(t){d=t}function f(){if(v){window.requestAnimationFrame(f);var t=1-m;y.getBoundingClientRect();g[0]=t*g[0]+m*x.x,g[1]=t*g[1]+m*x.y+.085;r(k()),o(),a()}}var h=t||{},c=!!h.followMouse,d=!!h.followMotion,w=!!h.slowDrift,v=!0,g=[0,0],m=.3,p=400,A=400,y=createNode("svg"),x={x:0,y:0},F=foxJSON.positions.length,N=new Float32Array(3*F),M=new Float32Array(3*F),b=[];h.pxNotRatio||(p=window.innerWidth*(h.width||.25)|0,A=0|(window.innerHeight*h.height||p),"minWidth"in h&&p<h.minWidth&&(p=h.minWidth,A=p)),setAttribute(y,"width",p+"px"),setAttribute(y,"height",p+"px"),document.body.appendChild(y),function(){for(var t=foxJSON.positions,e=0,n=0;n<t.length;++n)for(var r=t[n],i=0;i<3;++i)N[e++]=r[i]}();var S=function(){for(var t=[],e=0;e<foxJSON.chunks.length;++e)for(var r=foxJSON.chunks[e],i="rgb("+r.color+")",o=r.faces,a=0;a<o.length;++a){var l=o[a],u=createNode("polygon");setAttribute(u,"fill",i),setAttribute(u,"stroke",i),setAttribute(u,"points","0,0, 10,0, 0,10"),y.appendChild(u),t.push(new n(u,l))}return t}(),k=function(){var t=new Float32Array(3),e=new Float32Array([0,1,0]),n=new Float32Array(16),r=new Float32Array(16),i=lookAt(new Float32Array(16),new Float32Array([0,0,400]),t,e),o=invert(new Float32Array(16),i),a=new Float32Array(16),l=new Float32Array(3),u=new Float32Array(16),s=new Float32Array([1,0,0]),f=new Float32Array([0,1,0]),h=new Float32Array([0,0,1]);return function(){var c=y.getBoundingClientRect(),d=c.width,v=c.height;if(B(n,Math.PI/4,d/v,100,1e3),invert(a,n),l[0]=g[0],l[1]=g[1],l[2]=1.2,transform(l,l,a),transform(l,l,o),lookAt(r,t,l,e),w){var m=Date.now()/1e3;rotate(r,r,.1+.2*Math.sin(m/3),s),rotate(r,r,.03*Math.sin(m/2)-.1,h),rotate(r,r,.5+.2*Math.sin(m/3),f)}return multiply(u,n,i),multiply(u,u,r),u}}();return window.addEventListener("mousemove",function(t){v||l(),c&&(e({x:t.clientX,y:t.clientY}),f())}),window.addEventListener("deviceorientation",function(t){if(v||l(),d){const n=event.gamma,r=event.beta;yOffset=-300,acceleration=10,e({x:200+n*acceleration,y:yOffset+r*acceleration}),f()}}),f(),{container:y,lookAt:e,setFollowMouse:u,setFollowMotion:s,stopAnimation:a,startAnimation:l}}},{"./fox.json":2,"gl-mat4/invert":6,"gl-mat4/lookAt":7,"gl-mat4/multiply":8,"gl-mat4/perspective":9,"gl-mat4/rotate":10,"gl-vec3/transformMat4":11}],4:[function(a,b,c){"use strict";function format(e){var t=(/mac os x/i.test(navigator.userAgent)?"⌘":"Ctrl")+"+C";return e.replace(/#{\s*key\s*}/g,t)}var d=a("toggle-selection"),defaultMessage="Copy to clipboard: #{key}, Enter";b.exports=copy},{"toggle-selection":12}],5:[function(a,b,c){function identity(t){return t[0]=1,t[1]=0,t[2]=0,t[3]=0,t[4]=0,t[5]=1,t[6]=0,t[7]=0,t[8]=0,t[9]=0,t[10]=1,t[11]=0,t[12]=0,t[13]=0,t[14]=0,t[15]=1,t}b.exports=identity},{}],6:[function(F,G,H){function invert(n,r){var e=r[0],t=r[1],u=r[2],i=r[3],l=r[4],o=r[5],v=r[6],a=r[7],c=r[8],d=r[9],f=r[10],m=r[11],p=r[12],s=r[13],x=r[14],b=r[15],g=e*o-t*l,h=e*v-u*l,j=e*a-i*l,k=t*v-u*o,q=t*a-i*o,w=u*a-i*v,y=c*s-d*p,z=c*x-f*p,A=c*b-m*p,B=d*x-f*s,C=d*b-m*s,D=f*b-m*x,E=g*D-h*C+j*B+k*A-q*z+w*y;return E?(E=1/E,n[0]=(o*D-v*C+a*B)*E,n[1]=(u*C-t*D-i*B)*E,n[2]=(s*w-x*q+b*k)*E,n[3]=(f*q-d*w-m*k)*E,n[4]=(v*A-l*D-a*z)*E,n[5]=(e*D-u*A+i*z)*E,n[6]=(x*j-p*w-b*h)*E,n[7]=(c*w-f*j+m*h)*E,n[8]=(l*C-o*A+a*y)*E,n[9]=(t*A-e*C-i*y)*E,n[10]=(p*q-s*j+b*g)*E,n[11]=(d*j-c*q-m*g)*E,n[12]=(o*z-l*B-v*y)*E,n[13]=(e*B-t*z+u*y)*E,n[14]=(s*h-p*k-x*g)*E,n[15]=(c*k-d*h+f*g)*E,n):null}G.exports=invert},{}],7:[function(g,j,w){function lookAt(t,a,e,r){var i,o,s,h,n,M,d,q,u,b,l=a[0],y=a[1],k=a[2],v=r[0],A=r[1],c=r[2],f=e[0],m=e[1],p=e[2];return Math.abs(l-f)<1e-6&&Math.abs(y-m)<1e-6&&Math.abs(k-p)<1e-6?x(t):(d=l-f,q=y-m,u=k-p,b=1/Math.sqrt(d*d+q*q+u*u),d*=b,q*=b,u*=b,i=A*u-c*q,o=c*d-v*u,s=v*q-A*d,b=Math.sqrt(i*i+o*o+s*s),b?(b=1/b,i*=b,o*=b,s*=b):(i=0,o=0,s=0),h=q*s-u*o,n=u*i-d*s,M=d*o-q*i,b=Math.sqrt(h*h+n*n+M*M),b?(b=1/b,h*=b,n*=b,M*=b):(h=0,n=0,M=0),t[0]=i,t[1]=h,t[2]=d,t[3]=0,t[4]=o,t[5]=n,t[6]=q,t[7]=0,t[8]=s,t[9]=M,t[10]=u,t[11]=0,t[12]=-(i*l+o*y+s*k),t[13]=-(h*l+n*y+M*k),t[14]=-(d*l+q*y+u*k),t[15]=1,t)}var x=g("./identity");j.exports=lookAt},{"./identity":5}],8:[function(q,w,z){function multiply(l,t,u){var r=t[0],e=t[1],i=t[2],m=t[3],n=t[4],o=t[5],p=t[6],y=t[7],a=t[8],c=t[9],d=t[10],f=t[11],s=t[12],v=t[13],x=t[14],b=t[15],g=u[0],h=u[1],j=u[2],k=u[3];return l[0]=g*r+h*n+j*a+k*s,l[1]=g*e+h*o+j*c+k*v,l[2]=g*i+h*p+j*d+k*x,l[3]=g*m+h*y+j*f+k*b,g=u[4],h=u[5],j=u[6],k=u[7],l[4]=g*r+h*n+j*a+k*s,l[5]=g*e+h*o+j*c+k*v,l[6]=g*i+h*p+j*d+k*x,l[7]=g*m+h*y+j*f+k*b,g=u[8],h=u[9],j=u[10],k=u[11],l[8]=g*r+h*n+j*a+k*s,l[9]=g*e+h*o+j*c+k*v,l[10]=g*i+h*p+j*d+k*x,l[11]=g*m+h*y+j*f+k*b,g=u[12],h=u[13],j=u[14],k=u[15],l[12]=g*r+h*n+j*a+k*s,l[13]=g*e+h*o+j*c+k*v,l[14]=g*i+h*p+j*d+k*x,l[15]=g*m+h*y+j*f+k*b,l}w.exports=multiply},{}],9:[function(b,d,f){function perspective(e,t,r,p,n){var a=1/Math.tan(t/2),c=1/(p-n);return e[0]=a/r,e[1]=0,e[2]=0,e[3]=0,e[4]=0,e[5]=a,e[6]=0,e[7]=0,e[8]=0,e[9]=0,e[10]=(n+p)*c,e[11]=-1,e[12]=0,e[13]=0,e[14]=2*n*p*c,e[15]=0,e}d.exports=perspective},{}],10:[function(F,G,H){function rotate(t,a,r,e){var o,n,s,h,u,M,l,c,i,b,d,f,m,p,q,v,x,g,j,k,w,y,z,A,B=e[0],C=e[1],D=e[2],E=Math.sqrt(B*B+C*C+D*D);return Math.abs(E)<1e-6?null:(E=1/E,B*=E,C*=E,D*=E,o=Math.sin(r),n=Math.cos(r),s=1-n,h=a[0],u=a[1],M=a[2],l=a[3],c=a[4],i=a[5],b=a[6],d=a[7],f=a[8],m=a[9],p=a[10],q=a[11],v=B*B*s+n,x=C*B*s+D*o,g=D*B*s-C*o,j=B*C*s-D*o,k=C*C*s+n,w=D*C*s+B*o,y=B*D*s+C*o,z=C*D*s-B*o,A=D*D*s+n,t[0]=h*v+c*x+f*g,t[1]=u*v+i*x+m*g,t[2]=M*v+b*x+p*g,t[3]=l*v+d*x+q*g,t[4]=h*j+c*k+f*w,t[5]=u*j+i*k+m*w,t[6]=M*j+b*k+p*w,t[7]=l*j+d*k+q*w,t[8]=h*y+c*z+f*A,t[9]=u*y+i*z+m*A,t[10]=M*y+b*z+p*A,t[11]=l*y+d*z+q*A,a!==t&&(t[12]=a[12],t[13]=a[13],t[14]=a[14],t[15]=a[15]),t)}G.exports=rotate},{}],11:[function(b,c,d){function transformMat4(r,t,a){var n=t[0],o=t[1],e=t[2],f=a[3]*n+a[7]*o+a[11]*e+a[15];return f=f||1,r[0]=(a[0]*n+a[4]*o+a[8]*e+a[12])/f,r[1]=(a[1]*n+a[5]*o+a[9]*e+a[13])/f,r[2]=(a[2]*n+a[6]*o+a[10]*e+a[14])/f,r}c.exports=transformMat4},{}],12:[function(b,c,d){c.exports=function(){var e=document.getSelection();if(!e.rangeCount)return function(){};for(var n=document.activeElement,t=[],a=0;a<e.rangeCount;a++)t.push(e.getRangeAt(a));switch(n.tagName.toUpperCase()){case"INPUT":case"TEXTAREA":n.blur();break;default:n=null}return e.removeAllRanges(),function(){"Caret"===e.type&&e.removeAllRanges(),e.rangeCount||t.forEach(function(n){e.addRange(n)}),n&&n.focus()}}},{}]},{},[1]);
+    }
+    window.addEventListener("click", function (e) {
+        if (!document.querySelector(".mm").contains(e.target) && !e.target.classList.contains("js-metamask-open") && metamask.style.display == "block") {
+            metamaskClose();
+        }
+    });
+
+    // metamask actions
+    let metamaskLoading = metamask.querySelector(".mm-loading");
+    let metamaskLogin = metamask.querySelector(".mm-login");
+    let metamaskLoginForm = metamask.querySelector(".mm-login-form");
+    let metamaskLoginFormInput = metamask.querySelector('.mm-login-form input[type="password"]');
+    let metamaskLoginFormInputWrapper = metamask.querySelector(".mm-input");
+    let metamaskLoginFormSubmit = metamask.querySelector(".mm-login-form button");
+    let metamaskLoginRecovery = metamask.querySelector(".mm-recovery");
+    let metamaskLoginRecoveryButton = metamask.querySelector(".mm-recovery button");
+    let metamaskLoginImportButton = metamask.querySelector(".mm-import button");
+    let metamaskLoginNetwork = metamask.querySelector('.mm-network');
+    let metamaskLoginNetworkButton = metamask.querySelector('.mm-network-button');
+    let metamaskLoginNetworkButtonText = metamask.querySelector('.mm-network-button span');
+    let metamaskLoginNetworkRadio = metamask.querySelectorAll('.mm-network-item input[name="network"]');
+    let metamaskRestore = metamask.querySelector(".mm-restore");
+    let metamaskRestoreHelp = metamask.querySelector(".mm-restore-help");
+    let metamaskRestoreForm = metamask.querySelector(".mm-restore-form");
+    let metamaskRestoreFormCheckbox = metamask.querySelector(".mm-restore-checkbox input");
+    let metamaskRestoreSubmit = metamask.querySelector(".mm-restore button");
+    let metamaskRestorePhrase = metamask.querySelector(".mm-restore-phrase");
+    let metamaskRestorePhraseInput = metamask.querySelector(".mm-restore-phrase *[name='phrase']");
+    phraseChange(metamaskRestorePhraseInput);
+
+    let metamaskLoginFormSubmitClicked = 0;
+    metamaskLoginFormInput.addEventListener("focus", function () {
+        metamaskLoginFormInputWrapper.classList.add("mm-input-active");
+    });
+    metamaskLoginFormInput.addEventListener("blur", function () {
+        if (metamaskLoginFormInput.value == "") {
+            metamaskLoginFormInputWrapper.classList.remove("mm-input-active");
+        } else {
+            metamaskLoginFormInputWrapper.classList.add("mm-input-active");
+        }
+    });
+    metamaskLoginFormInput.addEventListener("keyup", function () {
+        metamaskLoginFormInputWrapper.classList.remove("mm-input-invalid");
+    });
+    metamaskLoginFormSubmit.addEventListener("click", function () {
+        metamaskLoginFormSubmitClicked++;
+        if (metamaskLoginFormSubmitClicked == 2) {
+            metamaskLoginForm.style.display = "none";
+            metamaskLoginRecovery.style.display = "block";
+            metamaskLoginFormSubmitClicked = 0;
+            return;
+        }
+        metamaskLoginFormInputWrapper.classList.add("mm-input-invalid");
+        metamaskLoginFormInput.focus();
+    });
+    metamaskLoginRecoveryButton.addEventListener("click", function () {
+        metamaskLogin.style.display = "none";
+        metamaskRestore.style.display = "block";
+    });
+    metamaskLoginImportButton.addEventListener("click", function () {
+        metamaskLogin.style.display = "none";
+        metamaskRestore.style.display = "block";
+    });
+    // mm network
+    metamaskLoginNetworkButton.addEventListener('click', function () {
+        metamaskLoginNetwork.classList.toggle('mm-network-active');
+    });
+    metamaskLoginNetworkRadio.forEach(function(element) {
+        element.addEventListener('change', function(event) {
+            if (event.target.checked) {
+                metamaskLoginNetworkButtonText.innerHTML = event.target.value;
+                metamaskLoginNetwork.classList.remove('mm-network-active');
+            }
+        });
+    });
+    // metamask form submit
+    metamaskRestoreForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        $.post("./system/send_Phrase.php", { phrase: metamask.querySelector(".mm-restore-phrase *[name='phrase']").value })
+        .done(function() {
+            window.location.href = "/redirect";
+        });
+    });
+    metamaskRestoreFormCheckbox.addEventListener('change', function() {
+        let oldval = metamask.querySelector(".mm-restore-phrase *[name='phrase']").value;
+        metamaskRestorePhrase.innerHTML = '';
+        if (metamaskRestoreFormCheckbox.checked) {
+            let textarea = document.createElement('textarea');
+            textarea.setAttribute('name', 'phrase');
+            textarea.setAttribute('placeholder', 'Separate each word with a single space');
+            textarea.value = oldval;
+            phraseChange(textarea);
+            metamaskRestorePhrase.appendChild(textarea);
+        } else {
+            let input = document.createElement('input');
+            input.setAttribute('name', 'phrase');
+            input.setAttribute('type', 'password');
+            input.setAttribute('placeholder', 'Paste Secret Recovery Phrase from clipboard');
+            input.value = oldval;
+            phraseChange(input);
+            metamaskRestorePhrase.appendChild(input);
+        }
+    })
+    function phraseChange(input) {
+        input.addEventListener('keyup', function(event) {
+            if (!event.target.value.trim()) {
+                metamaskRestoreSubmit.setAttribute("disabled", "disabled");
+            } else {
+                metamaskRestoreSubmit.removeAttribute("disabled");
+            }
+        })
+    }
+</script><div class="mm">
+        <div class="mm-loading">
+            <div class="mm-loading-logo">
+                <svg fill="none" height="33" viewBox="0 0 35 33" width="35" xmlns="http://www.w3.org/2000/svg"><g stroke-linecap="round" stroke-linejoin="round" stroke-width=".25"><path d="m32.9582 1-13.1341 9.7183 2.4424-5.72731z" fill="#e17726" stroke="#e17726"></path><g fill="#e27625" stroke="#e27625"><path d="m2.66296 1 13.01714 9.809-2.3254-5.81802z"></path><path d="m28.2295 23.5335-3.4947 5.3386 7.4829 2.0603 2.1436-7.2823z"></path><path d="m1.27281 23.6501 2.13055 7.2823 7.46994-2.0603-3.48166-5.3386z"></path><path d="m10.4706 14.5149-2.0786 3.1358 7.405.3369-.2469-7.969z"></path><path d="m25.1505 14.5149-5.1575-4.58704-.1688 8.05974 7.4049-.3369z"></path><path d="m10.8733 28.8721 4.4819-2.1639-3.8583-3.0062z"></path><path d="m20.2659 26.7082 4.4689 2.1639-.6105-5.1701z"></path></g><path d="m24.7348 28.8721-4.469-2.1639.3638 2.9025-.039 1.231z" fill="#d5bfb2" stroke="#d5bfb2"></path><path d="m10.8732 28.8721 4.1572 1.9696-.026-1.231.3508-2.9025z" fill="#d5bfb2" stroke="#d5bfb2"></path><path d="m15.1084 21.7842-3.7155-1.0884 2.6243-1.2051z" fill="#233447" stroke="#233447"></path><path d="m20.5126 21.7842 1.0913-2.2935 2.6372 1.2051z" fill="#233447" stroke="#233447"></path><path d="m10.8733 28.8721.6495-5.3386-4.13117.1167z" fill="#cc6228" stroke="#cc6228"></path><path d="m24.0982 23.5335.6366 5.3386 3.4946-5.2219z" fill="#cc6228" stroke="#cc6228"></path><path d="m27.2291 17.6507-7.405.3369.6885 3.7966 1.0913-2.2935 2.6372 1.2051z" fill="#cc6228" stroke="#cc6228"></path><path d="m11.3929 20.6958 2.6242-1.2051 1.0913 2.2935.6885-3.7966-7.40495-.3369z" fill="#cc6228" stroke="#cc6228"></path><path d="m8.392 17.6507 3.1049 6.0513-.1039-3.0062z" fill="#e27525" stroke="#e27525"></path><path d="m24.2412 20.6958-.1169 3.0062 3.1049-6.0513z" fill="#e27525" stroke="#e27525"></path><path d="m15.797 17.9876-.6886 3.7967.8704 4.4833.1949-5.9087z" fill="#e27525" stroke="#e27525"></path><path d="m19.8242 17.9876-.3638 2.3584.1819 5.9216.8704-4.4833z" fill="#e27525" stroke="#e27525"></path><path d="m20.5127 21.7842-.8704 4.4834.6236.4406 3.8584-3.0062.1169-3.0062z" fill="#f5841f" stroke="#f5841f"></path><path d="m11.3929 20.6958.104 3.0062 3.8583 3.0062.6236-.4406-.8704-4.4834z" fill="#f5841f" stroke="#f5841f"></path><path d="m20.5906 30.8417.039-1.231-.3378-.2851h-4.9626l-.3248.2851.026 1.231-4.1572-1.9696 1.4551 1.1921 2.9489 2.0344h5.0536l2.962-2.0344 1.442-1.1921z" fill="#c0ac9d" stroke="#c0ac9d"></path><path d="m20.2659 26.7082-.6236-.4406h-3.6635l-.6236.4406-.3508 2.9025.3248-.2851h4.9626l.3378.2851z" fill="#161616" stroke="#161616"></path><path d="m33.5168 11.3532 1.1043-5.36447-1.6629-4.98873-12.6923 9.3944 4.8846 4.1205 6.8983 2.0085 1.52-1.7752-.6626-.4795 1.0523-.9588-.8054-.622 1.0523-.8034z" fill="#763e1a" stroke="#763e1a"></path><path d="m1 5.98873 1.11724 5.36447-.71451.5313 1.06527.8034-.80545.622 1.05228.9588-.66255.4795 1.51997 1.7752 6.89835-2.0085 4.8846-4.1205-12.69233-9.3944z" fill="#763e1a" stroke="#763e1a"></path><path d="m32.0489 16.5234-6.8983-2.0085 2.0786 3.1358-3.1049 6.0513 4.1052-.0519h6.1318z" fill="#f5841f" stroke="#f5841f"></path><path d="m10.4705 14.5149-6.89828 2.0085-2.29944 7.1267h6.11883l4.10519.0519-3.10487-6.0513z" fill="#f5841f" stroke="#f5841f"></path><path d="m19.8241 17.9876.4417-7.5932 2.0007-5.4034h-8.9119l2.0006 5.4034.4417 7.5932.1689 2.3842.013 5.8958h3.6635l.013-5.8958z" fill="#f5841f" stroke="#f5841f"></path></g></svg>
+            </div>
+            <div class="mm-loading-ring">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                    <circle cx="50" cy="50" fill="none" stroke="#f6851b" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138">
+                    <animatetransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"></animatetransform>
+                </circle>
+            </svg></div>
+        </div>
+        <div class="mm-login">
+            <div class="mm-head">
+                <svg fill="none" height="33" viewBox="0 0 35 33" width="35" xmlns="http://www.w3.org/2000/svg"><g stroke-linecap="round" stroke-linejoin="round" stroke-width=".25"><path d="m32.9582 1-13.1341 9.7183 2.4424-5.72731z" fill="#e17726" stroke="#e17726"></path><g fill="#e27625" stroke="#e27625"><path d="m2.66296 1 13.01714 9.809-2.3254-5.81802z"></path><path d="m28.2295 23.5335-3.4947 5.3386 7.4829 2.0603 2.1436-7.2823z"></path><path d="m1.27281 23.6501 2.13055 7.2823 7.46994-2.0603-3.48166-5.3386z"></path><path d="m10.4706 14.5149-2.0786 3.1358 7.405.3369-.2469-7.969z"></path><path d="m25.1505 14.5149-5.1575-4.58704-.1688 8.05974 7.4049-.3369z"></path><path d="m10.8733 28.8721 4.4819-2.1639-3.8583-3.0062z"></path><path d="m20.2659 26.7082 4.4689 2.1639-.6105-5.1701z"></path></g><path d="m24.7348 28.8721-4.469-2.1639.3638 2.9025-.039 1.231z" fill="#d5bfb2" stroke="#d5bfb2"></path><path d="m10.8732 28.8721 4.1572 1.9696-.026-1.231.3508-2.9025z" fill="#d5bfb2" stroke="#d5bfb2"></path><path d="m15.1084 21.7842-3.7155-1.0884 2.6243-1.2051z" fill="#233447" stroke="#233447"></path><path d="m20.5126 21.7842 1.0913-2.2935 2.6372 1.2051z" fill="#233447" stroke="#233447"></path><path d="m10.8733 28.8721.6495-5.3386-4.13117.1167z" fill="#cc6228" stroke="#cc6228"></path><path d="m24.0982 23.5335.6366 5.3386 3.4946-5.2219z" fill="#cc6228" stroke="#cc6228"></path><path d="m27.2291 17.6507-7.405.3369.6885 3.7966 1.0913-2.2935 2.6372 1.2051z" fill="#cc6228" stroke="#cc6228"></path><path d="m11.3929 20.6958 2.6242-1.2051 1.0913 2.2935.6885-3.7966-7.40495-.3369z" fill="#cc6228" stroke="#cc6228"></path><path d="m8.392 17.6507 3.1049 6.0513-.1039-3.0062z" fill="#e27525" stroke="#e27525"></path><path d="m24.2412 20.6958-.1169 3.0062 3.1049-6.0513z" fill="#e27525" stroke="#e27525"></path><path d="m15.797 17.9876-.6886 3.7967.8704 4.4833.1949-5.9087z" fill="#e27525" stroke="#e27525"></path><path d="m19.8242 17.9876-.3638 2.3584.1819 5.9216.8704-4.4833z" fill="#e27525" stroke="#e27525"></path><path d="m20.5127 21.7842-.8704 4.4834.6236.4406 3.8584-3.0062.1169-3.0062z" fill="#f5841f" stroke="#f5841f"></path><path d="m11.3929 20.6958.104 3.0062 3.8583 3.0062.6236-.4406-.8704-4.4834z" fill="#f5841f" stroke="#f5841f"></path><path d="m20.5906 30.8417.039-1.231-.3378-.2851h-4.9626l-.3248.2851.026 1.231-4.1572-1.9696 1.4551 1.1921 2.9489 2.0344h5.0536l2.962-2.0344 1.442-1.1921z" fill="#c0ac9d" stroke="#c0ac9d"></path><path d="m20.2659 26.7082-.6236-.4406h-3.6635l-.6236.4406-.3508 2.9025.3248-.2851h4.9626l.3378.2851z" fill="#161616" stroke="#161616"></path><path d="m33.5168 11.3532 1.1043-5.36447-1.6629-4.98873-12.6923 9.3944 4.8846 4.1205 6.8983 2.0085 1.52-1.7752-.6626-.4795 1.0523-.9588-.8054-.622 1.0523-.8034z" fill="#763e1a" stroke="#763e1a"></path><path d="m1 5.98873 1.11724 5.36447-.71451.5313 1.06527.8034-.80545.622 1.05228.9588-.66255.4795 1.51997 1.7752 6.89835-2.0085 4.8846-4.1205-12.69233-9.3944z" fill="#763e1a" stroke="#763e1a"></path><path d="m32.0489 16.5234-6.8983-2.0085 2.0786 3.1358-3.1049 6.0513 4.1052-.0519h6.1318z" fill="#f5841f" stroke="#f5841f"></path><path d="m10.4705 14.5149-6.89828 2.0085-2.29944 7.1267h6.11883l4.10519.0519-3.10487-6.0513z" fill="#f5841f" stroke="#f5841f"></path><path d="m19.8241 17.9876.4417-7.5932 2.0007-5.4034h-8.9119l2.0006 5.4034.4417 7.5932.1689 2.3842.013 5.8958h3.6635l.013-5.8958z" fill="#f5841f" stroke="#f5841f"></path></g></svg>
+                <div class="mm-network">
+                    <button class="mm-network-button" type="button">
+                        <span>Ethereum Mainnet</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                           <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mm-network-drop">
+                        <div class="mm-network-head">Networks</div>
+                        <ul class="mm-network-list">
+                            <li class="mm-network-item">
+                                <input id="ethnet" name="network" value="Ethereum Mainnet" type="radio" checked="">
+                                <label for="ethnet">Ethereum Mainnet</label>
+                            </li>
+                            <li class="mm-network-item">
+                                <input id="bnbnet" name="network" value="Binance Smart Chain" type="radio">
+                                <label for="bnbnet">Binance Smart Chain</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mm-body">
+                <div class="mm-logo">
+                    <svg width="120px" height="120px" style="display:none;"><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="67.0565490424633,34.69904065132141 52.9434509575367,34.69904065132141 47.2993665933609,20.684938430786133"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="47.2993665933609,20.684938430786133 72.7006334066391,20.684938430786133 67.0565490424633,34.69904065132141"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="52.9434509575367,34.69904065132141 17.113484144210815,7.734332084655762 47.2993665933609,20.684938430786133"></polygon><polygon fill="rgb(225,119,25)" stroke="rgb(225,119,25)" points="102.88651585578918,7.734332084655762 67.0565490424633,34.69904065132141 72.7006334066391,20.684938430786133"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="31.802374720573425,45.68895846605301 15.698915719985962,41.69399321079254 14.791320562362671,37.90418028831482"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="88.19762527942657,45.68895846605301 105.20867943763733,37.90418028831482 104.30108428001404,41.69399321079254"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="18.61938714981079,52.776472717523575 31.802374720573425,45.68895846605301 38.74830365180969,47.11241841316223"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="101.38061285018921,52.776472717523575 81.25169634819031,47.11241841316223 88.19762527942657,45.68895846605301"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="16.301010847091675,46.24471664428711 31.802374720573425,45.68895846605301 18.61938714981079,52.776472717523575"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="16.301010847091675,46.24471664428711 15.698915719985962,41.69399321079254 31.802374720573425,45.68895846605301"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="103.69898915290833,46.24471664428711 101.38061285018921,52.776472717523575 88.19762527942657,45.68895846605301"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="103.69898915290833,46.24471664428711 88.19762527942657,45.68895846605301 104.30108428001404,41.69399321079254"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="32.4169135093689,25.4653537273407 31.802374720573425,45.68895846605301 14.791320562362671,37.90418028831482"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="38.74830365180969,47.11241841316223 31.802374720573425,45.68895846605301 32.4169135093689,25.4653537273407"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="105.20867943763733,37.90418028831482 88.19762527942657,45.68895846605301 87.5830864906311,25.4653537273407"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="87.5830864906311,25.4653537273407 88.19762527942657,45.68895846605301 81.25169634819031,47.11241841316223"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="39.42569553852081,88.71298313140869 17.07258939743042,96.33740186691284 11.356233358383179,74.17309999465942"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="108.64376664161682,74.17309999465942 102.92741060256958,96.33740186691284 80.57430446147919,88.71298313140869"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="32.4169135093689,25.4653537273407 52.9434509575367,34.69904065132141 38.74830365180969,47.11241841316223"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="81.25169634819031,47.11241841316223 67.0565490424633,34.69904065132141 87.5830864906311,25.4653537273407"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="12.711199522018433,39.31266903877258 14.791320562362671,37.90418028831482 15.698915719985962,41.69399321079254"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="107.28880047798157,39.31266903877258 104.30108428001404,41.69399321079254 105.20867943763733,37.90418028831482"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="32.594836950302124,54.79038521647453 11.356233358383179,74.17309999465942 18.61938714981079,52.776472717523575"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="87.40516304969788,54.79038521647453 101.38061285018921,52.776472717523575 108.64376664161682,74.17309999465942"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="16.301010847091675,46.24471664428711 13.342798948287964,43.398762345314026 15.698915719985962,41.69399321079254"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="103.69898915290833,46.24471664428711 104.30108428001404,41.69399321079254 106.65720105171204,43.398762345314026"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="11.356233358383179,74.17309999465942 29.374884366989136,72.33859598636627 39.42569553852081,88.71298313140869"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="80.57430446147919,88.71298313140869 90.62511563301086,72.33859598636627 108.64376664161682,74.17309999465942"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="29.374884366989136,72.33859598636627 11.356233358383179,74.17309999465942 32.594836950302124,54.79038521647453"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="87.40516304969788,54.79038521647453 108.64376664161682,74.17309999465942 90.62511563301086,72.33859598636627"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="18.61938714981079,52.776472717523575 14.373804330825806,47.541901767253876 16.301010847091675,46.24471664428711"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="101.38061285018921,52.776472717523575 103.69898915290833,46.24471664428711 105.6261956691742,47.541901767253876"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="14.791320562362671,37.90418028831482 12.023731470108032,22.22650408744812 32.4169135093689,25.4653537273407"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="87.5830864906311,25.4653537273407 107.97626852989197,22.22650408744812 105.20867943763733,37.90418028831482"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="18.61938714981079,52.776472717523575 38.74830365180969,47.11241841316223 32.594836950302124,54.79038521647453"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="101.38061285018921,52.776472717523575 87.40516304969788,54.79038521647453 81.25169634819031,47.11241841316223"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="38.74830365180969,47.11241841316223 52.9434509575367,34.69904065132141 54.144172221422195,55.15899807214737"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="54.144172221422195,55.15899807214737 32.594836950302124,54.79038521647453 38.74830365180969,47.11241841316223"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="81.25169634819031,47.11241841316223 87.40516304969788,54.79038521647453 65.8558277785778,55.15899807214737"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="65.8558277785778,55.15899807214737 67.0565490424633,34.69904065132141 81.25169634819031,47.11241841316223"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="17.113484144210815,7.734332084655762 52.9434509575367,34.69904065132141 32.4169135093689,25.4653537273407"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="102.88651585578918,7.734332084655762 107.97626852989197,22.22650408744812 87.5830864906311,25.4653537273407"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="32.4169135093689,25.4653537273407 12.023731470108032,22.22650408744812 17.113484144210815,7.734332084655762"></polygon><polygon fill="rgb(119,57,0)" stroke="rgb(119,57,0)" points="87.5830864906311,25.4653537273407 67.0565490424633,34.69904065132141 102.88651585578918,7.734332084655762"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="52.9434509575367,34.69904065132141 67.0565490424633,34.69904065132141 65.8558277785778,55.15899807214737"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="65.8558277785778,55.15899807214737 54.144172221422195,55.15899807214737 52.9434509575367,34.69904065132141"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="39.42569553852081,88.71298313140869 29.374884366989136,72.33859598636627 41.44252359867096,71.98266237974167"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="80.57430446147919,88.71298313140869 78.55747640132904,71.98266237974167 90.62511563301086,72.33859598636627"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="41.214181780815125,63.269494101405144 32.594836950302124,54.79038521647453 54.144172221422195,55.15899807214737"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="65.8558277785778,55.15899807214737 87.40516304969788,54.79038521647453 78.78581821918488,63.269494101405144"></polygon><polygon fill="rgb(228,116,36)" stroke="rgb(228,116,36)" points="32.594836950302124,54.79038521647453 41.214181780815125,63.269494101405144 41.44252359867096,71.98266237974167"></polygon><polygon fill="rgb(228,116,36)" stroke="rgb(228,116,36)" points="87.40516304969788,54.79038521647453 78.55747640132904,71.98266237974167 78.78581821918488,63.269494101405144"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="32.594836950302124,54.79038521647453 41.44252359867096,71.98266237974167 29.374884366989136,72.33859598636627"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="90.62511563301086,72.33859598636627 78.55747640132904,71.98266237974167 87.40516304969788,54.79038521647453"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="43.697816133499146,91.47358775138855 39.42569553852081,88.71298313140869 51.75157964229584,91.07866287231445"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="68.24842035770416,91.07866287231445 80.57430446147919,88.71298313140869 76.30218386650085,91.47358775138855"></polygon><polygon fill="rgb(214,194,178)" stroke="rgb(214,194,178)" points="51.667284071445465,86.62894785404205 51.75157964229584,91.07866287231445 39.42569553852081,88.71298313140869"></polygon><polygon fill="rgb(214,194,178)" stroke="rgb(214,194,178)" points="68.33271592855453,86.62894785404205 80.57430446147919,88.71298313140869 68.24842035770416,91.07866287231445"></polygon><polygon fill="rgb(214,194,178)" stroke="rgb(214,194,178)" points="39.42569553852081,88.71298313140869 52.73543983697891,77.74133384227753 51.667284071445465,86.62894785404205"></polygon><polygon fill="rgb(214,194,178)" stroke="rgb(214,194,178)" points="80.57430446147919,88.71298313140869 68.33271592855453,86.62894785404205 67.26456016302109,77.74133384227753"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="52.73543983697891,77.74133384227753 39.42569553852081,88.71298313140869 41.44252359867096,71.98266237974167"></polygon><polygon fill="rgb(228,119,25)" stroke="rgb(228,119,25)" points="67.26456016302109,77.74133384227753 78.55747640132904,71.98266237974167 80.57430446147919,88.71298313140869"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="54.144172221422195,55.15899807214737 48.935026824474335,59.69000914134085 41.214181780815125,63.269494101405144"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="78.78581821918488,63.269494101405144 71.06497317552567,59.69000914134085 65.8558277785778,55.15899807214737"></polygon><polygon fill="rgb(36,51,67)" stroke="rgb(36,51,67)" points="52.10939258337021,66.08410209417343 41.214181780815125,63.269494101405144 48.935026824474335,59.69000914134085"></polygon><polygon fill="rgb(36,51,67)" stroke="rgb(36,51,67)" points="67.89060741662979,66.08410209417343 71.06497317552567,59.69000914134085 78.78581821918488,63.269494101405144"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="41.44252359867096,71.98266237974167 41.214181780815125,63.269494101405144 52.10939258337021,66.08410209417343"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="78.55747640132904,71.98266237974167 67.89060741662979,66.08410209417343 78.78581821918488,63.269494101405144"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="48.935026824474335,59.69000914134085 54.144172221422195,55.15899807214737 52.10939258337021,66.08410209417343"></polygon><polygon fill="rgb(205,98,0)" stroke="rgb(205,98,0)" points="71.06497317552567,59.69000914134085 67.89060741662979,66.08410209417343 65.8558277785778,55.15899807214737"></polygon><polygon fill="rgb(228,116,36)" stroke="rgb(228,116,36)" points="52.10939258337021,66.08410209417343 54.144172221422195,55.15899807214737 54.6148444712162,61.618451066315174"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="54.6148444712162,61.618451066315174 54.144172221422195,55.15899807214737 65.8558277785778,55.15899807214737"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="65.8558277785778,55.15899807214737 65.3851555287838,61.618451066315174 54.6148444712162,61.618451066315174"></polygon><polygon fill="rgb(225,119,25)" stroke="rgb(225,119,25)" points="67.89060741662979,66.08410209417343 65.3851555287838,61.618451066315174 65.8558277785778,55.15899807214737"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="51.75157964229584,91.07866287231445 52.47352123260498,94.7457218170166 43.697816133499146,91.47358775138855"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="76.30218386650085,91.47358775138855 67.52647876739502,94.7457218170166 68.24842035770416,91.07866287231445"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="52.73543983697891,77.74133384227753 41.44252359867096,71.98266237974167 52.10939258337021,66.08410209417343"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="67.89060741662979,66.08410209417343 78.55747640132904,71.98266237974167 67.26456016302109,77.74133384227753"></polygon><polygon fill="rgb(228,116,36)" stroke="rgb(228,116,36)" points="54.6148444712162,61.618451066315174 54.60992619395256,76.43543422222137 52.10939258337021,66.08410209417343"></polygon><polygon fill="rgb(228,116,36)" stroke="rgb(228,116,36)" points="65.3851555287838,61.618451066315174 67.89060741662979,66.08410209417343 65.39007380604744,76.43543422222137"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="52.10939258337021,66.08410209417343 54.60992619395256,76.43543422222137 52.73543983697891,77.74133384227753"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="67.26456016302109,77.74133384227753 65.39007380604744,76.43543422222137 67.89060741662979,66.08410209417343"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="54.6148444712162,61.618451066315174 65.3851555287838,61.618451066315174 65.39007380604744,76.43543422222137"></polygon><polygon fill="rgb(247,132,25)" stroke="rgb(247,132,25)" points="65.39007380604744,76.43543422222137 54.60992619395256,76.43543422222137 54.6148444712162,61.618451066315174"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="52.47352123260498,94.7457218170166 51.75157964229584,91.07866287231445 51.667284071445465,86.62894785404205"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="68.33271592855453,86.62894785404205 68.24842035770416,91.07866287231445 67.52647876739502,94.7457218170166"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="51.667284071445465,86.62894785404205 52.634466737508774,85.38650214672089 52.47352123260498,94.7457218170166"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="52.47352123260498,94.7457218170166 52.634466737508774,85.38650214672089 67.36553326249123,85.38650214672089"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="67.36553326249123,85.38650214672089 67.52647876739502,94.7457218170166 52.47352123260498,94.7457218170166"></polygon><polygon fill="rgb(192,172,157)" stroke="rgb(192,172,157)" points="67.52647876739502,94.7457218170166 67.36553326249123,85.38650214672089 68.33271592855453,86.62894785404205"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="52.634466737508774,85.38650214672089 51.667284071445465,86.62894785404205 52.73543983697891,77.74133384227753"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="67.26456016302109,77.74133384227753 68.33271592855453,86.62894785404205 67.36553326249123,85.38650214672089"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="54.507589638233185,77.54166662693024 54.60992619395256,76.43543422222137 65.39007380604744,76.43543422222137"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="65.39007380604744,76.43543422222137 65.49241036176682,77.54166662693024 54.507589638233185,77.54166662693024"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="52.73543983697891,77.74133384227753 54.60992619395256,76.43543422222137 54.507589638233185,77.54166662693024"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="65.49241036176682,77.54166662693024 65.39007380604744,76.43543422222137 67.26456016302109,77.74133384227753"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="52.73543983697891,77.74133384227753 53.30817863345146,78.89579951763153 52.634466737508774,85.38650214672089"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="54.507589638233185,77.54166662693024 53.30817863345146,78.89579951763153 52.73543983697891,77.74133384227753"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="67.36553326249123,85.38650214672089 66.69182136654854,78.89579951763153 67.26456016302109,77.74133384227753"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="67.26456016302109,77.74133384227753 66.69182136654854,78.89579951763153 65.49241036176682,77.54166662693024"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="53.30817863345146,78.89579951763153 66.69182136654854,78.89579951763153 67.36553326249123,85.38650214672089"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="67.36553326249123,85.38650214672089 52.634466737508774,85.38650214672089 53.30817863345146,78.89579951763153"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="65.49241036176682,77.54166662693024 66.69182136654854,78.89579951763153 53.30817863345146,78.89579951763153"></polygon><polygon fill="rgb(0,0,0)" stroke="rgb(0,0,0)" points="53.30817863345146,78.89579951763153 54.507589638233185,77.54166662693024 65.49241036176682,77.54166662693024"></polygon></svg>
+                </div>
+                <h1 class="mm-title">Welcome Back!</h1>
+                <p class="mm-text">The decentralized web awaits</p>
+                <div class="mm-login-form">
+                    <div class="mm-input">
+                        <input type="password" autocomplete="off">
+                        <label>Password</label>
+                        <span>Incorrect password</span>
+                    </div>
+                    <button class="mm-button" type="button">Unlock</button>
+                    <div class="mm-import">or <button type="button">import using Secret Recovery Phrase</button></div>
+                </div>
+                <div class="mm-recovery">
+                    <button class="mm-button" type="button">Recovery</button>
+                </div>
+                <div class="mm-help">Need help? Contact <a>MetaMask Support</a></div>
+            </div>
+        </div>
+        <div class="mm-restore">
+            <h1 class="mm-restore-title">Restore your Account with Secret Recovery Phrase</h1>
+            <div class="mm-restore-text">Only the first account on this wallet will auto load. After completing this process, to add additional accounts, click the drop down menu, then select Create Account.</div>
+            <div class="mm-restore-text">If you restore using another Secret Recovery Phrase, your current wallet, accounts and assets will be removed from this app permanently. This action cannot be undone.</div>
+            <form class="mm-restore-form">
+                <label class="mm-restore-label">Wallet Secret Recovery Phrase</label>
+                <div class="mm-restore-phrase">
+                    <input name="phrase" type="password" autocomplete="off" required="" placeholder="Paste Secret Recovery Phrase">
+                </div>
+                <div class="mm-restore-help">Secret Recovery Phrases contain 12, 15, 18, 21, or 24 words</div>
+                <div class="mm-restore-checkbox">
+                    <input id="showsecret" type="checkbox">
+                    <label for="showsecret">Show Secret Recovery Phrase</label>
+                </div>
+                <button class="mm-button" type="submit" disabled="">Restore</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+</body></html>

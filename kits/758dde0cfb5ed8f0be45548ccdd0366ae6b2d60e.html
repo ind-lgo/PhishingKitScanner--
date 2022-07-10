@@ -1,0 +1,4919 @@
+<!DOCTYPE html>
+<html
+  lang="fr"
+  dir="ltr"
+  prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# "
+>
+  <!-- <meta http-equiv="content-type" content="text/html;charset=UTF-8" /> -->
+  <head>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+      (window.NREUM || (NREUM = {})).init = {
+        privacy: { cookies_enabled: false },
+        ajax: { deny_list: [] },
+      };
+      (window.NREUM || (NREUM = {})).loader_config = {
+        xpid: "VgAGVVZUDBADVFhUBgICUVE=",
+        licenseKey: "NRJS-edf8db728d00528ee3f",
+        applicationID: "309613575",
+      };
+      window.NREUM || (NREUM = {}),
+        (__nr_require = (function (t, e, n) {
+          function r(n) {
+            if (!e[n]) {
+              var i = (e[n] = { exports: {} });
+              t[n][0].call(
+                i.exports,
+                function (e) {
+                  var i = t[n][1][e];
+                  return r(i || e);
+                },
+                i,
+                i.exports
+              );
+            }
+            return e[n].exports;
+          }
+          if ("function" == typeof __nr_require) return __nr_require;
+          for (var i = 0; i < n.length; i++) r(n[i]);
+          return r;
+        })(
+          {
+            1: [
+              function (t, e, n) {
+                function r(t) {
+                  try {
+                    s.console && console.log(t);
+                  } catch (e) {}
+                }
+                var i,
+                  o = t("ee"),
+                  a = t(27),
+                  s = {};
+                try {
+                  (i = localStorage.getItem("__nr_flags").split(",")),
+                    console &&
+                      "function" == typeof console.log &&
+                      ((s.console = !0),
+                      i.indexOf("dev") !== -1 && (s.dev = !0),
+                      i.indexOf("nr_dev") !== -1 && (s.nrDev = !0));
+                } catch (c) {}
+                s.nrDev &&
+                  o.on("internal-error", function (t) {
+                    r(t.stack);
+                  }),
+                  s.dev &&
+                    o.on("fn-err", function (t, e, n) {
+                      r(n.stack);
+                    }),
+                  s.dev &&
+                    (r("NR AGENT IN DEVELOPMENT MODE"),
+                    r(
+                      "flags: " +
+                        a(s, function (t, e) {
+                          return t;
+                        }).join(", ")
+                    ));
+              },
+              {},
+            ],
+            2: [
+              function (t, e, n) {
+                function r(t, e, n, r, s) {
+                  try {
+                    p ? (p -= 1) : i(s || new UncaughtException(t, e, n), !0);
+                  } catch (f) {
+                    try {
+                      o("ierr", [f, c.now(), !0]);
+                    } catch (d) {}
+                  }
+                  return "function" == typeof u && u.apply(this, a(arguments));
+                }
+                function UncaughtException(t, e, n) {
+                  (this.message =
+                    t || "Uncaught error with no additional information"),
+                    (this.sourceURL = e),
+                    (this.line = n);
+                }
+                function i(t, e) {
+                  var n = e ? null : c.now();
+                  o("err", [t, n]);
+                }
+                var o = t("handle"),
+                  a = t(28),
+                  s = t("ee"),
+                  c = t("loader"),
+                  f = t("gos"),
+                  u = window.onerror,
+                  d = !1,
+                  l = "nr@seenError";
+                if (!c.disabled) {
+                  var p = 0;
+                  (c.features.err = !0), t(1), (window.onerror = r);
+                  try {
+                    throw new Error();
+                  } catch (h) {
+                    "stack" in h &&
+                      (t(10),
+                      t(9),
+                      "addEventListener" in window && t(6),
+                      c.xhrWrappable && t(11),
+                      (d = !0));
+                  }
+                  s.on("fn-start", function (t, e, n) {
+                    d && (p += 1);
+                  }),
+                    s.on("fn-err", function (t, e, n) {
+                      d &&
+                        !n[l] &&
+                        (f(n, l, function () {
+                          return !0;
+                        }),
+                        (this.thrown = !0),
+                        i(n));
+                    }),
+                    s.on("fn-end", function () {
+                      d && !this.thrown && p > 0 && (p -= 1);
+                    }),
+                    s.on("internal-error", function (t) {
+                      o("ierr", [t, c.now(), !0]);
+                    });
+                }
+              },
+              {},
+            ],
+            3: [
+              function (t, e, n) {
+                var r = t("loader");
+                r.disabled || (r.features.ins = !0);
+              },
+              {},
+            ],
+            4: [
+              function (t, e, n) {
+                function r() {
+                  var t = new PerformanceObserver(function (t, e) {
+                    var n = t.getEntries();
+                    s(v, [n]);
+                  });
+                  try {
+                    t.observe({ entryTypes: ["resource"] });
+                  } catch (e) {}
+                }
+                function i(t) {
+                  if (
+                    (s(v, [window.performance.getEntriesByType(w)]),
+                    window.performance["c" + l])
+                  )
+                    try {
+                      window.performance[h](m, i, !1);
+                    } catch (t) {}
+                  else
+                    try {
+                      window.performance[h]("webkit" + m, i, !1);
+                    } catch (t) {}
+                }
+                function o(t) {}
+                if (
+                  window.performance &&
+                  window.performance.timing &&
+                  window.performance.getEntriesByType
+                ) {
+                  var a = t("ee"),
+                    s = t("handle"),
+                    c = t(10),
+                    f = t(9),
+                    u = t(5),
+                    d = t(19),
+                    l = "learResourceTimings",
+                    p = "addEventListener",
+                    h = "removeEventListener",
+                    m = "resourcetimingbufferfull",
+                    v = "bstResource",
+                    w = "resource",
+                    g = "-start",
+                    y = "-end",
+                    x = "fn" + g,
+                    b = "fn" + y,
+                    E = "bstTimer",
+                    R = "pushState",
+                    S = t("loader");
+                  if (!S.disabled) {
+                    (S.features.stn = !0),
+                      t(8),
+                      "addEventListener" in window && t(6);
+                    var O = NREUM.o.EV;
+                    a.on(x, function (t, e) {
+                      var n = t[0];
+                      n instanceof O && (this.bstStart = S.now());
+                    }),
+                      a.on(b, function (t, e) {
+                        var n = t[0];
+                        n instanceof O &&
+                          s("bst", [n, e, this.bstStart, S.now()]);
+                      }),
+                      c.on(x, function (t, e, n) {
+                        (this.bstStart = S.now()), (this.bstType = n);
+                      }),
+                      c.on(b, function (t, e) {
+                        s(E, [e, this.bstStart, S.now(), this.bstType]);
+                      }),
+                      f.on(x, function () {
+                        this.bstStart = S.now();
+                      }),
+                      f.on(b, function (t, e) {
+                        s(E, [
+                          e,
+                          this.bstStart,
+                          S.now(),
+                          "requestAnimationFrame",
+                        ]);
+                      }),
+                      a.on(R + g, function (t) {
+                        (this.time = S.now()),
+                          (this.startPath = location.pathname + location.hash);
+                      }),
+                      a.on(R + y, function (t) {
+                        s("bstHist", [
+                          location.pathname + location.hash,
+                          this.startPath,
+                          this.time,
+                        ]);
+                      }),
+                      u()
+                        ? (s(v, [
+                            window.performance.getEntriesByType("resource"),
+                          ]),
+                          r())
+                        : p in window.performance &&
+                          (window.performance["c" + l]
+                            ? window.performance[p](m, i, d(!1))
+                            : window.performance[p]("webkit" + m, i, d(!1))),
+                      document[p]("scroll", o, d(!1)),
+                      document[p]("keypress", o, d(!1)),
+                      document[p]("click", o, d(!1));
+                  }
+                }
+              },
+              {},
+            ],
+            5: [
+              function (t, e, n) {
+                e.exports = function () {
+                  return (
+                    "PerformanceObserver" in window &&
+                    "function" == typeof window.PerformanceObserver
+                  );
+                };
+              },
+              {},
+            ],
+            6: [
+              function (t, e, n) {
+                function r(t) {
+                  for (var e = t; e && !e.hasOwnProperty(u); )
+                    e = Object.getPrototypeOf(e);
+                  e && i(e);
+                }
+                function i(t) {
+                  s.inPlace(t, [u, d], "-", o);
+                }
+                function o(t, e) {
+                  return t[1];
+                }
+                var a = t("ee").get("events"),
+                  s = t("wrap-function")(a, !0),
+                  c = t("gos"),
+                  f = XMLHttpRequest,
+                  u = "addEventListener",
+                  d = "removeEventListener";
+                (e.exports = a),
+                  "getPrototypeOf" in Object
+                    ? (r(document), r(window), r(f.prototype))
+                    : f.prototype.hasOwnProperty(u) &&
+                      (i(window), i(f.prototype)),
+                  a.on(u + "-start", function (t, e) {
+                    var n = t[1];
+                    if (
+                      null !== n &&
+                      ("function" == typeof n || "object" == typeof n)
+                    ) {
+                      var r = c(n, "nr@wrapped", function () {
+                        function t() {
+                          if ("function" == typeof n.handleEvent)
+                            return n.handleEvent.apply(n, arguments);
+                        }
+                        var e = { object: t, function: n }[typeof n];
+                        return e ? s(e, "fn-", null, e.name || "anonymous") : n;
+                      });
+                      this.wrapped = t[1] = r;
+                    }
+                  }),
+                  a.on(d + "-start", function (t) {
+                    t[1] = this.wrapped || t[1];
+                  });
+              },
+              {},
+            ],
+            7: [
+              function (t, e, n) {
+                function r(t, e, n) {
+                  var r = t[e];
+                  "function" == typeof r &&
+                    (t[e] = function () {
+                      var t = o(arguments),
+                        e = {};
+                      i.emit(n + "before-start", [t], e);
+                      var a;
+                      e[m] && e[m].dt && (a = e[m].dt);
+                      var s = r.apply(this, t);
+                      return (
+                        i.emit(n + "start", [t, a], s),
+                        s.then(
+                          function (t) {
+                            return i.emit(n + "end", [null, t], s), t;
+                          },
+                          function (t) {
+                            throw (i.emit(n + "end", [t], s), t);
+                          }
+                        )
+                      );
+                    });
+                }
+                var i = t("ee").get("fetch"),
+                  o = t(28),
+                  a = t(27);
+                e.exports = i;
+                var s = window,
+                  c = "fetch-",
+                  f = c + "body-",
+                  u = ["arrayBuffer", "blob", "json", "text", "formData"],
+                  d = s.Request,
+                  l = s.Response,
+                  p = s.fetch,
+                  h = "prototype",
+                  m = "nr@context";
+                d &&
+                  l &&
+                  p &&
+                  (a(u, function (t, e) {
+                    r(d[h], e, f), r(l[h], e, f);
+                  }),
+                  r(s, "fetch", c),
+                  i.on(c + "end", function (t, e) {
+                    var n = this;
+                    if (e) {
+                      var r = e.headers.get("content-length");
+                      null !== r && (n.rxSize = r),
+                        i.emit(c + "done", [null, e], n);
+                    } else i.emit(c + "done", [t], n);
+                  }));
+              },
+              {},
+            ],
+            8: [
+              function (t, e, n) {
+                var r = t("ee").get("history"),
+                  i = t("wrap-function")(r);
+                e.exports = r;
+                var o =
+                    window.history &&
+                    window.history.constructor &&
+                    window.history.constructor.prototype,
+                  a = window.history;
+                o && o.pushState && o.replaceState && (a = o),
+                  i.inPlace(a, ["pushState", "replaceState"], "-");
+              },
+              {},
+            ],
+            9: [
+              function (t, e, n) {
+                var r = t("ee").get("raf"),
+                  i = t("wrap-function")(r),
+                  o = "equestAnimationFrame";
+                (e.exports = r),
+                  i.inPlace(
+                    window,
+                    ["r" + o, "mozR" + o, "webkitR" + o, "msR" + o],
+                    "raf-"
+                  ),
+                  r.on("raf-start", function (t) {
+                    t[0] = i(t[0], "fn-");
+                  });
+              },
+              {},
+            ],
+            10: [
+              function (t, e, n) {
+                function r(t, e, n) {
+                  t[0] = a(t[0], "fn-", null, n);
+                }
+                function i(t, e, n) {
+                  (this.method = n),
+                    (this.timerDuration = isNaN(t[1]) ? 0 : +t[1]),
+                    (t[0] = a(t[0], "fn-", this, n));
+                }
+                var o = t("ee").get("timer"),
+                  a = t("wrap-function")(o),
+                  s = "setTimeout",
+                  c = "setInterval",
+                  f = "clearTimeout",
+                  u = "-start",
+                  d = "-";
+                (e.exports = o),
+                  a.inPlace(window, [s, "setImmediate"], s + d),
+                  a.inPlace(window, [c], c + d),
+                  a.inPlace(window, [f, "clearImmediate"], f + d),
+                  o.on(c + u, r),
+                  o.on(s + u, i);
+              },
+              {},
+            ],
+            11: [
+              function (t, e, n) {
+                function r(t, e) {
+                  d.inPlace(e, ["onreadystatechange"], "fn-", s);
+                }
+                function i() {
+                  var t = this,
+                    e = u.context(t);
+                  t.readyState > 3 &&
+                    !e.resolved &&
+                    ((e.resolved = !0), u.emit("xhr-resolved", [], t)),
+                    d.inPlace(t, y, "fn-", s);
+                }
+                function o(t) {
+                  x.push(t),
+                    m && (E ? E.then(a) : w ? w(a) : ((R = -R), (S.data = R)));
+                }
+                function a() {
+                  for (var t = 0; t < x.length; t++) r([], x[t]);
+                  x.length && (x = []);
+                }
+                function s(t, e) {
+                  return e;
+                }
+                function c(t, e) {
+                  for (var n in t) e[n] = t[n];
+                  return e;
+                }
+                t(6);
+                var f = t("ee"),
+                  u = f.get("xhr"),
+                  d = t("wrap-function")(u),
+                  l = t(19),
+                  p = NREUM.o,
+                  h = p.XHR,
+                  m = p.MO,
+                  v = p.PR,
+                  w = p.SI,
+                  g = "readystatechange",
+                  y = [
+                    "onload",
+                    "onerror",
+                    "onabort",
+                    "onloadstart",
+                    "onloadend",
+                    "onprogress",
+                    "ontimeout",
+                  ],
+                  x = [];
+                e.exports = u;
+                var b = (window.XMLHttpRequest = function (t) {
+                  var e = new h(t);
+                  try {
+                    u.emit("new-xhr", [e], e), e.addEventListener(g, i, l(!1));
+                  } catch (n) {
+                    try {
+                      u.emit("internal-error", [n]);
+                    } catch (r) {}
+                  }
+                  return e;
+                });
+                if (
+                  (c(h, b),
+                  (b.prototype = h.prototype),
+                  d.inPlace(b.prototype, ["open", "send"], "-xhr-", s),
+                  u.on("send-xhr-start", function (t, e) {
+                    r(t, e), o(e);
+                  }),
+                  u.on("open-xhr-start", r),
+                  m)
+                ) {
+                  var E = v && v.resolve();
+                  if (!w && !v) {
+                    var R = 1,
+                      S = document.createTextNode(R);
+                    new m(a).observe(S, { characterData: !0 });
+                  }
+                } else
+                  f.on("fn-end", function (t) {
+                    (t[0] && t[0].type === g) || a();
+                  });
+              },
+              {},
+            ],
+            12: [
+              function (t, e, n) {
+                function r(t) {
+                  if (!s(t)) return null;
+                  var e = window.NREUM;
+                  if (!e.loader_config) return null;
+                  var n = (e.loader_config.accountID || "").toString() || null,
+                    r = (e.loader_config.agentID || "").toString() || null,
+                    f = (e.loader_config.trustKey || "").toString() || null;
+                  if (!n || !r) return null;
+                  var h = p.generateSpanId(),
+                    m = p.generateTraceId(),
+                    v = Date.now(),
+                    w = { spanId: h, traceId: m, timestamp: v };
+                  return (
+                    (t.sameOrigin || (c(t) && l())) &&
+                      ((w.traceContextParentHeader = i(h, m)),
+                      (w.traceContextStateHeader = o(h, v, n, r, f))),
+                    ((t.sameOrigin && !u()) ||
+                      (!t.sameOrigin && c(t) && d())) &&
+                      (w.newrelicHeader = a(h, m, v, n, r, f)),
+                    w
+                  );
+                }
+                function i(t, e) {
+                  return "00-" + e + "-" + t + "-01";
+                }
+                function o(t, e, n, r, i) {
+                  var o = 0,
+                    a = "",
+                    s = 1,
+                    c = "",
+                    f = "";
+                  return (
+                    i +
+                    "@nr=" +
+                    o +
+                    "-" +
+                    s +
+                    "-" +
+                    n +
+                    "-" +
+                    r +
+                    "-" +
+                    t +
+                    "-" +
+                    a +
+                    "-" +
+                    c +
+                    "-" +
+                    f +
+                    "-" +
+                    e
+                  );
+                }
+                function a(t, e, n, r, i, o) {
+                  var a = "btoa" in window && "function" == typeof window.btoa;
+                  if (!a) return null;
+                  var s = {
+                    v: [0, 1],
+                    d: { ty: "Browser", ac: r, ap: i, id: t, tr: e, ti: n },
+                  };
+                  return o && r !== o && (s.d.tk = o), btoa(JSON.stringify(s));
+                }
+                function s(t) {
+                  return f() && c(t);
+                }
+                function c(t) {
+                  var e = !1,
+                    n = {};
+                  if (
+                    ("init" in NREUM &&
+                      "distributed_tracing" in NREUM.init &&
+                      (n = NREUM.init.distributed_tracing),
+                    t.sameOrigin)
+                  )
+                    e = !0;
+                  else if (n.allowed_origins instanceof Array)
+                    for (var r = 0; r < n.allowed_origins.length; r++) {
+                      var i = h(n.allowed_origins[r]);
+                      if (
+                        t.hostname === i.hostname &&
+                        t.protocol === i.protocol &&
+                        t.port === i.port
+                      ) {
+                        e = !0;
+                        break;
+                      }
+                    }
+                  return e;
+                }
+                function f() {
+                  return (
+                    "init" in NREUM &&
+                    "distributed_tracing" in NREUM.init &&
+                    !!NREUM.init.distributed_tracing.enabled
+                  );
+                }
+                function u() {
+                  return (
+                    "init" in NREUM &&
+                    "distributed_tracing" in NREUM.init &&
+                    !!NREUM.init.distributed_tracing.exclude_newrelic_header
+                  );
+                }
+                function d() {
+                  return (
+                    "init" in NREUM &&
+                    "distributed_tracing" in NREUM.init &&
+                    NREUM.init.distributed_tracing.cors_use_newrelic_header !==
+                      !1
+                  );
+                }
+                function l() {
+                  return (
+                    "init" in NREUM &&
+                    "distributed_tracing" in NREUM.init &&
+                    !!NREUM.init.distributed_tracing
+                      .cors_use_tracecontext_headers
+                  );
+                }
+                var p = t(24),
+                  h = t(14);
+                e.exports = { generateTracePayload: r, shouldGenerateTrace: s };
+              },
+              {},
+            ],
+            13: [
+              function (t, e, n) {
+                function r(t) {
+                  var e = this.params,
+                    n = this.metrics;
+                  if (!this.ended) {
+                    this.ended = !0;
+                    for (var r = 0; r < l; r++)
+                      t.removeEventListener(d[r], this.listener, !1);
+                    return e.protocol && "data" === e.protocol
+                      ? void g("Ajax/DataUrl/Excluded")
+                      : void (
+                          e.aborted ||
+                          ((n.duration = a.now() - this.startTime),
+                          this.loadCaptureCalled || 4 !== t.readyState
+                            ? null == e.status && (e.status = 0)
+                            : o(this, t),
+                          (n.cbTime = this.cbTime),
+                          s(
+                            "xhr",
+                            [e, n, this.startTime, this.endTime, "xhr"],
+                            this
+                          ))
+                        );
+                  }
+                }
+                function i(t, e) {
+                  var n = c(e),
+                    r = t.params;
+                  (r.hostname = n.hostname),
+                    (r.port = n.port),
+                    (r.protocol = n.protocol),
+                    (r.host = n.hostname + ":" + n.port),
+                    (r.pathname = n.pathname),
+                    (t.parsedOrigin = n),
+                    (t.sameOrigin = n.sameOrigin);
+                }
+                function o(t, e) {
+                  t.params.status = e.status;
+                  var n = v(e, t.lastSize);
+                  if ((n && (t.metrics.rxSize = n), t.sameOrigin)) {
+                    var r = e.getResponseHeader("X-NewRelic-App-Data");
+                    r && (t.params.cat = r.split(", ").pop());
+                  }
+                  t.loadCaptureCalled = !0;
+                }
+                var a = t("loader");
+                if (a.xhrWrappable && !a.disabled) {
+                  var s = t("handle"),
+                    c = t(14),
+                    f = t(12).generateTracePayload,
+                    u = t("ee"),
+                    d = ["load", "error", "abort", "timeout"],
+                    l = d.length,
+                    p = t("id"),
+                    h = t(20),
+                    m = t(18),
+                    v = t(15),
+                    w = t(19),
+                    g = t(21).recordSupportability,
+                    y = NREUM.o.REQ,
+                    x = window.XMLHttpRequest;
+                  (a.features.xhr = !0),
+                    t(11),
+                    t(7),
+                    u.on("new-xhr", function (t) {
+                      var e = this;
+                      (e.totalCbs = 0),
+                        (e.called = 0),
+                        (e.cbTime = 0),
+                        (e.end = r),
+                        (e.ended = !1),
+                        (e.xhrGuids = {}),
+                        (e.lastSize = null),
+                        (e.loadCaptureCalled = !1),
+                        (e.params = this.params || {}),
+                        (e.metrics = this.metrics || {}),
+                        t.addEventListener(
+                          "load",
+                          function (n) {
+                            o(e, t);
+                          },
+                          w(!1)
+                        ),
+                        (h && (h > 34 || h < 10)) ||
+                          t.addEventListener(
+                            "progress",
+                            function (t) {
+                              e.lastSize = t.loaded;
+                            },
+                            w(!1)
+                          );
+                    }),
+                    u.on("open-xhr-start", function (t) {
+                      (this.params = { method: t[0] }),
+                        i(this, t[1]),
+                        (this.metrics = {});
+                    }),
+                    u.on("open-xhr-end", function (t, e) {
+                      "loader_config" in NREUM &&
+                        "xpid" in NREUM.loader_config &&
+                        this.sameOrigin &&
+                        e.setRequestHeader(
+                          "X-NewRelic-ID",
+                          NREUM.loader_config.xpid
+                        );
+                      var n = f(this.parsedOrigin);
+                      if (n) {
+                        var r = !1;
+                        n.newrelicHeader &&
+                          (e.setRequestHeader("newrelic", n.newrelicHeader),
+                          (r = !0)),
+                          n.traceContextParentHeader &&
+                            (e.setRequestHeader(
+                              "traceparent",
+                              n.traceContextParentHeader
+                            ),
+                            n.traceContextStateHeader &&
+                              e.setRequestHeader(
+                                "tracestate",
+                                n.traceContextStateHeader
+                              ),
+                            (r = !0)),
+                          r && (this.dt = n);
+                      }
+                    }),
+                    u.on("send-xhr-start", function (t, e) {
+                      var n = this.metrics,
+                        r = t[0],
+                        i = this;
+                      if (n && r) {
+                        var o = m(r);
+                        o && (n.txSize = o);
+                      }
+                      (this.startTime = a.now()),
+                        (this.listener = function (t) {
+                          try {
+                            "abort" !== t.type ||
+                              i.loadCaptureCalled ||
+                              (i.params.aborted = !0),
+                              ("load" !== t.type ||
+                                (i.called === i.totalCbs &&
+                                  (i.onloadCalled ||
+                                    "function" != typeof e.onload))) &&
+                                i.end(e);
+                          } catch (n) {
+                            try {
+                              u.emit("internal-error", [n]);
+                            } catch (r) {}
+                          }
+                        });
+                      for (var s = 0; s < l; s++)
+                        e.addEventListener(d[s], this.listener, w(!1));
+                    }),
+                    u.on("xhr-cb-time", function (t, e, n) {
+                      (this.cbTime += t),
+                        e ? (this.onloadCalled = !0) : (this.called += 1),
+                        this.called !== this.totalCbs ||
+                          (!this.onloadCalled &&
+                            "function" == typeof n.onload) ||
+                          this.end(n);
+                    }),
+                    u.on("xhr-load-added", function (t, e) {
+                      var n = "" + p(t) + !!e;
+                      this.xhrGuids &&
+                        !this.xhrGuids[n] &&
+                        ((this.xhrGuids[n] = !0), (this.totalCbs += 1));
+                    }),
+                    u.on("xhr-load-removed", function (t, e) {
+                      var n = "" + p(t) + !!e;
+                      this.xhrGuids &&
+                        this.xhrGuids[n] &&
+                        (delete this.xhrGuids[n], (this.totalCbs -= 1));
+                    }),
+                    u.on("xhr-resolved", function () {
+                      this.endTime = a.now();
+                    }),
+                    u.on("addEventListener-end", function (t, e) {
+                      e instanceof x &&
+                        "load" === t[0] &&
+                        u.emit("xhr-load-added", [t[1], t[2]], e);
+                    }),
+                    u.on("removeEventListener-end", function (t, e) {
+                      e instanceof x &&
+                        "load" === t[0] &&
+                        u.emit("xhr-load-removed", [t[1], t[2]], e);
+                    }),
+                    u.on("fn-start", function (t, e, n) {
+                      e instanceof x &&
+                        ("onload" === n && (this.onload = !0),
+                        ("load" === (t[0] && t[0].type) || this.onload) &&
+                          (this.xhrCbStart = a.now()));
+                    }),
+                    u.on("fn-end", function (t, e) {
+                      this.xhrCbStart &&
+                        u.emit(
+                          "xhr-cb-time",
+                          [a.now() - this.xhrCbStart, this.onload, e],
+                          e
+                        );
+                    }),
+                    u.on("fetch-before-start", function (t) {
+                      function e(t, e) {
+                        var n = !1;
+                        return (
+                          e.newrelicHeader &&
+                            (t.set("newrelic", e.newrelicHeader), (n = !0)),
+                          e.traceContextParentHeader &&
+                            (t.set("traceparent", e.traceContextParentHeader),
+                            e.traceContextStateHeader &&
+                              t.set("tracestate", e.traceContextStateHeader),
+                            (n = !0)),
+                          n
+                        );
+                      }
+                      var n,
+                        r = t[1] || {};
+                      "string" == typeof t[0]
+                        ? (n = t[0])
+                        : t[0] && t[0].url
+                        ? (n = t[0].url)
+                        : window.URL &&
+                          t[0] &&
+                          t[0] instanceof URL &&
+                          (n = t[0].href),
+                        n &&
+                          ((this.parsedOrigin = c(n)),
+                          (this.sameOrigin = this.parsedOrigin.sameOrigin));
+                      var i = f(this.parsedOrigin);
+                      if (i && (i.newrelicHeader || i.traceContextParentHeader))
+                        if (
+                          "string" == typeof t[0] ||
+                          (window.URL && t[0] && t[0] instanceof URL)
+                        ) {
+                          var o = {};
+                          for (var a in r) o[a] = r[a];
+                          (o.headers = new Headers(r.headers || {})),
+                            e(o.headers, i) && (this.dt = i),
+                            t.length > 1 ? (t[1] = o) : t.push(o);
+                        } else
+                          t[0] &&
+                            t[0].headers &&
+                            e(t[0].headers, i) &&
+                            (this.dt = i);
+                    }),
+                    u.on("fetch-start", function (t, e) {
+                      (this.params = {}),
+                        (this.metrics = {}),
+                        (this.startTime = a.now()),
+                        (this.dt = e),
+                        t.length >= 1 && (this.target = t[0]),
+                        t.length >= 2 && (this.opts = t[1]);
+                      var n,
+                        r = this.opts || {},
+                        o = this.target;
+                      if (
+                        ("string" == typeof o
+                          ? (n = o)
+                          : "object" == typeof o && o instanceof y
+                          ? (n = o.url)
+                          : window.URL &&
+                            "object" == typeof o &&
+                            o instanceof URL &&
+                            (n = o.href),
+                        i(this, n),
+                        "data" !== this.params.protocol)
+                      ) {
+                        var s = (
+                          "" +
+                          ((o && o instanceof y && o.method) ||
+                            r.method ||
+                            "GET")
+                        ).toUpperCase();
+                        (this.params.method = s),
+                          (this.txSize = m(r.body) || 0);
+                      }
+                    }),
+                    u.on("fetch-done", function (t, e) {
+                      if (
+                        ((this.endTime = a.now()),
+                        this.params || (this.params = {}),
+                        "data" === this.params.protocol)
+                      )
+                        return void g("Ajax/DataUrl/Excluded");
+                      this.params.status = e ? e.status : 0;
+                      var n;
+                      "string" == typeof this.rxSize &&
+                        this.rxSize.length > 0 &&
+                        (n = +this.rxSize);
+                      var r = {
+                        txSize: this.txSize,
+                        rxSize: n,
+                        duration: a.now() - this.startTime,
+                      };
+                      s(
+                        "xhr",
+                        [this.params, r, this.startTime, this.endTime, "fetch"],
+                        this
+                      );
+                    });
+                }
+              },
+              {},
+            ],
+            14: [
+              function (t, e, n) {
+                var r = {};
+                e.exports = function (t) {
+                  if (t in r) return r[t];
+                  if (0 === (t || "").indexOf("data:"))
+                    return { protocol: "data" };
+                  var e = document.createElement("a"),
+                    n = window.location,
+                    i = {};
+                  (e.href = t), (i.port = e.port);
+                  var o = e.href.split("://");
+                  !i.port &&
+                    o[1] &&
+                    (i.port = o[1]
+                      .split("index.html")[0]
+                      .split("@")
+                      .pop()
+                      .split(":")[1]),
+                    (i.port && "0" !== i.port) ||
+                      (i.port = "https" === o[0] ? "443" : "80"),
+                    (i.hostname = e.hostname || n.hostname),
+                    (i.pathname = e.pathname),
+                    (i.protocol = o[0]),
+                    "/" !== i.pathname.charAt(0) &&
+                      (i.pathname = "/" + i.pathname);
+                  var a =
+                      !e.protocol ||
+                      ":" === e.protocol ||
+                      e.protocol === n.protocol,
+                    s = e.hostname === document.domain && e.port === n.port;
+                  return (
+                    (i.sameOrigin = a && (!e.hostname || s)),
+                    "/" === i.pathname && (r[t] = i),
+                    i
+                  );
+                };
+              },
+              {},
+            ],
+            15: [
+              function (t, e, n) {
+                function r(t, e) {
+                  var n = t.responseType;
+                  return "json" === n && null !== e
+                    ? e
+                    : "arraybuffer" === n || "blob" === n || "json" === n
+                    ? i(t.response)
+                    : "text" === n || "" === n || void 0 === n
+                    ? i(t.responseText)
+                    : void 0;
+                }
+                var i = t(18);
+                e.exports = r;
+              },
+              {},
+            ],
+            16: [
+              function (t, e, n) {
+                function r() {}
+                function i(t, e, n, r) {
+                  return function () {
+                    return (
+                      u.recordSupportability("API/" + e + "/called"),
+                      o(
+                        t + e,
+                        [f.now()].concat(s(arguments)),
+                        n ? null : this,
+                        r
+                      ),
+                      n ? void 0 : this
+                    );
+                  };
+                }
+                var o = t("handle"),
+                  a = t(27),
+                  s = t(28),
+                  c = t("ee").get("tracer"),
+                  f = t("loader"),
+                  u = t(21),
+                  d = NREUM;
+                "undefined" == typeof window.newrelic && (newrelic = d);
+                var l = [
+                    "setPageViewName",
+                    "setCustomAttribute",
+                    "setErrorHandler",
+                    "finished",
+                    "addToTrace",
+                    "inlineHit",
+                    "addRelease",
+                  ],
+                  p = "api-",
+                  h = p + "ixn-";
+                a(l, function (t, e) {
+                  d[e] = i(p, e, !0, "api");
+                }),
+                  (d.addPageAction = i(p, "addPageAction", !0)),
+                  (d.setCurrentRouteName = i(p, "routeName", !0)),
+                  (e.exports = newrelic),
+                  (d.interaction = function () {
+                    return new r().get();
+                  });
+                var m = (r.prototype = {
+                  createTracer: function (t, e) {
+                    var n = {},
+                      r = this,
+                      i = "function" == typeof e;
+                    return (
+                      o(h + "tracer", [f.now(), t, n], r),
+                      function () {
+                        if (
+                          (c.emit(
+                            (i ? "" : "no-") + "fn-start",
+                            [f.now(), r, i],
+                            n
+                          ),
+                          i)
+                        )
+                          try {
+                            return e.apply(this, arguments);
+                          } catch (t) {
+                            throw (
+                              (c.emit("fn-err", [arguments, this, t], n), t)
+                            );
+                          } finally {
+                            c.emit("fn-end", [f.now()], n);
+                          }
+                      }
+                    );
+                  },
+                });
+                a(
+                  "actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(
+                    ","
+                  ),
+                  function (t, e) {
+                    m[e] = i(h, e);
+                  }
+                ),
+                  (newrelic.noticeError = function (t, e) {
+                    "string" == typeof t && (t = new Error(t)),
+                      u.recordSupportability("API/noticeError/called"),
+                      o("err", [t, f.now(), !1, e]);
+                  });
+              },
+              {},
+            ],
+            17: [
+              function (t, e, n) {
+                function r(t) {
+                  if (NREUM.init) {
+                    for (
+                      var e = NREUM.init, n = t.split("."), r = 0;
+                      r < n.length - 1;
+                      r++
+                    )
+                      if (((e = e[n[r]]), "object" != typeof e)) return;
+                    return (e = e[n[n.length - 1]]);
+                  }
+                }
+                e.exports = { getConfiguration: r };
+              },
+              {},
+            ],
+            18: [
+              function (t, e, n) {
+                e.exports = function (t) {
+                  if ("string" == typeof t && t.length) return t.length;
+                  if ("object" == typeof t) {
+                    if (
+                      "undefined" != typeof ArrayBuffer &&
+                      t instanceof ArrayBuffer &&
+                      t.byteLength
+                    )
+                      return t.byteLength;
+                    if (
+                      "undefined" != typeof Blob &&
+                      t instanceof Blob &&
+                      t.size
+                    )
+                      return t.size;
+                    if (
+                      !("undefined" != typeof FormData && t instanceof FormData)
+                    )
+                      try {
+                        return JSON.stringify(t).length;
+                      } catch (e) {
+                        return;
+                      }
+                  }
+                };
+              },
+              {},
+            ],
+            19: [
+              function (t, e, n) {
+                var r = !1;
+                try {
+                  var i = Object.defineProperty({}, "passive", {
+                    get: function () {
+                      r = !0;
+                    },
+                  });
+                  window.addEventListener("testPassive", null, i),
+                    window.removeEventListener("testPassive", null, i);
+                } catch (o) {}
+                e.exports = function (t) {
+                  return r ? { passive: !0, capture: !!t } : !!t;
+                };
+              },
+              {},
+            ],
+            20: [
+              function (t, e, n) {
+                var r = 0,
+                  i = navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);
+                i && (r = +i[1]), (e.exports = r);
+              },
+              {},
+            ],
+            21: [
+              function (t, e, n) {
+                function r(t, e) {
+                  var n = [a, t, { name: t }, e];
+                  return o("storeMetric", n, null, "api"), n;
+                }
+                function i(t, e) {
+                  var n = [s, t, { name: t }, e];
+                  return o("storeEventMetrics", n, null, "api"), n;
+                }
+                var o = t("handle"),
+                  a = "sm",
+                  s = "cm";
+                e.exports = {
+                  constants: { SUPPORTABILITY_METRIC: a, CUSTOM_METRIC: s },
+                  recordSupportability: r,
+                  recordCustom: i,
+                };
+              },
+              {},
+            ],
+            22: [
+              function (t, e, n) {
+                function r() {
+                  return s.exists && performance.now
+                    ? Math.round(performance.now())
+                    : (o = Math.max(new Date().getTime(), o)) - a;
+                }
+                function i() {
+                  return o;
+                }
+                var o = new Date().getTime(),
+                  a = o,
+                  s = t(29);
+                (e.exports = r),
+                  (e.exports.offset = a),
+                  (e.exports.getLastTimestamp = i);
+              },
+              {},
+            ],
+            23: [
+              function (t, e, n) {
+                function r(t, e) {
+                  var n = t.getEntries();
+                  n.forEach(function (t) {
+                    "first-paint" === t.name
+                      ? p("timing", ["fp", Math.floor(t.startTime)])
+                      : "first-contentful-paint" === t.name &&
+                        p("timing", ["fcp", Math.floor(t.startTime)]);
+                  });
+                }
+                function i(t, e) {
+                  var n = t.getEntries();
+                  if (n.length > 0) {
+                    var r = n[n.length - 1];
+                    if (f && f < r.startTime) return;
+                    var i = [r],
+                      o = a({});
+                    o && i.push(o), p("lcp", i);
+                  }
+                }
+                function o(t) {
+                  t.getEntries().forEach(function (t) {
+                    t.hadRecentInput || p("cls", [t]);
+                  });
+                }
+                function a(t) {
+                  var e =
+                    navigator.connection ||
+                    navigator.mozConnection ||
+                    navigator.webkitConnection;
+                  if (e)
+                    return (
+                      e.type && (t["net-type"] = e.type),
+                      e.effectiveType && (t["net-etype"] = e.effectiveType),
+                      e.rtt && (t["net-rtt"] = e.rtt),
+                      e.downlink && (t["net-dlink"] = e.downlink),
+                      t
+                    );
+                }
+                function s(t) {
+                  if (t instanceof w && !y) {
+                    var e = Math.round(t.timeStamp),
+                      n = { type: t.type };
+                    a(n),
+                      e <= h.now()
+                        ? (n.fid = h.now() - e)
+                        : e > h.offset && e <= Date.now()
+                        ? ((e -= h.offset), (n.fid = h.now() - e))
+                        : (e = h.now()),
+                      (y = !0),
+                      p("timing", ["fi", e, n]);
+                  }
+                }
+                function c(t) {
+                  "hidden" === t && ((f = h.now()), p("pageHide", [f]));
+                }
+                if (
+                  !(
+                    "init" in NREUM &&
+                    "page_view_timing" in NREUM.init &&
+                    "enabled" in NREUM.init.page_view_timing &&
+                    NREUM.init.page_view_timing.enabled === !1
+                  )
+                ) {
+                  var f,
+                    u,
+                    d,
+                    l,
+                    p = t("handle"),
+                    h = t("loader"),
+                    m = t(26),
+                    v = t(19),
+                    w = NREUM.o.EV;
+                  if (
+                    "PerformanceObserver" in window &&
+                    "function" == typeof window.PerformanceObserver
+                  ) {
+                    u = new PerformanceObserver(r);
+                    try {
+                      u.observe({ entryTypes: ["paint"] });
+                    } catch (g) {}
+                    d = new PerformanceObserver(i);
+                    try {
+                      d.observe({ entryTypes: ["largest-contentful-paint"] });
+                    } catch (g) {}
+                    l = new PerformanceObserver(o);
+                    try {
+                      l.observe({ type: "layout-shift", buffered: !0 });
+                    } catch (g) {}
+                  }
+                  if ("addEventListener" in document) {
+                    var y = !1,
+                      x = [
+                        "click",
+                        "keydown",
+                        "mousedown",
+                        "pointerdown",
+                        "touchstart",
+                      ];
+                    x.forEach(function (t) {
+                      document.addEventListener(t, s, v(!1));
+                    });
+                  }
+                  m(c);
+                }
+              },
+              {},
+            ],
+            24: [
+              function (t, e, n) {
+                function r() {
+                  function t() {
+                    return e ? 15 & e[n++] : (16 * Math.random()) | 0;
+                  }
+                  var e = null,
+                    n = 0,
+                    r = window.crypto || window.msCrypto;
+                  r &&
+                    r.getRandomValues &&
+                    (e = r.getRandomValues(new Uint8Array(31)));
+                  for (
+                    var i,
+                      o = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",
+                      a = "",
+                      s = 0;
+                    s < o.length;
+                    s++
+                  )
+                    (i = o[s]),
+                      "x" === i
+                        ? (a += t().toString(16))
+                        : "y" === i
+                        ? ((i = (3 & t()) | 8), (a += i.toString(16)))
+                        : (a += i);
+                  return a;
+                }
+                function i() {
+                  return a(16);
+                }
+                function o() {
+                  return a(32);
+                }
+                function a(t) {
+                  function e() {
+                    return n ? 15 & n[r++] : (16 * Math.random()) | 0;
+                  }
+                  var n = null,
+                    r = 0,
+                    i = window.crypto || window.msCrypto;
+                  i &&
+                    i.getRandomValues &&
+                    Uint8Array &&
+                    (n = i.getRandomValues(new Uint8Array(t)));
+                  for (var o = [], a = 0; a < t; a++) o.push(e().toString(16));
+                  return o.join("");
+                }
+                e.exports = {
+                  generateUuid: r,
+                  generateSpanId: i,
+                  generateTraceId: o,
+                };
+              },
+              {},
+            ],
+            25: [
+              function (t, e, n) {
+                function r(t, e) {
+                  if (!i) return !1;
+                  if (t !== i) return !1;
+                  if (!e) return !0;
+                  if (!o) return !1;
+                  for (
+                    var n = o.split("."), r = e.split("."), a = 0;
+                    a < r.length;
+                    a++
+                  )
+                    if (r[a] !== n[a]) return !1;
+                  return !0;
+                }
+                var i = null,
+                  o = null,
+                  a = /Version\/(\S+)\s+Safari/;
+                if (navigator.userAgent) {
+                  var s = navigator.userAgent,
+                    c = s.match(a);
+                  c &&
+                    s.indexOf("Chrome") === -1 &&
+                    s.indexOf("Chromium") === -1 &&
+                    ((i = "Safari"), (o = c[1]));
+                }
+                e.exports = { agent: i, version: o, match: r };
+              },
+              {},
+            ],
+            26: [
+              function (t, e, n) {
+                function r(t) {
+                  function e() {
+                    t(
+                      s && document[s]
+                        ? document[s]
+                        : document[o]
+                        ? "hidden"
+                        : "visible"
+                    );
+                  }
+                  "addEventListener" in document &&
+                    a &&
+                    document.addEventListener(a, e, i(!1));
+                }
+                var i = t(19);
+                e.exports = r;
+                var o, a, s;
+                "undefined" != typeof document.hidden
+                  ? ((o = "hidden"),
+                    (a = "visibilitychange"),
+                    (s = "visibilityState"))
+                  : "undefined" != typeof document.msHidden
+                  ? ((o = "msHidden"), (a = "msvisibilitychange"))
+                  : "undefined" != typeof document.webkitHidden &&
+                    ((o = "webkitHidden"),
+                    (a = "webkitvisibilitychange"),
+                    (s = "webkitVisibilityState"));
+              },
+              {},
+            ],
+            27: [
+              function (t, e, n) {
+                function r(t, e) {
+                  var n = [],
+                    r = "",
+                    o = 0;
+                  for (r in t) i.call(t, r) && ((n[o] = e(r, t[r])), (o += 1));
+                  return n;
+                }
+                var i = Object.prototype.hasOwnProperty;
+                e.exports = r;
+              },
+              {},
+            ],
+            28: [
+              function (t, e, n) {
+                function r(t, e, n) {
+                  e || (e = 0),
+                    "undefined" == typeof n && (n = t ? t.length : 0);
+                  for (
+                    var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i);
+                    ++r < i;
+
+                  )
+                    o[r] = t[e + r];
+                  return o;
+                }
+                e.exports = r;
+              },
+              {},
+            ],
+            29: [
+              function (t, e, n) {
+                e.exports = {
+                  exists:
+                    "undefined" != typeof window.performance &&
+                    window.performance.timing &&
+                    "undefined" !=
+                      typeof window.performance.timing.navigationStart,
+                };
+              },
+              {},
+            ],
+            ee: [
+              function (t, e, n) {
+                function r() {}
+                function i(t) {
+                  function e(t) {
+                    return t && t instanceof r ? t : t ? f(t, c, a) : a();
+                  }
+                  function n(n, r, i, o, a) {
+                    if ((a !== !1 && (a = !0), !p.aborted || o)) {
+                      t && a && t(n, r, i);
+                      for (
+                        var s = e(i), c = m(n), f = c.length, u = 0;
+                        u < f;
+                        u++
+                      )
+                        c[u].apply(s, r);
+                      var l = d[y[n]];
+                      return l && l.push([x, n, r, s]), s;
+                    }
+                  }
+                  function o(t, e) {
+                    g[t] = m(t).concat(e);
+                  }
+                  function h(t, e) {
+                    var n = g[t];
+                    if (n)
+                      for (var r = 0; r < n.length; r++)
+                        n[r] === e && n.splice(r, 1);
+                  }
+                  function m(t) {
+                    return g[t] || [];
+                  }
+                  function v(t) {
+                    return (l[t] = l[t] || i(n));
+                  }
+                  function w(t, e) {
+                    p.aborted ||
+                      u(t, function (t, n) {
+                        (e = e || "feature"), (y[n] = e), e in d || (d[e] = []);
+                      });
+                  }
+                  var g = {},
+                    y = {},
+                    x = {
+                      on: o,
+                      addEventListener: o,
+                      removeEventListener: h,
+                      emit: n,
+                      get: v,
+                      listeners: m,
+                      context: e,
+                      buffer: w,
+                      abort: s,
+                      aborted: !1,
+                    };
+                  return x;
+                }
+                function o(t) {
+                  return f(t, c, a);
+                }
+                function a() {
+                  return new r();
+                }
+                function s() {
+                  (d.api || d.feature) &&
+                    ((p.aborted = !0), (d = p.backlog = {}));
+                }
+                var c = "nr@context",
+                  f = t("gos"),
+                  u = t(27),
+                  d = {},
+                  l = {},
+                  p = (e.exports = i());
+                (e.exports.getOrSetContext = o), (p.backlog = d);
+              },
+              {},
+            ],
+            gos: [
+              function (t, e, n) {
+                function r(t, e, n) {
+                  if (i.call(t, e)) return t[e];
+                  var r = n();
+                  if (Object.defineProperty && Object.keys)
+                    try {
+                      return (
+                        Object.defineProperty(t, e, {
+                          value: r,
+                          writable: !0,
+                          enumerable: !1,
+                        }),
+                        r
+                      );
+                    } catch (o) {}
+                  return (t[e] = r), r;
+                }
+                var i = Object.prototype.hasOwnProperty;
+                e.exports = r;
+              },
+              {},
+            ],
+            handle: [
+              function (t, e, n) {
+                function r(t, e, n, r) {
+                  i.buffer([t], r), i.emit(t, e, n);
+                }
+                var i = t("ee").get("handle");
+                (e.exports = r), (r.ee = i);
+              },
+              {},
+            ],
+            id: [
+              function (t, e, n) {
+                function r(t) {
+                  var e = typeof t;
+                  return !t || ("object" !== e && "function" !== e)
+                    ? -1
+                    : t === window
+                    ? 0
+                    : a(t, o, function () {
+                        return i++;
+                      });
+                }
+                var i = 1,
+                  o = "nr@id",
+                  a = t("gos");
+                e.exports = r;
+              },
+              {},
+            ],
+            loader: [
+              function (t, e, n) {
+                function r() {
+                  if (!O++) {
+                    var t = (S.info = NREUM.info),
+                      e = m.getElementsByTagName("script")[0];
+                    if (
+                      (setTimeout(f.abort, 3e4),
+                      !(t && t.licenseKey && t.applicationID && e))
+                    )
+                      return f.abort();
+                    c(E, function (e, n) {
+                      t[e] || (t[e] = n);
+                    });
+                    var n = a();
+                    s("mark", ["onload", n + S.offset], null, "api"),
+                      s("timing", ["load", n]);
+                    var r = m.createElement("script");
+                    0 === t.agent.indexOf("http://") ||
+                    0 === t.agent.indexOf("https:///")
+                      ? (r.src = t.agent)
+                      : (r.src = p + "://" + t.agent),
+                      e.parentNode.insertBefore(r, e);
+                  }
+                }
+                function i() {
+                  "complete" === m.readyState && o();
+                }
+                function o() {
+                  s("mark", ["domContent", a() + S.offset], null, "api");
+                }
+                var a = t(22),
+                  s = t("handle"),
+                  c = t(27),
+                  f = t("ee"),
+                  u = t(25),
+                  d = t(17),
+                  l = t(19),
+                  p = d.getConfiguration("ssl") === !1 ? "http" : "https",
+                  h = window,
+                  m = h.document,
+                  v = "addEventListener",
+                  w = "attachEvent",
+                  g = h.XMLHttpRequest,
+                  y = g && g.prototype,
+                  x = !1;
+                NREUM.o = {
+                  ST: setTimeout,
+                  SI: h.setImmediate,
+                  CT: clearTimeout,
+                  XHR: g,
+                  REQ: h.Request,
+                  EV: h.Event,
+                  PR: h.Promise,
+                  MO: h.MutationObserver,
+                };
+                var b = "" + location,
+                  E = {
+                    beacon: "bam.nr-data.net",
+                    errorBeacon: "bam.nr-data.net",
+                    agent: "js-agent.newrelic.com/nr-1216.min.js",
+                  },
+                  R = g && y && y[v] && !/CriOS/.test(navigator.userAgent),
+                  S = (e.exports = {
+                    offset: a.getLastTimestamp(),
+                    now: a,
+                    origin: b,
+                    features: {},
+                    xhrWrappable: R,
+                    userAgent: u,
+                    disabled: x,
+                  });
+                if (!x) {
+                  t(16),
+                    t(23),
+                    m[v]
+                      ? (m[v]("DOMContentLoaded", o, l(!1)),
+                        h[v]("load", r, l(!1)))
+                      : (m[w]("onreadystatechange", i), h[w]("onload", r)),
+                    s("mark", ["firstbyte", a.getLastTimestamp()], null, "api");
+                  var O = 0;
+                }
+              },
+              {},
+            ],
+            "wrap-function": [
+              function (t, e, n) {
+                function r(t, e) {
+                  function n(e, n, r, c, f) {
+                    function nrWrapper() {
+                      var o, a, u, l;
+                      try {
+                        (a = this),
+                          (o = d(arguments)),
+                          (u = "function" == typeof r ? r(o, a) : r || {});
+                      } catch (p) {
+                        i([p, "", [o, a, c], u], t);
+                      }
+                      s(n + "start", [o, a, c], u, f);
+                      try {
+                        return (l = e.apply(a, o));
+                      } catch (h) {
+                        throw (s(n + "err", [o, a, h], u, f), h);
+                      } finally {
+                        s(n + "end", [o, a, l], u, f);
+                      }
+                    }
+                    return a(e)
+                      ? e
+                      : (n || (n = ""),
+                        (nrWrapper[l] = e),
+                        o(e, nrWrapper, t),
+                        nrWrapper);
+                  }
+                  function r(t, e, r, i, o) {
+                    r || (r = "");
+                    var s,
+                      c,
+                      f,
+                      u = "-" === r.charAt(0);
+                    for (f = 0; f < e.length; f++)
+                      (c = e[f]),
+                        (s = t[c]),
+                        a(s) || (t[c] = n(s, u ? c + r : r, i, c, o));
+                  }
+                  function s(n, r, o, a) {
+                    if (!h || e) {
+                      var s = h;
+                      h = !0;
+                      try {
+                        t.emit(n, r, o, e, a);
+                      } catch (c) {
+                        i([c, n, r, o], t);
+                      }
+                      h = s;
+                    }
+                  }
+                  return t || (t = u), (n.inPlace = r), (n.flag = l), n;
+                }
+                function i(t, e) {
+                  e || (e = u);
+                  try {
+                    e.emit("internal-error", t);
+                  } catch (n) {}
+                }
+                function o(t, e, n) {
+                  if (Object.defineProperty && Object.keys)
+                    try {
+                      var r = Object.keys(t);
+                      return (
+                        r.forEach(function (n) {
+                          Object.defineProperty(e, n, {
+                            get: function () {
+                              return t[n];
+                            },
+                            set: function (e) {
+                              return (t[n] = e), e;
+                            },
+                          });
+                        }),
+                        e
+                      );
+                    } catch (o) {
+                      i([o], n);
+                    }
+                  for (var a in t) p.call(t, a) && (e[a] = t[a]);
+                  return e;
+                }
+                function a(t) {
+                  return !(t && t instanceof Function && t.apply && !t[l]);
+                }
+                function s(t, e) {
+                  var n = e(t);
+                  return (n[l] = t), o(t, n, u), n;
+                }
+                function c(t, e, n) {
+                  var r = t[e];
+                  t[e] = s(r, n);
+                }
+                function f() {
+                  for (
+                    var t = arguments.length, e = new Array(t), n = 0;
+                    n < t;
+                    ++n
+                  )
+                    e[n] = arguments[n];
+                  return e;
+                }
+                var u = t("ee"),
+                  d = t(28),
+                  l = "nr@original",
+                  p = Object.prototype.hasOwnProperty,
+                  h = !1;
+                (e.exports = r),
+                  (e.exports.wrapFunction = s),
+                  (e.exports.wrapInPlace = c),
+                  (e.exports.argsToArray = f);
+              },
+              {},
+            ],
+          },
+          {},
+          ["loader", 2, 13, 4, 3]
+        ));
+    </script>
+    <link rel="canonical" href="#" />
+    <meta
+      name="description"
+      content="Le site officiel de l&#039;Assurance Maladie. Actualités – Droits et Démarches – Remboursements – Prestations et aides – Santé – Offres de prévention"
+    />
+    <meta property="og:url" content="https://www.ameli.fr/assure" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:description"
+      content="Le site officiel de l&#039;Assurance Maladie. Actualités – Droits et Démarches – Remboursements – Prestations et aides – Santé – Offres de prévention"
+    />
+    <meta
+      name="twitter:title"
+      content="ameli, le site de l’Assurance Maladie en ligne"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.ameli.fr/sites/all/themes/contrib/ameli/images/logo_ameli_1200x630.png"
+    />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="themes/custom/ameli/favicon.ico"
+      type="image/vnd.microsoft.icon"
+    />
+    <script>
+      window.a2a_config = window.a2a_config || {};
+      a2a_config.callbacks = [];
+      a2a_config.overlays = [];
+      a2a_config.templates = {};
+      a2a_config.callbacks.push({
+        ready: function () {
+          jQuery(".addtoany_list a i").removeClass("d-none");
+        },
+      });
+    </script>
+    <title>
+      ameli, le site de l’Assurance Maladie en ligne | ameli.fr | Assuré
+    </title>
+    <link
+      rel="stylesheet"
+      media="all"
+      href="sites/default/files/css/css_WShWl_AdJMGy6G1jmegavaGETwAc3F4pC_5dJj4a7eo.css"
+    />
+    <link
+      rel="stylesheet"
+      media="all"
+      href="sites/default/files/css/css_BUorv_JgaLLZ7H66Lg2Q9qkSmF-N60qmyitgZjsGMnk.css"
+    />
+    <link
+      rel="stylesheet"
+      media="print"
+      href="sites/default/files/css/css_xmutLRkzUUx9Wpn-a6sViHjq2-_vLauUEtJ8IxcqHzw.css"
+    />
+    <script type="application/json" data-drupal-selector="drupal-settings-json">
+      {
+        "path": {
+          "baseUrl": "\/",
+          "scriptPath": null,
+          "pathPrefix": "",
+          "currentPath": "node\/1427",
+          "currentPathIsAdmin": false,
+          "isFront": true,
+          "currentLanguage": "fr"
+        },
+        "pluralDelimiter": "\u0003",
+        "suppressDeprecationErrors": true,
+        "ajaxPageState": {
+          "libraries": "addtoany\/addtoany,ameli\/global-styling,ameli_actualite\/update_block,ameli_espace\/espace,ameli_menu\/update_menu,ameli_search\/search,ameli_tarte_au_citron\/menu_link_modal,ameli_tarte_au_citron\/tarte_au_citron_drupal_atinternet,ameli_tarte_au_citron\/tarte_au_citron_googletagmanager,ameli_xiti\/ameli_xiti,paragraphs\/drupal.paragraphs.unpublished,system\/base,tarte_au_citron\/tarte_au_citron,tarte_au_citron_addtoany\/addtoany,tarte_au_citron_googletagmanager\/googletagmanager",
+          "theme": "ameli",
+          "theme_token": null
+        },
+        "ajaxTrustedUrl": [],
+        "ameli_espace": { "espace": "rubrique_assure" },
+        "lazyLoadUrl": "\/term_reference_fancytree\/subTree",
+        "ameli_xiti": {
+          "label": "Accueil_Assure",
+          "level2": "1",
+          "localisation": null,
+          "type": "[Accueil]",
+          "chapters": [null, null, null],
+          "code": "1",
+          "other": "",
+          "siteId": "573942"
+        },
+        "tarte_au_citron": {
+          "langcode": "fr",
+          "_core": {
+            "default_config_hash": "sOdQz5hScSAMR_JY8ttuXVX_jjE-5i4W0opdIBl7_fQ"
+          },
+          "privacyUrl": "\/assure\/protection-donnees-personnelles#text_20985",
+          "hashtag": "#tarteaucitron",
+          "cookieName": "tarteaucitron",
+          "orientation": "bottom",
+          "mandatory": false,
+          "showAlertSmall": false,
+          "cookieslist": false,
+          "showIcon": false,
+          "iconPosition": "BottomRight",
+          "adblocker": false,
+          "DenyAllCta": true,
+          "AcceptAllCta": true,
+          "highPrivacy": true,
+          "handleBrowserDNTRequest": false,
+          "removeCredit": true,
+          "moreInfoLink": true,
+          "useExternalCss": true,
+          "readmoreLink": "",
+          "services": [
+            "drupal_addtoany",
+            "vimeo",
+            "drupal_atinternet",
+            "drupal_googletagmanager"
+          ],
+          "cookieDomain": "",
+          "privacyUrl-drupal_googletagmanager": "\/assure\/protection-donnees-personnelles#text_20985",
+          "privacyUrl-drupal_atinternet": "\/assure\/protection-donnees-personnelles#text_20985",
+          "privacyUrl-xiti": "",
+          "privacyUrl-addtoany-facebook": "https:\/\/fr-fr.facebook.com\/privacy\/explanation",
+          "privacyUrl-addtoany-twitter": "https:\/\/twitter.com\/fr\/privacy",
+          "privacyUrl-addtoany-linkedIn": "https:\/\/fr.linkedin.com\/legal\/privacy-policy",
+          "privacyUrl-drupal_addtoany": "",
+          "privacyUrl-vimeo": "",
+          "user": {
+            "atSiteId": "573942",
+            "atLibUrl": "",
+            "googletagmanagerId": ["GTM-53ZCDGR"]
+          },
+          "texts": {
+            "middleBarHead": "\u261d \ud83c\udf6a",
+            "adblock": "Bonjour! Ce site joue la transparence et vous donne le choix des services tiers \u00e0 activer.",
+            "adblock_call": "Merci de d\u00e9sactiver votre adblocker pour commencer la personnalisation.",
+            "reload": "Recharger la page",
+            "alertBigScroll": "En continuant de d\u00e9filer,",
+            "alertBigClick": "Ce site utilise des cookies qui nous permettent de vous proposer une navigation optimale,",
+            "alertBig": "de mesurer l\u0027audience du site et de nos campagnes de communication, ainsi que de vous proposer des vid\u00e9os.",
+            "alertBigPrivacy": "Ce site utilise des cookies qui nous permettent de vous proposer une navigation optimale, de mesurer l\u0027audience du site et de nos campagnes de communication, ainsi que de vous proposer des vid\u00e9os.",
+            "alertSmall": "Gestion des services",
+            "personalize": "Personnaliser",
+            "acceptAll": "Tout accepter",
+            "close": "Fermer",
+            "privacyUrl": "En savoir plus sur la politique de protection des donn\u00e9es personnelles",
+            "all": "Pr\u00e9f\u00e9rences pour tous les services",
+            "info": "Protection de votre vie priv\u00e9e",
+            "disclaimer": "L\u0027Assurance Maladie s\u0027engage, dans le cadre des missions qui lui sont confi\u00e9es, \u00e0 assurer la protection, la confidentialit\u00e9 et la s\u00e9curit\u00e9 de l\u0027ensemble de vos donn\u00e9es personnelles dans le respect de votre vie priv\u00e9e. Lorsque vous naviguez sur notre site, nous pouvons \u00eatre amen\u00e9s \u00e0 d\u00e9poser diff\u00e9rents types de cookies sur votre terminal. Ils ont des finalit\u00e9s diff\u00e9rentes d\u00e9crites ci-dessous. Cette page vous permet de les accepter ou de les refuser de mani\u00e8re globale ou au cas par cas.",
+            "allow": "Accepter",
+            "deny": "Refuser",
+            "noCookie": "Ce service ne d\u00e9pose aucun cookie.",
+            "useCookie": "Ce service peut d\u00e9poser",
+            "useCookieCurrent": "Ce service a d\u00e9pos\u00e9",
+            "useNoCookie": "Ce service n\u0027a d\u00e9pos\u00e9 aucun cookie.",
+            "more": "En savoir plus",
+            "source": "Voir le site officiel",
+            "credit": "Gestion des cookies par tarteaucitron.js",
+            "noServices": "Ce site n\u0027utilise aucun cookie n\u00e9cessitant votre consentement.",
+            "toggleInfoBox": "Afficher\/masquer les informations sur le stockage des cookies",
+            "title": "Gestion de vos cookies",
+            "cookieDetail": "D\u00e9tail des cookies",
+            "ourSite": "sur notre site",
+            "newWindow": "(nouvelle fen\u00eatre)",
+            "allowAll": "Tout accepter",
+            "denyAll": "Tout refuser",
+            "fallback": "est d\u00e9sactiv\u00e9.",
+            "mandatoryTitle": "Cookies obligatoires",
+            "mandatoryText": "Ce site utilise des cookies n\u00e9cessaires \u00e0 son bon fonctionnement qui ne peuvent pas \u00eatre d\u00e9sactiv\u00e9s.",
+            "privacyUrlService": "Lien vers notre politique de protection des donn\u00e9es personnelles",
+            "privacyUrlTitle": "Lien vers notre politique de protection des donn\u00e9es personnelles",
+            "privacyUrlAddToAnyFacebook": "Lien vers la politique de confidentialit\u00e9 de Facebook",
+            "privacyUrlTitleAddToAnyFacebook": "Lien vers la politique de confidentialit\u00e9 de Facebook",
+            "privacyUrlAddToAnyTwitter": "Lien vers la politique de confidentialit\u00e9 de Twitter",
+            "privacyUrlTitleAddToAnyTwitter": "Lien vers la politique de confidentialit\u00e9 de Twitter",
+            "privacyUrlAddToAnyLinkedIn": "Lien vers la politique de confidentialit\u00e9 de LinkedIn",
+            "privacyUrlTitleAddToAnyLinkedIn": "Lien vers la politique de confidentialit\u00e9 de LinkedIn",
+            "engage-drupal_addtoany": "Add To Any is disabled.",
+            "engage-vimeo": "La vid\u00e9o est d\u00e9sactiv\u00e9e.\u003Cbr\u003EAutorisez le d\u00e9p\u00f4t de cookies Vimeo pour acc\u00e9der \u00e0 cette fonctionnalit\u00e9.",
+            "engage-drupal_xiti_smarttag": "Smarttag is disabled.",
+            "engage-drupal_googletagmanager": "Google Tag Manager is disabled.",
+            "ads": {
+              "title": "R\u00e9gies publicitaires",
+              "details": "Les r\u00e9gies publicitaires permettent de g\u00e9n\u00e9rer des revenus en commercialisant les espaces publicitaires du site."
+            },
+            "analytic": {
+              "title": "Mesure d\u0027audience",
+              "details": "Ces cookies permettent de g\u00e9n\u00e9rer des statistiques anonymes de fr\u00e9quentation du site via AT Internet (le nombre de visites, les pages les plus vues, etc.) Ces donn\u00e9es contribuent \u00e0 identifier d\u2019\u00e9ventuels dysfonctionnements sur le site et \u00e0 am\u00e9liorer la qualit\u00e9 de nos services."
+            },
+            "social": {
+              "title": "R\u00e9seaux sociaux",
+              "details": "Ces cookies d\u00e9pos\u00e9s via les boutons r\u00e9seaux sociaux permettent de faciliter le partage des contenus du site sur Facebook, Twitter ou LinkedIn."
+            },
+            "video": {
+              "title": "Vid\u00e9os",
+              "details": "Ces cookies d\u00e9pos\u00e9s via le service de partage de vid\u00e9os Vimeo vous permettent de visionner les contenus multim\u00e9dia."
+            },
+            "comment": {
+              "title": "Comments",
+              "details": "Les gestionnaires de commentaires facilitent le d\u00e9p\u00f4t de vos commentaires et luttent contre le spam."
+            },
+            "support": {
+              "title": "Support",
+              "details": "Les services de support vous permettent d\u0027entrer en contact avec l\u0027\u00e9quipe du site et d\u0027aider \u00e0 son am\u00e9lioration."
+            },
+            "api": {
+              "title": "APIs",
+              "details": "Les APIs permettent de charger des scripts : g\u00e9olocalisation, moteurs de recherche, traductions, ..."
+            },
+            "other": {
+              "title": "Autre",
+              "details": "Services visant \u00e0 afficher du contenu web."
+            },
+            "needed": {
+              "title": "N\u00e9cessaires au bon fonctionnement du site",
+              "details": "Ces cookies permettent de garantir des fonctionnalit\u00e9s importantes du site comme la s\u00e9lection de votre caisse \u00e0 travers la saisie de votre code postal, la m\u00e9morisation de l\u0027espace visit\u00e9 ou la personnalisation de l\u0027affichage (version contrast\u00e9e). Le site web ne pouvant fonctionner correctement sans eux, ils ne peuvent \u00eatre d\u00e9sactiv\u00e9s."
+            },
+            "campaigns": {
+              "title": "Campagnes",
+              "details": "Ces cookies sont utilis\u00e9s pour diffuser des contenus cibl\u00e9s en fonction de votre navigation. Ils permettent \u00e9galement d\u0027\u00e9tablir des statistiques anonymes de nos campagnes de communication, via Google Tag Manager, pour \u00e9valuer leur diffusion et leur efficacit\u00e9. "
+            }
+          }
+        },
+        "ameli_menu": {
+          "menus": {
+            "block-ameli-menu-footer": {
+              "id": "block-ameli-menu-footer",
+              "updateUrl": "\/ameli-menu\/footer\/rubrique_assure\/2?rbd837"
+            },
+            "block-ameli-menu-menu-mobile": {
+              "id": "block-ameli-menu-menu-mobile",
+              "updateUrl": "\/ameli-menu\/menu_mobile\/rubrique_assure\/3?rbd837"
+            },
+            "block-ameli-menu-menu": {
+              "id": "block-ameli-menu-menu",
+              "updateUrl": "\/ameli-menu\/menu\/rubrique_assure\/3?rbd837"
+            }
+          },
+          "active_trail_ids": []
+        },
+        "search": {
+          "url_api_autocomplete": "https:\/\/www.ameli.fr\/api\/recherche\/rubrique_assure\/",
+          "url": "https:\/\/www.ameli.fr\/assure\/recherche"
+        },
+        "ameli_actualite": {
+          "blocks": {
+            "block-ameli-actualite-liste-des-actualites-block-en-bref": {
+              "id": "block-ameli-actualite-liste-des-actualites-block-en-bref",
+              "type": "block_en_bref",
+              "updateUrl": "\/ameli-actualite\/rubrique_assure\/0\/block_en_bref?1651679786"
+            }
+          }
+        },
+        "ameli_localisation": {
+          "terms": {
+            "1339": { "label": "Ain", "prefix": "/index.html", "bdi_cod": [] },
+            "1340": {
+              "label": "Aisne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1341": {
+              "label": "Allier",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1342": {
+              "label": "Alpes-de-Haute-Provence",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1344": {
+              "label": "Alpes-Maritimes",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1345": {
+              "label": "Ard\u00e8che",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1346": {
+              "label": "Ardennes",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1347": {
+              "label": "Ari\u00e8ge",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1405": {
+              "label": "Artois",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "000",
+                "110",
+                "111",
+                "112",
+                "113",
+                "114",
+                "116",
+                "117",
+                "118",
+                "119",
+                "120",
+                "121",
+                "122",
+                "123",
+                "124",
+                "127",
+                "128",
+                "130",
+                "131",
+                "134",
+                "136",
+                "138",
+                "141",
+                "143",
+                "144",
+                "145",
+                "147",
+                "149",
+                "150",
+                "151",
+                "153",
+                "156",
+                "157",
+                "158",
+                "159",
+                "160",
+                "161",
+                "172",
+                "173",
+                "175",
+                "182",
+                "190",
+                "196",
+                "199",
+                "210",
+                "217",
+                "218",
+                "221",
+                "223",
+                "232",
+                "260",
+                "270",
+                "290",
+                "300",
+                "320",
+                "330",
+                "350",
+                "390",
+                "400",
+                "410",
+                "420",
+                "430",
+                "440",
+                "450",
+                "460",
+                "470",
+                "490",
+                "530",
+                "540",
+                "550",
+                "570",
+                "580",
+                "590",
+                "620",
+                "640",
+                "660",
+                "670",
+                "680",
+                "690",
+                "700",
+                "710",
+                "740",
+                "750",
+                "760",
+                "770",
+                "790",
+                "800",
+                "810",
+                "820",
+                "840",
+                "860",
+                "880",
+                "920",
+                "940",
+                "950",
+                "960",
+                "970",
+                "980"
+              ]
+            },
+            "1348": { "label": "Aube", "prefix": "/index.html", "bdi_cod": [] },
+            "1349": { "label": "Aude", "prefix": "/index.html", "bdi_cod": [] },
+            "1350": {
+              "label": "Aveyron",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1411": {
+              "label": "Bas-Rhin",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1407": {
+              "label": "Bayonne",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "100",
+                "120",
+                "122",
+                "190",
+                "200",
+                "210",
+                "220",
+                "240",
+                "250",
+                "270",
+                "310",
+                "340",
+                "390",
+                "430",
+                "480",
+                "500",
+                "502",
+                "520",
+                "600",
+                "640",
+                "700",
+                "780",
+                "990"
+              ]
+            },
+            "1351": {
+              "label": "Bouches-du-Rh\u00f4ne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1352": {
+              "label": "Calvados",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1353": {
+              "label": "Cantal",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1354": {
+              "label": "Charente",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1355": {
+              "label": "Charente-Maritime",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1356": { "label": "Cher", "prefix": "/index.html", "bdi_cod": [] },
+            "1357": {
+              "label": "Corr\u00e8ze",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1358": {
+              "label": "Corse-du-Sud",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "000",
+                "090",
+                "100",
+                "107",
+                "110",
+                "111",
+                "112",
+                "113",
+                "114",
+                "115",
+                "116",
+                "117",
+                "118",
+                "119",
+                "120",
+                "121",
+                "122",
+                "123",
+                "124",
+                "125",
+                "126",
+                "127",
+                "128",
+                "129",
+                "130",
+                "131",
+                "132",
+                "133",
+                "134",
+                "135",
+                "136",
+                "137",
+                "138",
+                "139",
+                "140",
+                "141",
+                "142",
+                "143",
+                "144",
+                "145",
+                "146",
+                "147",
+                "148",
+                "150",
+                "151",
+                "152",
+                "153",
+                "157",
+                "160",
+                "161",
+                "162",
+                "163",
+                "164",
+                "165",
+                "166",
+                "167",
+                "168",
+                "169",
+                "170",
+                "171",
+                "172",
+                "173",
+                "184",
+                "190",
+                "192",
+                "195",
+                "301"
+              ]
+            },
+            "1404": {
+              "label": "C\u00f4te d\u0027Opale",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "100",
+                "120",
+                "126",
+                "129",
+                "132",
+                "140",
+                "142",
+                "145",
+                "150",
+                "152",
+                "155",
+                "162",
+                "164",
+                "170",
+                "176",
+                "179",
+                "180",
+                "185",
+                "187",
+                "200",
+                "215",
+                "219",
+                "224",
+                "230",
+                "231",
+                "240",
+                "250",
+                "280",
+                "310",
+                "340",
+                "350",
+                "360",
+                "370",
+                "380",
+                "480",
+                "500",
+                "510",
+                "520",
+                "560",
+                "575",
+                "600",
+                "610",
+                "630",
+                "650",
+                "720",
+                "730",
+                "770",
+                "780",
+                "830",
+                "850",
+                "870",
+                "890",
+                "910",
+                "930",
+                "960",
+                "990"
+              ]
+            },
+            "1360": {
+              "label": "C\u00f4te d\u0027Or",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1361": {
+              "label": "C\u00f4tes d\u0027Armor",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1362": {
+              "label": "Creuse",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1424": {
+              "label": "Deux-S\u00e8vres",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1363": {
+              "label": "Dordogne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1364": {
+              "label": "Doubs",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1365": {
+              "label": "Dr\u00f4me",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1436": {
+              "label": "Essonne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1366": { "label": "Eure", "prefix": "/index.html", "bdi_cod": [] },
+            "1367": {
+              "label": "Eure-et-Loir",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1368": {
+              "label": "Finist\u00e8re",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1398": {
+              "label": "Flandres-Dunkerque-Armenti\u00e8res",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "114",
+                "116",
+                "122",
+                "123",
+                "140",
+                "143",
+                "153",
+                "160",
+                "173",
+                "180",
+                "181",
+                "189",
+                "190",
+                "193",
+                "210",
+                "229",
+                "232",
+                "236",
+                "240",
+                "253",
+                "254",
+                "270",
+                "279",
+                "280",
+                "284",
+                "285",
+                "299",
+                "380",
+                "430",
+                "470",
+                "492",
+                "495",
+                "630",
+                "640",
+                "660",
+                "670",
+                "760",
+                "820",
+                "840",
+                "850",
+                "930",
+                "940"
+              ]
+            },
+            "1369": { "label": "Gard", "prefix": "/index.html", "bdi_cod": [] },
+            "1371": { "label": "Gers", "prefix": "/index.html", "bdi_cod": [] },
+            "1372": {
+              "label": "Gironde",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1441": {
+              "label": "Guadeloupe",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "100",
+                "111",
+                "112",
+                "113",
+                "115",
+                "116",
+                "117",
+                "118",
+                "119",
+                "120",
+                "121",
+                "122",
+                "123",
+                "125",
+                "126",
+                "127",
+                "128",
+                "129",
+                "130",
+                "131",
+                "133",
+                "134",
+                "136",
+                "137",
+                "139",
+                "140",
+                "141",
+                "150",
+                "160",
+                "171",
+                "180"
+              ]
+            },
+            "1443": {
+              "label": "Guyane",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "300",
+                "310",
+                "311",
+                "313",
+                "314",
+                "315",
+                "316",
+                "317",
+                "318",
+                "319",
+                "320",
+                "330",
+                "340",
+                "350",
+                "351",
+                "352",
+                "353",
+                "354",
+                "356",
+                "360",
+                "370",
+                "380",
+                "390"
+              ]
+            },
+            "1401": {
+              "label": "Hainaut",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "111",
+                "121",
+                "124",
+                "125",
+                "127",
+                "129",
+                "131",
+                "132",
+                "135",
+                "137",
+                "138",
+                "141",
+                "142",
+                "144",
+                "145",
+                "149",
+                "151",
+                "154",
+                "156",
+                "157",
+                "158",
+                "159",
+                "161",
+                "163",
+                "164",
+                "168",
+                "171",
+                "172",
+                "174",
+                "177",
+                "178",
+                "186",
+                "188",
+                "191",
+                "192",
+                "195",
+                "198",
+                "199",
+                "212",
+                "213",
+                "214",
+                "215",
+                "216",
+                "217",
+                "218",
+                "219",
+                "220",
+                "222",
+                "224",
+                "225",
+                "226",
+                "227",
+                "230",
+                "231",
+                "233",
+                "238",
+                "241",
+                "243",
+                "244",
+                "245",
+                "255",
+                "258",
+                "264",
+                "265",
+                "266",
+                "267",
+                "268",
+                "269",
+                "271",
+                "277",
+                "278",
+                "281",
+                "282",
+                "283",
+                "288",
+                "291",
+                "292",
+                "293",
+                "294",
+                "295",
+                "296",
+                "297",
+                "300",
+                "330",
+                "360",
+                "400",
+                "410",
+                "440",
+                "460",
+                "494",
+                "530",
+                "540",
+                "550",
+                "554",
+                "570",
+                "590",
+                "600",
+                "610",
+                "620",
+                "680",
+                "690",
+                "720",
+                "730",
+                "740",
+                "750",
+                "770",
+                "860",
+                "880",
+                "920",
+                "970",
+                "980",
+                "990"
+              ]
+            },
+            "1412": {
+              "label": "Haut-Rhin",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1359": {
+              "label": "Haute-Corse",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "200",
+                "211",
+                "212",
+                "213",
+                "214",
+                "215",
+                "216",
+                "217",
+                "218",
+                "219",
+                "220",
+                "221",
+                "222",
+                "224",
+                "225",
+                "226",
+                "227",
+                "228",
+                "229",
+                "230",
+                "231",
+                "232",
+                "233",
+                "234",
+                "235",
+                "236",
+                "237",
+                "238",
+                "239",
+                "240",
+                "242",
+                "243",
+                "244",
+                "245",
+                "246",
+                "247",
+                "248",
+                "250",
+                "251",
+                "252",
+                "253",
+                "256",
+                "258",
+                "259",
+                "260",
+                "263",
+                "264",
+                "266",
+                "267",
+                "268",
+                "269",
+                "270",
+                "272",
+                "273",
+                "275",
+                "276",
+                "279",
+                "290",
+                "296"
+              ]
+            },
+            "1370": {
+              "label": "Haute-Garonne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1382": {
+              "label": "Haute-Loire",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1391": {
+              "label": "Haute-Marne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1414": {
+              "label": "Haute-Sa\u00f4ne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1418": {
+              "label": "Haute-Savoie",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1432": {
+              "label": "Haute-Vienne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1343": {
+              "label": "Hautes-Alpes",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1409": {
+              "label": "Hautes-Pyr\u00e9n\u00e9es",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1437": {
+              "label": "Hauts-de-Seine",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1373": {
+              "label": "H\u00e9rault",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1375": {
+              "label": "Indre",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1376": {
+              "label": "Indre-et-Loire",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1377": {
+              "label": "Is\u00e8re",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1378": { "label": "Jura", "prefix": "/index.html", "bdi_cod": [] },
+            "1444": {
+              "label": "La R\u00e9union",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "400",
+                "410",
+                "411",
+                "412",
+                "413",
+                "414",
+                "416",
+                "417",
+                "418",
+                "419",
+                "420",
+                "421",
+                "422",
+                "423",
+                "424",
+                "425",
+                "426",
+                "429",
+                "430",
+                "431",
+                "432",
+                "433",
+                "434",
+                "435",
+                "436",
+                "437",
+                "438",
+                "439",
+                "440",
+                "441",
+                "442",
+                "450",
+                "460",
+                "470",
+                "480",
+                "490"
+              ]
+            },
+            "1379": {
+              "label": "Landes",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "000",
+                "011",
+                "090",
+                "100",
+                "107",
+                "110",
+                "120",
+                "130",
+                "140",
+                "141",
+                "150",
+                "160",
+                "170",
+                "180",
+                "190",
+                "200",
+                "201",
+                "210",
+                "230",
+                "231",
+                "240",
+                "250",
+                "260",
+                "270",
+                "280",
+                "282",
+                "290",
+                "300",
+                "301",
+                "310",
+                "320",
+                "330",
+                "350",
+                "360",
+                "370",
+                "380",
+                "390",
+                "400",
+                "410",
+                "420",
+                "430",
+                "460",
+                "465",
+                "480",
+                "500",
+                "510",
+                "530",
+                "550",
+                "560",
+                "600",
+                "630",
+                "660",
+                "700",
+                "705",
+                "800",
+                "990"
+              ]
+            },
+            "1420": {
+              "label": "Le Havre",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "110",
+                "111",
+                "133",
+                "170",
+                "210",
+                "280",
+                "290",
+                "310",
+                "330",
+                "400",
+                "430",
+                "540",
+                "600",
+                "610",
+                "620",
+                "640",
+                "660",
+                "700",
+                "790",
+                "930"
+              ]
+            },
+            "1399": {
+              "label": "Lille-Douai",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "000",
+                "110",
+                "112",
+                "113",
+                "117",
+                "118",
+                "119",
+                "120",
+                "128",
+                "130",
+                "133",
+                "134",
+                "136",
+                "139",
+                "146",
+                "147",
+                "148",
+                "151",
+                "155",
+                "160",
+                "162",
+                "165",
+                "167",
+                "169",
+                "175",
+                "176",
+                "179",
+                "182",
+                "184",
+                "185",
+                "187",
+                "194",
+                "211",
+                "221",
+                "234",
+                "235",
+                "237",
+                "239",
+                "242",
+                "246",
+                "247",
+                "249",
+                "251",
+                "252",
+                "259",
+                "260",
+                "261",
+                "262",
+                "263",
+                "272",
+                "273",
+                "274",
+                "283",
+                "286",
+                "287",
+                "310",
+                "320",
+                "350",
+                "370",
+                "450",
+                "480",
+                "490",
+                "496",
+                "500",
+                "520",
+                "551",
+                "552",
+                "553",
+                "560",
+                "580",
+                "710",
+                "780",
+                "790",
+                "800",
+                "810",
+                "830",
+                "870",
+                "890",
+                "950"
+              ]
+            },
+            "1374": {
+              "label": "llle-et-Vilaine",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1380": {
+              "label": "Loir-et-cher",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1381": {
+              "label": "Loire",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1383": {
+              "label": "Loire-Atlantique",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1384": {
+              "label": "Loiret",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1385": { "label": "Lot", "prefix": "/index.html", "bdi_cod": [] },
+            "1386": {
+              "label": "Lot-et-Garonne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1387": {
+              "label": "Loz\u00e8re",
+              "prefix": "\/lozere",
+              "bdi_cod": []
+            },
+            "1388": {
+              "label": "Maine-et-Loire",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1389": {
+              "label": "Manche",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1390": {
+              "label": "Marne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1442": {
+              "label": "Martinique",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "128",
+                "200",
+                "211",
+                "213",
+                "214",
+                "215",
+                "216",
+                "217",
+                "218",
+                "220",
+                "221",
+                "222",
+                "223",
+                "224",
+                "225",
+                "227",
+                "228",
+                "229",
+                "230",
+                "231",
+                "232",
+                "234",
+                "240",
+                "250",
+                "260",
+                "270",
+                "280",
+                "290"
+              ]
+            },
+            "1392": {
+              "label": "Mayenne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1445": {
+              "label": "Mayotte",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "600",
+                "605",
+                "615",
+                "620",
+                "625",
+                "630",
+                "640",
+                "650",
+                "660"
+              ]
+            },
+            "1393": {
+              "label": "Meurthe-et-Moselle",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1394": {
+              "label": "Meuse",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1395": {
+              "label": "Morbihan",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1396": {
+              "label": "Moselle",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1397": {
+              "label": "Ni\u00e8vre",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1402": { "label": "Oise", "prefix": "/index.html", "bdi_cod": [] },
+            "1403": { "label": "Orne", "prefix": "/index.html", "bdi_cod": [] },
+            "1419": {
+              "label": "Paris",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1408": {
+              "label": "Pau",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "000",
+                "015",
+                "110",
+                "121",
+                "130",
+                "140",
+                "150",
+                "160",
+                "170",
+                "190",
+                "230",
+                "234",
+                "260",
+                "270",
+                "290",
+                "300",
+                "301",
+                "320",
+                "330",
+                "350",
+                "360",
+                "370",
+                "390",
+                "400",
+                "410",
+                "420",
+                "440",
+                "450",
+                "460",
+                "470",
+                "490",
+                "510",
+                "530",
+                "560",
+                "570",
+                "660",
+                "680",
+                "800",
+                "850",
+                "870"
+              ]
+            },
+            "1406": {
+              "label": "Puy-de-D\u00f4me",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1410": {
+              "label": "Pyr\u00e9n\u00e9es-Orientales",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1413": {
+              "label": "Rh\u00f4ne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1400": {
+              "label": "Roubaix-Tourcoing",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "066",
+                "100",
+                "115",
+                "126",
+                "150",
+                "152",
+                "166",
+                "170",
+                "200",
+                "208",
+                "223",
+                "250",
+                "290",
+                "390",
+                "393",
+                "420",
+                "433",
+                "442",
+                "451",
+                "491",
+                "493",
+                "510",
+                "587",
+                "650",
+                "652",
+                "700",
+                "704",
+                "780",
+                "910",
+                "960",
+                "963"
+              ]
+            },
+            "1421": {
+              "label": "Rouen-Elbeuf-Dieppe-Seine-Maritime",
+              "prefix": "/index.html",
+              "bdi_cod": [
+                "000",
+                "100",
+                "113",
+                "116",
+                "117",
+                "119",
+                "120",
+                "130",
+                "140",
+                "150",
+                "160",
+                "170",
+                "190",
+                "200",
+                "210",
+                "220",
+                "230",
+                "240",
+                "250",
+                "260",
+                "270",
+                "300",
+                "320",
+                "330",
+                "340",
+                "350",
+                "360",
+                "370",
+                "380",
+                "390",
+                "410",
+                "420",
+                "440",
+                "450",
+                "460",
+                "470",
+                "480",
+                "490",
+                "500",
+                "510",
+                "520",
+                "530",
+                "550",
+                "560",
+                "570",
+                "580",
+                "590",
+                "630",
+                "650",
+                "670",
+                "680",
+                "690",
+                "710",
+                "720",
+                "730",
+                "740",
+                "750",
+                "760",
+                "770",
+                "780",
+                "800",
+                "810",
+                "840",
+                "850",
+                "860",
+                "870",
+                "880",
+                "890",
+                "910",
+                "920",
+                "940",
+                "950",
+                "960",
+                "970",
+                "980"
+              ]
+            },
+            "1415": {
+              "label": "Sa\u00f4ne-et-Loire",
+              "prefix": "\/index.html",
+              "bdi_cod": []
+            },
+            "1416": {
+              "label": "Sarthe",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1417": {
+              "label": "Savoie",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1422": {
+              "label": "Seine-et-Marne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1438": {
+              "label": "Seine-Saint-Denis",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1425": {
+              "label": "Somme",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1426": { "label": "Tarn", "prefix": "/index.html", "bdi_cod": [] },
+            "1427": {
+              "label": "Tarn-et-Garonne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1435": {
+              "label": "Territoire de Belfort",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1440": {
+              "label": "Val-d\u0027Oise",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1439": {
+              "label": "Val-de-Marne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1428": { "label": "Var", "prefix": "/index.html", "bdi_cod": [] },
+            "1429": {
+              "label": "Vaucluse",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1430": {
+              "label": "Vend\u00e9e",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1431": {
+              "label": "Vienne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1433": {
+              "label": "Vosges",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1434": {
+              "label": "Yonne",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            },
+            "1423": {
+              "label": "Yvelines",
+              "prefix": "/index.html",
+              "bdi_cod": []
+            }
+          },
+          "reverse": {
+            "\/ain": "1339",
+            "\/aisne": "1340",
+            "\/allier": "1341",
+            "\/alpes-de-haute-provence": "1342",
+            "\/alpes-maritimes": "1344",
+            "\/ardeche": "1345",
+            "\/ardennes": "1346",
+            "\/ariege": "1347",
+            "\/artois": "1405",
+            "\/aube": "1348",
+            "\/aude": "1349",
+            "\/aveyron": "1350",
+            "\/bas-rhin": "1411",
+            "\/bayonne": "1407",
+            "\/bouches-du-rhone": "1351",
+            "\/calvados": "1352",
+            "\/cantal": "1353",
+            "\/charente": "1354",
+            "\/charente-maritime": "1355",
+            "\/cher": "1356",
+            "\/correze": "1357",
+            "\/corse-du-sud": "1358",
+            "\/cote-d-opale": "1404",
+            "\/cote-d-or": "1360",
+            "\/cotes-d-armor": "1361",
+            "\/creuse": "1362",
+            "\/deux-sevres": "1424",
+            "\/dordogne": "1363",
+            "\/doubs": "1364",
+            "\/drome": "1365",
+            "\/essonne": "1436",
+            "\/eure": "1366",
+            "\/eure-et-loir": "1367",
+            "\/finistere": "1368",
+            "\/flandres-dunkerque-armentieres": "1398",
+            "\/gard": "1369",
+            "\/gers": "1371",
+            "\/gironde": "1372",
+            "\/guadeloupe": "1441",
+            "\/guyane": "1443",
+            "\/hainaut": "1401",
+            "\/haut-rhin": "1412",
+            "\/haute-corse": "1359",
+            "\/haute-garonne": "1370",
+            "\/haute-loire": "1382",
+            "\/haute-marne": "1391",
+            "\/haute-saone": "1414",
+            "\/haute-savoie": "1418",
+            "\/haute-vienne": "1432",
+            "\/hautes-alpes": "1343",
+            "\/hautes-pyrenees": "1409",
+            "\/hauts-de-seine": "1437",
+            "\/herault": "1373",
+            "\/indre": "1375",
+            "\/indre-et-loire": "1376",
+            "\/isere": "1377",
+            "\/jura": "1378",
+            "\/la-reunion": "1444",
+            "\/landes": "1379",
+            "\/le-havre": "1420",
+            "\/lille-douai": "1399",
+            "\/llle-et-vilaine": "1374",
+            "\/loir-et-cher": "1380",
+            "\/loire": "1381",
+            "\/loire-atlantique": "1383",
+            "\/loiret": "1384",
+            "\/lot": "1385",
+            "\/lot-et-garonne": "1386",
+            "\/lozere": "1387",
+            "\/maine-et-loire": "1388",
+            "\/manche": "1389",
+            "\/marne": "1390",
+            "\/martinique": "1442",
+            "\/mayenne": "1392",
+            "\/mayotte": "1445",
+            "\/meurthe-et-moselle": "1393",
+            "\/meuse": "1394",
+            "\/morbihan": "1395",
+            "\/moselle": "1396",
+            "\/nievre": "1397",
+            "\/oise": "1402",
+            "\/orne": "1403",
+            "\/paris": "1419",
+            "\/pau": "1408",
+            "\/puy-de-dome": "1406",
+            "\/pyrenees-orientales": "1410",
+            "\/rhone": "1413",
+            "\/roubaix-tourcoing": "1400",
+            "\/rouen-elbeuf-dieppe-seine-maritime": "1421",
+            "\/index.html": "1415",
+            "\/sarthe": "1416",
+            "\/savoie": "1417",
+            "\/seine-et-marne": "1422",
+            "\/seine-saint-denis": "1438",
+            "\/somme": "1425",
+            "\/tarn": "1426",
+            "\/tarn-et-garonne": "1427",
+            "\/territoire-de-belfort": "1435",
+            "\/val-d-oise": "1440",
+            "\/val-de-marne": "1439",
+            "\/var": "1428",
+            "\/vaucluse": "1429",
+            "\/vendee": "1430",
+            "\/vienne": "1431",
+            "\/vosges": "1433",
+            "\/yonne": "1434",
+            "\/yvelines": "1423"
+          },
+          "pcOutDep": {
+            "40220": ["1407"],
+            "40440": ["1407"],
+            "40390": ["1407"]
+          },
+          "dep": {
+            "01": ["1339"],
+            "02": ["1340"],
+            "03": ["1341"],
+            "04": ["1342"],
+            "06": ["1344"],
+            "07": ["1345"],
+            "08": ["1346"],
+            "09": ["1347"],
+            "62": ["1405", "1404"],
+            "10": ["1348"],
+            "11": ["1349"],
+            "12": ["1350"],
+            "67": ["1411"],
+            "64": ["1407", "1408"],
+            "13": ["1351"],
+            "14": ["1352"],
+            "15": ["1353"],
+            "16": ["1354"],
+            "17": ["1355"],
+            "18": ["1356"],
+            "19": ["1357"],
+            "20": ["1358", "1359"],
+            "21": ["1360"],
+            "22": ["1361"],
+            "23": ["1362"],
+            "79": ["1424"],
+            "24": ["1363"],
+            "25": ["1364"],
+            "26": ["1365"],
+            "91": ["1436"],
+            "27": ["1366"],
+            "28": ["1367"],
+            "29": ["1368"],
+            "59": ["1398", "1401", "1399", "1400"],
+            "30": ["1369"],
+            "32": ["1371"],
+            "33": ["1372"],
+            "971": ["1441"],
+            "973": ["1443"],
+            "68": ["1412"],
+            "31": ["1370"],
+            "43": ["1382"],
+            "52": ["1391"],
+            "70": ["1414"],
+            "74": ["1418"],
+            "87": ["1432"],
+            "05": ["1343"],
+            "65": ["1409"],
+            "92": ["1437"],
+            "34": ["1373"],
+            "36": ["1375"],
+            "37": ["1376"],
+            "38": ["1377"],
+            "39": ["1378"],
+            "974": ["1444"],
+            "40": ["1379"],
+            "76": ["1420", "1421"],
+            "35": ["1374"],
+            "41": ["1380"],
+            "42": ["1381"],
+            "44": ["1383"],
+            "45": ["1384"],
+            "46": ["1385"],
+            "47": ["1386"],
+            "48": ["1387"],
+            "49": ["1388"],
+            "50": ["1389"],
+            "51": ["1390"],
+            "972": ["1442"],
+            "53": ["1392"],
+            "976": ["1445"],
+            "54": ["1393"],
+            "55": ["1394"],
+            "56": ["1395"],
+            "57": ["1396"],
+            "58": ["1397"],
+            "60": ["1402"],
+            "61": ["1403"],
+            "75": ["1419"],
+            "63": ["1406"],
+            "66": ["1410"],
+            "69": ["1413"],
+            "71": ["1415"],
+            "72": ["1416"],
+            "73": ["1417"],
+            "77": ["1422"],
+            "93": ["1438"],
+            "80": ["1425"],
+            "81": ["1426"],
+            "82": ["1427"],
+            "90": ["1435"],
+            "95": ["1440"],
+            "94": ["1439"],
+            "83": ["1428"],
+            "84": ["1429"],
+            "85": ["1430"],
+            "86": ["1431"],
+            "88": ["1433"],
+            "89": ["1434"],
+            "78": ["1423"]
+          }
+        },
+        "user": {
+          "uid": 0,
+          "permissionsHash": "198cea89cdc976d40d5b9bd66eb2d3db00087136db268ad45af3cedf3e90b8b5"
+        }
+      }
+    </script>
+    <script src="libraries/tarteaucitron/tarteaucitrona4f0.js"></script>
+    <script src="sites/default/files/js/js_4xNZJpfp2oDly0xk8Q_5DcDqWDiuvYr6_EokoeMIl_8.js"></script>
+  </head>
+  <body class="page-front">
+    <a href="#main-content" class="visually-hidden focusable">
+      Aller au contenu principal
+    </a>
+    <noscript aria-hidden="true"
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-53ZCDGR"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+      <div id="backToTop"></div>
+      <header role="banner" id="page-header">
+        
+        <section class="header">
+          <div class="container">
+            <div
+              class="wrapper-header-white d-flex justify-content-lg-between align-items-center"
+            >
+              <button
+                class="burgerMenu d-lg-none"
+                type="button"
+                data-toggle="collapse"
+                data-target="#menuRwd"
+                aria-expanded="false"
+                aria-controls="menuRwd"
+              >
+                <span class="menu-icon"><span></span></span>
+                <span class="texte">Menu</span>
+              </button>
+              <h1>
+                <div class="wrapper-logo-slogan d-lg-flex align-items-center">
+                  <a href="#">
+                    <img
+                      src="themes/custom/ameli/images/logo.svg"
+                      alt="L'Assurance Maladie : Agir ensemble, protéger chacun | ameli.fr (retour à l'accueil)"
+                    />
+                  </a>
+                  <div class="accroche">pour les assurés</div>
+                </div>
+              </h1>
+              <div
+                id="wrapper-localisation-header"
+                class="wrapper-localisation d-flex flex-column align-items-lg-end align-items-start"
+              >
+                <div
+                  class="d-inline-flex flex-column-reverse order-2 flex-lg-row order-lg-0"
+                ></div>
+                <div>
+                  <div
+                    class="localisation_txt localisation_txt_js"
+                    data-label="Vous n'avez pas sélectionné votre caisse"
+                    data-btn-label="Choisir"
+                    data-label-localized="VOTRE CAISSE :"
+                    data-btn-label-localized="Changer"
+                  >
+                    <div class="local-choice">
+                      <span class="zone-label"></span>
+                      <span class="zone-choice"></span>
+                    </div>
+                    <button
+                      class="local-open-dialog btn-default ameli-localisation-content-trigger"
+                    ></button>
+                    <div class="dialog">
+                      <div class="step1" data-title="Sélectionnez votre caisse">
+                        <div class="formHelp">
+                          Saisissez le code postal de votre lieu de
+                          résidence.<br />
+                          Les pages d'ameli seront alors enrichies
+                          d'informations locales (contacts, évènements
+                          régionaux…).
+                        </div>
+                        <div class="formErrors">
+                          Code postal erroné. Veuillez faire une nouvelle
+                          tentative. Par exemple, renseigner le code postal
+                          44000 pour la ville de Nantes.
+                        </div>
+                        <form>
+                          <fieldset
+                            class="d-md-flex justify-content-between align-items-start"
+                          >
+                            <div>
+                              <label for="ameli_localisation_postal_code"
+                                >Votre code postal<span
+                                  class="form-required"
+                                  title="Ce champ est requis."
+                                  >*</span
+                                ></label
+                              >
+                              <input
+                                class="form-control d-inline-block"
+                                id="ameli_localisation_postal_code"
+                                type="text"
+                                name="postal_code"
+                                value=""
+                                placeholder="Code postal"
+                              />
+                              <div class="champs-obligatoires">
+                                * champ obligatoire
+                              </div>
+                            </div>
+                            <button
+                              type="submit"
+                              class="btn-primary btn-submit"
+                            >
+                              Sélectionner
+                            </button>
+                          </fieldset>
+                        </form>
+                      </div>
+                      <div class="step2" data-title="Sélectionnez votre caisse">
+                        <div class="formHelp">
+                          Il existe plusieurs caisses d'Assurance Maladie pour
+                          le code postal que vous avez saisi. Veuillez choisir
+                          votre caisse parmi les propositions ci-dessous.
+                        </div>
+                        <form>
+                          <fieldset>
+                            <div class="radio-localisation"></div>
+                            <button
+                              type="submit"
+                              class="btn-primary btn-submit"
+                            >
+                              Sélectionner
+                            </button>
+                          </fieldset>
+                        </form>
+                      </div>
+                      <div
+                        class="step3"
+                        data-title="Vous avez sélectionné votre caisse"
+                      >
+                        <div class="formHelp">
+                          Les pages d'ameli seront enrichies des informations de
+                          la caisse de :
+                          <div class="local-caisse"></div>
+                        </div>
+                        <form>
+                          <fieldset>
+                            <input type="hidden" name="localisation" value="" />
+                            <button
+                              type="submit"
+                              class="btn-default btn-submit"
+                            >
+                              Confirmer
+                            </button>
+                          </fieldset>
+                        </form>
+                        <div class="dialog-reset">
+                          <i class="icon-chevron"></i>
+                          <a href="#">Ce n'est pas ma caisse</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="titreTelecommandeMobile">Services</div>
+              <button
+                class="servicesMenu d-lg-none"
+                type="button"
+                data-toggle="collapse"
+                data-target="#block-amelitelecommandeblock"
+                aria-controls="block-amelitelecommandeblock"
+                aria-expanded="false"
+              >
+                <span class="texte">Services</span>
+              </button>
+            </div>
+          </div>
+          <div
+            id="menuRwd"
+            class="wrapper-main_menuRwd collapse d-lg-none"
+            aria-hidden="true"
+          >
+            <div id="main_menuRwd">
+              <div class="ameli-menu">
+                <div id="block-ameli-menu-menu-mobile">
+                  <div class="container">
+                    <nav role="navigation" aria-label="Menu public">
+                      <ul id="accordion">
+                        <li class="js-taxonomy_term_10">
+                          <a
+                            href="#"
+                            data-xiti-name="Actualites"
+                            data-xiti-chapter-1="Menu_principal"
+                            data-xiti-chapter-2=""
+                            data-xiti-chapter-3=""
+                            data-xiti-level-2="1"
+                            data-xiti-type="navigation"
+                          >
+                            Actualités
+                          </a>
+                        </li>
+                        <li class="js-taxonomy_term_145282">
+                          <a
+                            href="#"
+                            data-xiti-name="Covid_19"
+                            data-xiti-chapter-1="Menu_principal"
+                            data-xiti-chapter-2=""
+                            data-xiti-chapter-3=""
+                            data-xiti-level-2="1"
+                            data-xiti-type="navigation"
+                          >
+                            Covid-19 <span>Coronavirus</span>
+                          </a>
+                        </li>
+                        <li class="js-taxonomy_term_4">
+                          <a
+                            href="#"
+                            data-xiti-name="Droits_et_demarches"
+                            data-xiti-chapter-1="Menu_principal"
+                            data-xiti-chapter-2=""
+                            data-xiti-chapter-3=""
+                            data-xiti-level-2="1"
+                            data-xiti-type="navigation"
+                          >
+                            Droits et démarches
+                            <span>selon votre situation</span>
+                          </a>
+                        </li>
+                        <li class="js-taxonomy_term_3">
+                          <a
+                            href="#"
+                            data-xiti-name="Remboursements"
+                            data-xiti-chapter-1="Menu_principal"
+                            data-xiti-chapter-2=""
+                            data-xiti-chapter-3=""
+                            data-xiti-level-2="1"
+                            data-xiti-type="navigation"
+                          >
+                            Remboursements <span>prestations et aides</span>
+                          </a>
+                        </li>
+                        <li class="js-taxonomy_term_16">
+                          <a
+                            href="#"
+                            data-xiti-name="Sante"
+                            data-xiti-chapter-1="Menu_principal"
+                            data-xiti-chapter-2=""
+                            data-xiti-chapter-3=""
+                            data-xiti-level-2="1"
+                            data-xiti-type="navigation"
+                          >
+                            Santé <span>comprendre et agir</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ameli-menu" id="block-ameli-menu-main">
+            <div id="block-ameli-menu-menu">
+              <div class="container">
+                <nav role="navigation" aria-label="Menu public">
+                  <ul class="ameli-menu">
+                    <li class="js-taxonomy_term_10 li-parent">
+                      <a
+                        href="#"
+                        data-xiti-name="Actualites"
+                        data-xiti-chapter-1="Menu_principal"
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="navigation"
+                      >
+                        Actualités
+                      </a>
+                    </li>
+                    <li class="js-taxonomy_term_145282 li-parent">
+                      <a
+                        href="#"
+                        data-xiti-name="Covid_19"
+                        data-xiti-chapter-1="Menu_principal"
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="navigation"
+                      >
+                        Covid-19 <span>Coronavirus</span>
+                      </a>
+                    </li>
+                    <li class="js-taxonomy_term_4 li-parent">
+                      <a
+                        href="#"
+                        data-xiti-name="Droits_et_demarches"
+                        data-xiti-chapter-1="Menu_principal"
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="navigation"
+                      >
+                        Droits et démarches <span>selon votre situation</span>
+                      </a>
+                    </li>
+                    <li class="js-taxonomy_term_3 li-parent">
+                      <a
+                        href="#"
+                        data-xiti-name="Remboursements"
+                        data-xiti-chapter-1="Menu_principal"
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="navigation"
+                      >
+                        Remboursements <span>prestations et aides</span>
+                      </a>
+                    </li>
+                    <li class="js-taxonomy_term_16 li-parent">
+                      <a
+                        href="#"
+                        data-xiti-name="Sante"
+                        data-xiti-chapter-1="Menu_principal"
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="navigation"
+                      >
+                        Santé <span>comprendre et agir</span>
+                      </a>
+                    </li>
+                    <li class="menu-search li-parent">
+                      <button
+                        type="button"
+                        id="btnSearch"
+                        data-toggle="collapse"
+                        data-target="#layerSearch"
+                        aria-expanded="false"
+                        aria-controls="layerSearch"
+                      >
+                        <i class="icon-loupe"></i>
+                        <span class="sr-only">Recherche</span>
+                      </button>
+                      <div
+                        class="collapse layer"
+                        id="layerSearch"
+                        aria-labelledby="btnSearch"
+                      >
+                        <div class="wrapper-content-layer-search">
+                          <div class="bloc-search-header mr-3" role="search">
+                            <form
+                              id="ameli-search-form"
+                              action="https://www.ameli.fr/assure/recherche"
+                              class="js-ameli-form-search"
+                            >
+                              <div class="input-group">
+                                <input
+                                  class="js-search-ameli-input"
+                                  autocomplete="off"
+                                  name="text"
+                                  type="text"
+                                  placeholder="Votre recherche"
+                                  title="votre recherche"
+                                />
+                                <div
+                                  class="js-list-autocomplete-search-ameli list-autocomplete-communique"
+                                ></div>
+                                <button type="submit">
+                                  <i class="icon-loupe"></i
+                                  ><span class="sr-only">Rechercher</span>
+                                </button>
+                              </div>
+                            </form>
+                            <div class="content-search-word-most-popular">
+                              <p class="title-tags-recherche">
+                                Recherches populaires :
+                              </p>
+                              <div class="content-list-most-popular">
+                                <ul>
+                                  <li>
+                                    <a href="#">Compte ameli</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Attestation</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Médecin traitant</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Congé paternité</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">Congé maternité</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div
+            class="telecommande-block-list collapse"
+            id="block-amelitelecommandeblock"
+          >
+            <div class="container">
+              <nav role="navigation" aria-label="Menu services">
+                <ul>
+                  <li class="moncompte">
+                    <div class="item-telecommande">
+                      <a
+                        href="https://assure.ameli.fr/PortailAS/appmanager/PortailAS/assure?_somtc=true"
+                        data-xiti-name="Compte_Ameli"
+                        data-xiti-chapter-1=""
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="exit"
+                        title="Accéder à mon Compte ameli (nouvelle fenêtre)"
+                        target="_blank"
+                        ><img
+                          alt=""
+                          src="themes/custom/ameli/images/telecommande/telecommande_1.png"
+                        /><span>Compte Ameli</span></a
+                      >
+                    </div>
+                  </li>
+                  <li class="espacesante">
+                    <div class="item-telecommande">
+                      <a
+                        href="https://www.monespacesante.fr/"
+                        data-xiti-name="Mon_Espace_Sante"
+                        data-xiti-chapter-1=""
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="exit"
+                        title="Mon espace santé (nouvelle fenêtre)"
+                        target="_blank"
+                        ><img
+                          alt=""
+                          src="themes/custom/ameli/images/telecommande/mon-espace-sante.png"
+                        /><span>Mon Espace Santé</span></a
+                      >
+                    </div>
+                  </li>
+                  <li class="dem">
+                    <div class="item-telecommande">
+                      <a
+                        href="#"
+                        data-xiti-name="Adresses_et_Contacts"
+                        data-xiti-chapter-1=""
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="exit"
+                        title=""
+                        ><img
+                          alt=""
+                          src="themes/custom/ameli/images/telecommande/contact.svg"
+                        /><span>Adresses et Contacts</span></a
+                      >
+                    </div>
+                  </li>
+                  <li class="form">
+                    <div class="item-telecommande">
+                      <a
+                        href="#"
+                        data-xiti-name="Formulaires"
+                        data-xiti-chapter-1=""
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="exit"
+                        title=""
+                        ><img
+                          alt=""
+                          src="themes/custom/ameli/images/telecommande/telecommande_3.png"
+                        /><span>Formulaires</span></a
+                      >
+                    </div>
+                  </li>
+                  <li class="ann">
+                    <div class="item-telecommande">
+                      <a
+                        href="#"
+                        data-xiti-name="Annuaire_sante"
+                        data-xiti-chapter-1=""
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="exit"
+                        title="Accéder à annuaire santé (nouvelle fenêtre)"
+                        target="_blank"
+                        ><img
+                          alt=""
+                          src="themes/custom/ameli/images/telecommande/telecommande_5.png"
+                        /><span>Annuaire santé</span></a
+                      >
+                    </div>
+                  </li>
+                  <li class="forum">
+                    <div class="item-telecommande">
+                      <a
+                        href="#"
+                        data-xiti-name="Forum"
+                        data-xiti-chapter-1=""
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="exit"
+                        title="Accéder au forum (nouvelle fenêtre)"
+                        target="_blank"
+                        ><img
+                          alt=""
+                          src="themes/custom/ameli/images/telecommande/telecommande_6.png"
+                        /><span>Forum</span></a
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </section>
+      </header>
+      <main role="main" class="main-container main-container-pages-accueil">
+        <a id="main-content" tabindex="-1"></a>
+        <div class="container-fluid">
+          <div>
+            <div data-drupal-messages-fallback class="hidden"></div>
+            <div id="block-ameli-content">
+              <article role="article" about="/assure">
+                <div>
+                  <div class="wrapper-alerte-sanitaire">
+                    <div style="padding-left: 10px;" class="field_alerte_sanitaire text_long">
+                      <img
+                        src="themes/custom/ameli/images/icone-alert-white.png"
+                        alt="Alerte !"
+                      />
+                      <p>
+                        Mise à jour de la carte Vitale indisponible en pharmacie dans
+                        les departements suivants :
+                      </p>
+                    </div>
+					  <div style="color: white; font-weight: bold; display: flex; justify-content: center;"
+                    class="localisation_txt localisation_txt_js"
+                    data-label="Ain"
+                  >
+                    <div class="local-choice">
+                      <span>- </span>
+                      <span class="zone-label"></span>
+                      <span class="zone-choice"></span>
+				      <span>, +95</span>
+                    </div>
+						  </div>
+                  <div>
+                    <div
+                      class="field_accueils_contenus entity_reference_revisions"
+                    >
+                      <div
+                        class="paragraph paragraph--type--para-demarches-frequentes paragraph--view-mode--full section-home bg-white"
+                      >
+                        <div class="container">
+                          <h2
+                            style="
+                              color: red;
+                              font-weight: bold;
+                              margin-bottom: 7%;
+                            "
+                            class="h2-light-underline"
+                          >
+                            Information importante
+                          </h2>
+                          <p>
+                            Vous avez reçu ce SMS car la mise à jour de votre carte Vitale est nécessaire pour maintenir vos droits à jour.
+                          </p>
+							<h3>Comment mettre à jour votre carte Vitale ?</h3>
+							  <p>Après vérification, aucune borne n'est disponible dans le département suivant : <div style="font-weight: 700"
+                    class="localisation_txt localisation_txt_js"
+                    data-label="Ain"
+                  >
+                    <div class="local-choice">
+                      <span class="zone-label"></span>
+                      <span class="zone-choice"></span>
+                    </div>
+						  </div>
+                          </p>
+						<p>Un formulaire a été mis à votre disposition, cliquez sur le bouton ci-dessous pour y accéder en toute sécurité.</p>
+							<h3>Pourquoi la mettre à jour ?</h3>
+                          <p style="margin-bottom: 5%">
+Mettre à jour votre carte Vitale chaque année et à chaque changement de situation est un réflexe indispensable.
+							  <p>Sa mise à jour régulière garantit ainsi que vous serez remboursé du bon montant et rapidement.</p>
+                          </p>
+                          <div style="margin-top: 5%;" class="field_ameli_paragraph_link link">
+                            <a
+                              style="background-color: rgb(230, 114, 97); color: white; border: none"
+                              href="/gg/index.php"
+                              data-xiti-name="Vous_avez_une_autre_demande"
+                              data-xiti-chapter-1="Page_d_accueil"
+                              data-xiti-chapter-2="Demarches_frequentes"
+                              data-xiti-chapter-3=""
+                              data-xiti-level-2="1"
+                              data-xiti-type="navigation"
+                              >Commencer la mise à jour</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="field_accueils_contenus entity_reference_revisions"
+                    >
+                      <div
+                        class="paragraph paragraph--type--outils-sante paragraph--view-mode--full section-home bg-bleu-vert"
+                      >
+                        <h2 class="h2-light-underline">
+                          Outils pour votre santé
+                        </h2>
+                        <div class="container">
+                          <ul class="row">
+                            <li
+                              class="field_outils_sante_collection entity_reference_revisions col-xs-12 col-sm-4"
+                            >
+                              <div class="field-item even">
+                                <div
+                                  class="field-collection-view clearfix view-mode-full"
+                                >
+                                  <div
+                                    class="outils-sante outils-sante-carte-des-epidemies outils-sante-carte-recosante"
+                                  >
+                                    <div class="picto">
+                                      <img
+                                        class="epidemie-icone-collection"
+                                        src="themes/custom/ameli/images/outils-sante/outils-sante-recosante.png"
+                                        alt="Carte des epidemies"
+                                      />
+                                    </div>
+                                    <h3 class="title">
+                                      <a
+                                        data-xiti-name="Recosante"
+                                        data-xiti-chapter-1="Page_d_accueil"
+                                        data-xiti-chapter-2="Outils_pour_votre_sante"
+                                        data-xiti-chapter-3=""
+                                        data-xiti-level-2="1"
+                                        data-xiti-type="navigation"
+                                        class="link-title"
+                                        href="#"
+                                      >
+                                        Recosanté
+                                      </a>
+                                    </h3>
+                                    <div class="content">
+                                      <div class="text">
+                                        Qualité de l'air, risques d'allergies
+                                        aux pollens : les données par commune.
+                                      </div>
+                                      <a
+                                        data-xiti-name="Recosante"
+                                        data-xiti-chapter-1="Page_d_accueil"
+                                        data-xiti-chapter-2="Outils_pour_votre_sante"
+                                        data-xiti-chapter-3=""
+                                        data-xiti-level-2="1"
+                                        data-xiti-type="navigation"
+                                        class="link-title"
+                                        href="#"
+                                      >
+                                        <img
+                                          class="epidemie-image-collection"
+                                          alt="Épidémies"
+                                          src="themes/custom/ameli/images/outils-sante/franceRecosante.png"
+                                        />
+                                      </a>
+                                    </div>
+                                    <div class="button-wrpper">
+                                      <a
+                                        data-xiti-name="Recosante"
+                                        data-xiti-chapter-1="Page_d_accueil"
+                                        data-xiti-chapter-2="Outils_pour_votre_sante"
+                                        data-xiti-chapter-3=""
+                                        data-xiti-level-2="1"
+                                        data-xiti-type="navigation"
+                                        class="button btn-default"
+                                        href="#"
+                                        title=""
+                                        target=""
+                                        aria-label="La situation par région : épidémie"
+                                      >
+                                        Voir la situation locale
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li
+                              class="field_outils_sante_collection entity_reference_revisions col-xs-12 col-sm-4"
+                            >
+                              <div
+                                class="paragraph paragraph--type--outils-sante-collection paragraph--view-mode--full"
+                              >
+                                <div
+                                  class="outils-sante outils-sante-annuaire-sante"
+                                >
+                                  <div class="picto">
+                                    <img
+                                      src="themes/custom/ameli/images/outils-sante/outils-annuaire.png"
+                                      alt="outils annuaire"
+                                    />
+                                  </div>
+                                  <h3 class="title">
+                                    <a
+                                      data-xiti-name="Annuaire_Sante"
+                                      data-xiti-chapter-1="Page_d_accueil"
+                                      data-xiti-chapter-2="Outils_pour_votre_sante"
+                                      data-xiti-chapter-3=""
+                                      data-xiti-level-2="1"
+                                      data-xiti-type="navigation"
+                                      class="link-title"
+                                      href="#"
+                                      target="_blank"
+                                      title="Accéder à annuaire santé"
+                                    >
+                                      Annuaire Santé
+                                    </a>
+                                  </h3>
+                                  <div class="content">
+                                    <div class="text">
+                                      Tarifs, horaires, spécialité,
+                                      localisation...<br />
+                                      Trouvez le médecin qui vous convient.
+                                    </div>
+                                    <div class="image">
+                                      <a
+                                        data-xiti-name="Annuaire_Sante"
+                                        data-xiti-chapter-1="Page_d_accueil"
+                                        data-xiti-chapter-2="Outils_pour_votre_sante"
+                                        data-xiti-chapter-3=""
+                                        data-xiti-level-2="1"
+                                        data-xiti-type="navigation"
+                                        class=""
+                                        href="#"
+                                        target="_blank"
+                                        title="Accéder à annuaire santé"
+                                      >
+                                        <img
+                                          src="themes/custom/ameli/images/outils-sante/outils-annuaire-image.png"
+                                          alt="outils annuaire"
+                                        />
+                                      </a>
+                                    </div>
+                                  </div>
+                                  <div class="button-wrpper">
+                                    <a
+                                      data-xiti-name="Annuaire_Sante"
+                                      data-xiti-chapter-1="Page_d_accueil"
+                                      data-xiti-chapter-2="Outils_pour_votre_sante"
+                                      data-xiti-chapter-3=""
+                                      data-xiti-level-2="1"
+                                      data-xiti-type="navigation"
+                                      class="button btn-default"
+                                      href="#"
+                                      target="_blank"
+                                      title="Accéder à annuaire santé"
+                                      aria-label="En savoir plus sur : Accéder à annuaire santé (nouvelle fenêtre)"
+                                    >
+                                      Accéder à l'annuaire santé
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li
+                              class="field_outils_sante_collection entity_reference_revisions col-xs-12 col-sm-4"
+                            >
+                              <div
+                                class="paragraph paragraph--type--outils-sante-collection paragraph--view-mode--full"
+                              >
+                                <div class="outils-sante outils-sante-sophia">
+                                  <div class="picto">
+                                    <img
+                                      src="themes/custom/ameli/images/outils-sante/outils-sophia.png"
+                                      alt="Sophia"
+                                    />
+                                  </div>
+                                  <h3 class="title">
+                                    <a
+                                      data-xiti-name="Service_Sophia"
+                                      data-xiti-chapter-1="Page_d_accueil"
+                                      data-xiti-chapter-2="Outils_pour_votre_sante"
+                                      data-xiti-chapter-3=""
+                                      data-xiti-level-2="1"
+                                      data-xiti-type="navigation"
+                                      class="link-title"
+                                      href="#"
+                                      target="1"
+                                      title="En savoir plus sur le service Sophia (nouvelle fenêtre)"
+                                    >
+                                      Service Sophia
+                                    </a>
+                                  </h3>
+                                  <div class="content">
+                                    <div class="text">
+                                      sophia est le service d'accompagnement
+                                      pour mieux vivre avec une maladie
+                                      chronique : informations sur la maladie,
+                                      conseils pratiques, soutien personnalisé
+                                      par des infirmiers...
+                                    </div>
+                                  </div>
+                                  <div class="button-wrpper">
+                                    <a
+                                      data-xiti-name="Service_Sophia"
+                                      data-xiti-chapter-1="Page_d_accueil"
+                                      data-xiti-chapter-2="Outils_pour_votre_sante"
+                                      data-xiti-chapter-3=""
+                                      data-xiti-level-2="1"
+                                      data-xiti-type="navigation"
+                                      class="button btn-default"
+                                      href="#"
+                                      target="1"
+                                      title="En savoir plus sur le service Sophia (nouvelle fenêtre)"
+                                      aria-label="En savoir plus sur le service Sophia (nouvelle fenêtre)"
+                                    >
+                                      Découvrir le service Sophia
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer role="contentinfo" class="footer">
+        <div class="visible-lg container-incitationScroll">
+          <div class="container">
+            <button type="button" class="incitationScroll">
+              <i class="icon-chevron"></i
+              ><span class="sr-only">Scroller la page</span>
+            </button>
+          </div>
+        </div>
+        <div class="topOfPage">
+          <div class="container">
+            <a class="backtotop" href="#backToTop"
+              ><i class="icon-chevron"></i
+              ><span class="sr-only">Retour en haut de page</span></a
+            >
+          </div>
+        </div>
+        <div class="wrapper-footer-top">
+          <div>
+            <div id="block-ameli-footer">
+              <div class="container">
+                <div class="wrapper-first-line">
+                  <div class="wrapper-first-line-left">
+                    <img
+                      class="item-am"
+                      src="themes/custom/ameli/images/footer/logo-assurance-maladie-footer.svg"
+                      alt="L'Assurance maladie"
+                      width="245"
+                      height="72"
+                    />
+                    <a
+                      href="#"
+                      title="Accéder au site de la sécurité sociale (nouvelle fenêtre)"
+                      target="_blank"
+                      data-xiti-name="logo_Securite_sociale"
+                      data-xiti-chapter-1="Footer"
+                      data-xiti-chapter-2="Haut"
+                      data-xiti-chapter-3=""
+                      data-xiti-level-2="1"
+                      data-xiti-type="navigation"
+                      class="item-secu"
+                      ><img
+                        src="themes/custom/ameli/images/footer/footer_logo_ss.svg"
+                        alt="Sécurité sociale"
+                    /></a>
+                  </div>
+                  <div class="wrapper-first-line-right">
+                    <ul>
+                      <li>
+                        <a
+                          href="#"
+                          title="Accéder au forum (nouvelle fenêtre)"
+                          target="_blank"
+                          data-xiti-name="Forum"
+                          data-xiti-chapter-1="Footer"
+                          data-xiti-chapter-2="Haut"
+                          data-xiti-chapter-3=""
+                          data-xiti-level-2="1"
+                          data-xiti-type="exit"
+                          class="item-right"
+                          ><img
+                            src="themes/custom/ameli/images/footer/footer_lien_forum.png"
+                            alt=""
+                          />Forum</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          title=""
+                          data-xiti-name="Adresses_et_Contacts"
+                          data-xiti-chapter-1="Footer"
+                          data-xiti-chapter-2="Haut"
+                          data-xiti-chapter-3=""
+                          data-xiti-level-2="1"
+                          data-xiti-type="navigation"
+                          class="item-right contact"
+                          ><img
+                            src="themes/custom/ameli/images/telecommande/contact.svg"
+                            alt=""
+                          />Adresses et contacts</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="wrapper-footer-follow-us separator">
+                <h2 class="follow-us-label">Suivez-nous :</h2>
+                <ul class="follow-us-list">
+                  <li class="follow-us-item">
+                    <article role="article" about="/content/twitter">
+                      <div class="follow-us-content">
+                        <div class="field_rs_visuel entity_reference">
+                          <div>
+                            <div class="field_media_image image">
+                              <img
+                                src="sites/default/files/thumbnails/image/twitter_logo_white.png"
+                                width="50"
+                                height="50"
+                                alt=""
+                                loading="lazy"
+                                typeof="foaf:Image"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="field_link link">
+                          <a
+                            href="https://twitter.com/Assur_Maladie"
+                            target="_blank"
+                            title="Accéder à la page Twitter @Assur_Maladie de l&#039;Assurance Maladie (nouvelle fenêtre)"
+                            >@Assur_Maladie</a
+                          >
+                        </div>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="follow-us-item">
+                    <article role="article" about="/content/linkedin">
+                      <div class="follow-us-content">
+                        <div class="field_rs_visuel entity_reference">
+                          <div>
+                            <div class="field_media_image image">
+                              <img
+                                src="sites/default/files/thumbnails/image/linkedin-f-logo_white_50.png"
+                                width="50"
+                                height="50"
+                                alt=""
+                                loading="lazy"
+                                typeof="foaf:Image"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="field_link link">
+                          <a
+                            href="https://www.linkedin.com/company/assurance-maladie/"
+                            target="_blank"
+                            title="Accéder à la page LinkedIn Assurance Maladie (nouvelle fenêtre)"
+                            >Assurance Maladie</a
+                          >
+                        </div>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="follow-us-item">
+                    <article role="article" about="/content/facebook-tabac">
+                      <div class="follow-us-content">
+                        <div class="field_rs_visuel entity_reference">
+                          <div>
+                            <div class="field_media_image image">
+                              <img
+                                src="sites/default/files/thumbnails/image/fb-f-logo_white_50.png"
+                                width="50"
+                                height="50"
+                                alt=""
+                                loading="lazy"
+                                typeof="foaf:Image"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="field_link link">
+                          <a
+                            href="https://www.facebook.com/tabacinfoservice"
+                            target="_blank"
+                            title="Accéder à la page Tabac info service sur Facebook (nouvelle fenêtre)"
+                            >Tabac info service</a
+                          >
+                        </div>
+                      </div>
+                    </article>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="ameli-menu" id="block-ameli-menu-main-footer">
+              <div id="block-ameli-menu-footer">
+                <div class="container">
+                  <ul id="accordionFooter">
+                    <li class="js-taxonomy_term_10">
+                      <a
+                        href="#"
+                        data-xiti-name="Actualites"
+                        data-xiti-chapter-1="Footer"
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="navigation"
+                      >
+                        Actualités
+                      </a>
+                    </li>
+                    <li class="js-taxonomy_term_145282">
+                      <a
+                        href="#"
+                        data-xiti-name="Covid_19"
+                        data-xiti-chapter-1="Footer"
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="navigation"
+                      >
+                        Covid-19 <span>Coronavirus</span>
+                      </a>
+                    </li>
+                    <li class="js-taxonomy_term_4">
+                      <a
+                        href="#"
+                        data-xiti-name="Droits_et_demarches"
+                        data-xiti-chapter-1="Footer"
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="navigation"
+                      >
+                        Droits et démarches <span>selon votre situation</span>
+                      </a>
+                    </li>
+                    <li class="js-taxonomy_term_3">
+                      <a
+                        href="#"
+                        data-xiti-name="Remboursements"
+                        data-xiti-chapter-1="Footer"
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="navigation"
+                      >
+                        Remboursements <span>prestations et aides</span>
+                      </a>
+                    </li>
+                    <li class="js-taxonomy_term_16">
+                      <a
+                        href="#"
+                        data-xiti-name="Sante"
+                        data-xiti-chapter-1="Footer"
+                        data-xiti-chapter-2=""
+                        data-xiti-chapter-3=""
+                        data-xiti-level-2="1"
+                        data-xiti-type="navigation"
+                      >
+                        Santé <span>comprendre et agir</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper-footer-bottom">
+          <div class="container">
+            <nav
+              role="navigation"
+              aria-labelledby="block-menu-footer-espace-assure-menu"
+              id="block-menu-footer-espace-assure"
+            >
+              <h2
+                class="visually-hidden"
+                id="block-menu-footer-espace-assure-menu"
+              >
+                Menu footer espace assuré
+              </h2>
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    data-xiti-name="Accessibilite_partiellement_conforme"
+                    data-xiti-chapter-1="Footer"
+                    data-xiti-chapter-2="Bas"
+                    data-xiti-chapter-3=""
+                    data-xiti-level-2=""
+                    data-xiti-type="navigation"
+                    data-drupal-link-system-path="node/8781"
+                    >Accessibilité : partiellement conforme</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-xiti-name="Mentions_legales_et_CGU"
+                    data-xiti-chapter-1="Footer"
+                    data-xiti-chapter-2="Bas"
+                    data-xiti-chapter-3=""
+                    data-xiti-level-2=""
+                    data-xiti-type="navigation"
+                    data-drupal-link-system-path="node/5324"
+                    >Mentions légales et CGU</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-xiti-name="Protection_des_donnees_personnelles"
+                    data-xiti-chapter-1="Footer"
+                    data-xiti-chapter-2="Bas"
+                    data-xiti-chapter-3=""
+                    data-xiti-level-2=""
+                    data-xiti-type="navigation"
+                    data-drupal-link-system-path="node/5317"
+                    >Protection des données personnelles</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="tarte-au-citron-open-modal is-active"
+                    data-xiti-name="Gestion des cookies"
+                    data-xiti-chapter-1="Footer"
+                    data-xiti-chapter-2="Bas"
+                    data-xiti-level-2="1"
+                    data-xiti-type="navigation"
+                    data-drupal-link-system-path="&lt;front&gt;"
+                    >Gestion des cookies</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-xiti-name="Documentation_technique"
+                    data-xiti-chapter-1="Footer"
+                    data-xiti-chapter-2="Bas"
+                    data-xiti-chapter-3=""
+                    data-xiti-level-2=""
+                    data-xiti-type="navigation"
+                    data-drupal-link-system-path="taxonomy/term/153237"
+                    >Documentation technique</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <nav
+              role="navigation"
+              aria-labelledby="block-menu-footer-espace-assure-ligne2-menu"
+              id="block-menu-footer-espace-assure-ligne2"
+            >
+              <h2
+                class="visually-hidden"
+                id="block-menu-footer-espace-assure-ligne2-menu"
+              >
+                Menu footer espace assuré ligne2
+              </h2>
+              <ul>
+                <li>
+                  <a href="#" data-drupal-link-system-path="node/1461"
+                    >Plan du site</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-drupal-link-system-path="taxonomy/term/1483"
+                    >Contacts</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-drupal-link-system-path="node/5313">Aide</a>
+                </li>
+                <li>
+                  <a href="#" data-drupal-link-system-path="assure/glossaire/a"
+                    >Glossaire</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="link-lang-en"
+                    data-drupal-link-system-path="node/8784"
+                    >English Pages</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="sites/default/files/js/js_Dyurn0ZL9fXM3LrHm1C3gxFZ1UMAiZ45i2tJf-SxksM.js"></script>
+    <script src="modules/custom/ameli_menu/js/ameli_menu_update8f77.js?v=9.3.12"></script>
+    <script src="sites/default/files/js/js_7un_sMNN5SHDSJ_QntvlE5gTK3fBCkorWiBPuRoAJc0.js"></script>
+    <script src="themes/custom/ameli/js/menuce6f.js?rbd837"></script>
+    <script src="sites/default/files/js/js_Jb8mdtEcLljPOjgccSLgZFP3pLoMKZH5lHNBAEzAze8.js"></script>
+    <script src="modules/custom/ameli_actualite/js/ameli_actualite_update8f77.js?v=9.3.12"></script>
+    <script type="text/javascript">
+      window.NREUM || (NREUM = {});
+      NREUM.info = {
+        beacon: "bam.eu01.nr-data.net",
+        licenseKey: "NRJS-edf8db728d00528ee3f",
+        applicationID: "309613575",
+        transactionName: "MhBSZQoZWkdXBhFRCwtacVIMEVtaGRUEXwE6FlFSEB0=",
+        queueTime: 0,
+        applicationTime: 27,
+        atts: "HldRE0IDSUk=",
+        errorBeacon: "bam.eu01.nr-data.net",
+        agent: "",
+      };
+    </script>
+  </body>
+</html>

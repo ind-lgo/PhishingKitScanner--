@@ -1,0 +1,829 @@
+Microsoft
+dreamhost
+softlayer
+calyxinstitute
+cyveillance
+tor-exit
+geoplugin
+$blocked_words = array(
+gethostbyaddr($ip)
+$bannedIP
+ia_archiver
+Apple
+geoiptool
+Yahoo! Slurp
+yandex.com
+HTTrack
+Facebook
+urlredirectresolver
+apple.com
+p3pwgdsn
+Kraken
+mon.itor.us
+paypal.com
+safebrowsing-cache
+YahooSeeker
+PycURL
+blocker.php
+api.telegram.org
+live.com
+antibots
+saved from url
+PayPal
+ip-api.com
+| xLs |
+microsoftonline.com
+binlist.net
+document.write(unescape(
+ipinfo.io
+lookup.binlist.net
+mail.ru
+$a370a
+anti3
+$c5d6b
+anti4
+anti2
+anti1
+anti8
+anti7
+$a4ade
+extreme-ip-lookup.com
+anti5
+$c97e57ec
+$c28dd9c
+Chase
+anti6
+rand=13
+LinkedIn
+13InboxLight
+WhatsApp
+sendMessage?chat_id=
+msauth.net
+American Express
+msftauth.net
+2m.ma
+vultr
+googletagmanager
+'chat_id'=>
+feedfetcher
+ipinfodb.com
+bell.net
+Rackspace
+iTunes
+id="formimage1"
+jpui
+ip2location
+Westnet
+Spectrum
+amazon.com
+bin2hex
+imgur
+ReZulT
+spyeyes
+Time Warner
+whoer
+Coded By x-Phisher
+theseotools.net
+logincdn.msauth.net
+yandex.ru
+tlh.ro
+Netflix
+akamaihd.net
+usps.com
+foreach ($Bot as $BotType) {
+AT&T
+Rezult
+ipqualityscore.com
+z0n51
+Wells Fargo
+'chat_id' =>
+Created by Priv8
+base64_decode($user)
+news-
+credit-agricole.fr
+$subject = "Card | $ip"
+$chat_id  = '
+$api_key  = '
+NETCRAFT
+$user_ids=array(
+Crédit Agricole
+Comcast
+icloud.com
+Alibaba
+upcloud.host
+kyivstar.net
+foreach ($bannedIP as $ip) {
+comrise.ru
+$chatId
+RACKSPACE
+PHP_URL_HOST
+Xfinity
+proxy.mind-media.com
+PHISHTANK
+GODADDY
+<3 USPS <3
+Citi
+$token = "
+FUDPAGES [.] RU
+JPMorgan Chase
+$botToken
+foreach ($blocked_words as $word) {
+yimg.com
+Vict!m Info
+'chat_id' => '
+att.net
+static.xx.fbcdn.net
+$chatId=
+.rand=13vqcr8bp0gud&lc=1033
+firebase-
+curl.haxx.se
+connect.secure.wellsfargo.com
+dhl.com
+firb.br
+aliexpress.com
+t-online.de
+Login Type Selection --
+eval(base64_decode(
+aliyun.com
+static.licdn.com
+J9QGYobZy3jVIV1MEHXWlORmqxCeu8PW
+secureserver.net
+Spry.Widget.
+shopify.com
+ReSulT
+labanquepostale.fr
+bankofamerica.com
+163.com
+Scripted by Machine
+accounts.login.idm.telekom.com
+telekom.de
+:Mon3y
+mtb.com
+1688.com
+$domain<west>
+devilscream
+otp2
+La Banque Postale
+CREDIT AGRICOLE
+CODE~SPIRIT
+$scamname
+WeTransfer
+Resultz
+ip-geo.ru
+countryflags.io
+att.com
+appleid.apple.com
+i.ibb.co
+$zabi
+USAA
+dancevida.com
+alibaba.com
+daum.net
+Xclusiv-3D-Logs
+orange.fr
+Bank of America
+Anonymous Cyber Team
+Zimbra
+tawk.to
+rezults
+iptool.xyz
+CrawlerDetect
+Synacor
+Jaybizzle
+HSBC
+$VictimInfo
+Telekom Deutschland
+ipapi.co
+godaddy.com
+rackspace.com
+id="ZLoginAppName"
+gov.uk
+DNThirTeen
+CIBC
+$tanitatikaram
+RezulT
+fudsender(dot)com
+dhl.de
+class="zLoginField"
+Alipay
+ymail.com
+=ReZulT=
+Mengunjungi
+alaskausa.org
+Alaska USA
+shellg2corecss
+Huntington
+eBay
+AliExpress
+oneprosec.com
+alicdn.com
+$email_result
+kirim = mail($emailku, $subjek, $pesan, $headers)
+~xrobotos
+Xiami
+WYSIWYG Web Builder
+Umeng
+UCWeb
+tmall.com
+Taobao Marketplace
+ScAm Inf0
+otp1
+dingtalk.com
+by Cyborg99
+Autonavi
+AliTelecom
+Alimama
+Alibaba Group
+1and1.com
+$yagmai
+YunOS
+TTPod
+Tmall
+taobao.com
++ LOGS +
+Juhuasuan
+bincodes.com
+Alitrip
+Alibaba Cloud Computing
+$config_translate
+$config_smtp
+$config_identity
+$config_filter
+$config_blocker
+$config_apikey
+$config_3dsecure
+yunos.com
+xiami.com
+umeng.com
+ttpod.com
+sina.com
+laiwang.com
+intl.alipay.com
+emailsrvr.com
+autonavi.com
+aliunicorn.com
+alitrip.com
+alimama.com
+alibabagroup.com
+tatic-exp1.licdn.com
+Spox_dz
+match.com
+BAN USER BY IP
+akamaized.net
+tiqcdn.com
+swisscom.ch
+ANTIBOTS DZEB
+53.com
+$key = "
+$chat_id = "
+shopget24.com
+nullrefer.com
+login.t-online.de
+L34K.C0de
+iCloud
+Created by OVO-360
+By fSOCIETY
+antibot.pw
+$apiToken = "
+spectrum.net
+qsdq21sd5s4d4s1
+gandi.net
+acs4.3dsecure.no
+$METRI_TOKEN
+webtoolhub.com
+define("TELEGRAM_TOKEN"
+define("TELEGRAM_CHAT_ID"
+CrEaTeD bY BurHan
+BY rYan
+BNP Paribas
+$_SESSION['cntname']
+ReferralSpamDetect
+Mcavy
+killbot.org
+HMRC
+ELGH03T
+Coinbase
+By Shaun
+By JoCk
+wa.me
+SH33NZ0
+optimum.net
+mabanque.bnpparibas
+ionos.de
+caixabank.es
+BOTeye v1.9
+$Txt_Rezlt
+$api = "
+webtop.webmail.optimum.net
+Ownedby|v!nc3
+mobile.de
+fucker.php
+firebasestorage.googleapis.com
+top4top.io
+orvx.pw
+onetrust.com
+|Ghost Rider|
+DBS iBanking
+xDD+
+watch.spectrum.net
+Spotify
+Shopify
+Mr-Anobs
+lintex.png
+ip-api.org
+Dark-Attacker
+Created BY $PG Bon
+"chat_id=
+amazon.co.jp
+$keys = "
+$gobscate = "
+wetransfer.com
+webmail.roadrunner.com
+TD Canada Trust
+Santander
+Reddit
+naver.com
+mtb LOGIN ! xDD+
+ionos.com
+Halifax
+GOBE
+FedEx
+EL GH03T
+citi.com
+BY Mr S!CKICK
+BECU
+bancogalicia.com.ar
+6LffMGcUAAAAACw-0oBJ13czW1dsl_0HbXbxEVUY
+6LffMGcUAAAAABRJmPd1mUqhxUg7w5iktOIsbgMI
+$token ='
+$token = '
+zeura.com
+vxlwdyo.cn
+uzyivzf.cn
+SLYUGOS
+Salesforce
+PHP Encode v1.0 by
+ourtime.com
+intuit.com
+fsuxeua2yzwtgh.bar
+Frontier
+CODED BY MIRCBOOT
+btinternet.com
+BANKIA
+amazon.fr
+126.com
+xAthena
+webmail.earthlink.net
+online.adp.com
+ionos.es
+internet-banking.dbs.com.sg
+gallery.mailchimp.com
+eval(str_rot13(gzinflate(str_rot13(base64_decode(
+DBS Bank LTD. Co.
+currently.att.yahoo.com
+19lnboxLight
+16lnboxLight
+$tokenlink
+$telegrambot
+$chatid = "
+$api="
+T-ONLINE.DE
+sailpoint.com
+nedbank.co.za
+".md5(\'XCLAY\')."
+Fifth Third Bank
+fedex.com
+Created By ShellsHost
+billionairel0g3
+auth.centurylink.net
+ARDUINO_DAS
+$telegramchatid
+$bad_words =
+$Abuse_Filter
+X-SniPer
+skynet.be
+Optus
+ing.nl
+ci5.googleusercontent.com
+CHINA AUTO Logs
+bot" . $token . "
+antibot_wasChecked
+$Token="
+$ip = getUserIPszz()
+verizon.yahoo.com
+SingleFile
+Secur!ty C0de
+San.tan'der Info
+rackspacemail.com
+okinawa-grandmer.com
+nwolb.com
+kerio_
+CaiхaBank
+Built By HustleLogic
+$t = "
+$('#CardNumber').mask('0000 0000 0000 0000')
+Scotiabank
+oluxshop
+Mr.Undetected
+0 b y t 3 m 1 n 1 -
+1337 shell
+1945 shell
+1962Cracker
+1dt.w0lf
+3xp1r3 Cyber Army
+@4RNN0Ts
+Achon666ju5t
+Afghan Cyber Army (ACA)
+An0n 3xPloiTeR
+AnonGhost
+AnonGhostOfficial2
+AnonTeamX
+Auto Delete Shell
+Backdoor Blast v1
+B Ge Team File Manager
+Black Scorpion Obfuscation
+Black_scorpion shell
+Bloodninja
+Butun Acik Portlari goster
+Butun suid dosyalarini bul
+By Akram Stelle
+Bypass 406 Not Acceptable
+By Th3 Err0r
+CHips L Pro sangad
+Chitoge kirisaki <3
+CMSmap
+Coded by Bksmile (RooTTN)
+CODED BY FALLAG
+CODED BY HEx
+Coded by: L0c4lh34rtz
+Coded By SadCode.org
+Con7ext Mini Shell
+Con7ext Shell
+content="Hacked By Extreme Crew"
+Create by Pst4r8
+Created By Driv3r Kr
+D704T
+Dasha 0xVinca
+dengan 4 pilihan
+Dengan Bypass Tools
+DRIV3R KR PRIV8 MAILER
+FoxAuto
+FRESH.VERFIED.SHELL
+GOOD SHELL
+Gray Byte
+GREEN SHELL V1
+h0d3_g4nt3ng
+H3K | Tiny File Manager
+HACKED BY IDBTE4M
+>HACKED BY SID GIFARI FROM TEAM_CC
+Hard coded by 0x1999
+ICTUS Digital Security Team Iran
+ICWR-TECH
+IDBTE4M CODE 87
+iMHATiMi.ORG
+indonesiaaaaaaanxxxhackrr
+IndoXploit
+Jayalah Indonesiaku
+Jod3r  Shell ReSult
+Jokr Haxor
+kaylin
+kod3shells
+Leaf PHP Mailer
+Lok1iS4an
+MAILLIST by SELLER82
+Mail Sent By Freshrdp
+Manz Shell
+Mass Defacement Script
+Mass Defacement Script By Yunus Incredibl
+>Mass Defacer - By Sid Gifari<
+Mauritania HaCker Team
+MCA-AFC-HFE
+MiNi BaCkDoOr
+MINI MO Shell
+Mini Shell
+Mister Spy SymlinkerV2 Project
+MisterSpyV2Bruter
+Mr.Gardenia
+Mr.H4R1-X SHELL
+Mr.N00B
+Mr Secretz Shell
+Nine Millon 9 Mailer
+NoName Shell Release
+Obfuscation provided by FOPO
+Olux.to Seller 115 Mini Shell
+ORVX SHELL
+O R V X - SHOP
+Owl PHP Mailer
+Pak Cyber Pyrates
+php7.2 L u f i x 4.2.5
+php7.2 X V I L 4.2.5
+PHP Encode Sh*ll Auto v4 Fox
+PHP Encode v1.0 by zeura.com
+PHP File Manager
+phpFileManager
+Plugin Name: The way to world domination
+Powerad By MilitanZ
+PST4R8 SHELL
+PureShinobi SHell
+r3h4n
+r57shell.php
+Raiz0WorM
+Recoded By eXeUser
+Rizi_haoxr
+Robot Pirates
+RootKit ( PHP BackDoor )
+RootMax-SheLL
+ru_text
+Sajjad 1337
+S@_@EFKFAWFKWAF
+SHELL GOOD
+SHELL MASUK BOS
+Shem3a
+shem3a.scripts
+Simple WordPress Shell
+SMTP-Presta
+Solevisible/Alfa-Team
+Spade's Mini Shell
+SQL Dump created by S.A.P.
+SuperNinja
+Swan Shell
+TAPESH
+TeaMp0isoN
+The Next JanCox Shell
+./Trenggalek Mafia
+Tryag File Manager
+./TuanDestroy Shell
+United Bangladeshi Hackers
+WAF Evasion Shell
+Web Console v0.9.7
+WebShellOrb 2.6 - With PHP 7
+WHO SHELL 2018
+$An0n_3xPloiTeR
+$auth_pass = "
+$back_connect_p="
+$backdor_code
+$backdor_write
+$bind_port_p="
+$Black_Scorpion=
+$C5L9i7e3iI =
+$CO11KKK1OO=
+$COK1O11KKO=
+$con7ext
+$_COOKIE['b374k']
+$D42uk = substr(str_shuffle(str_repeat(
+$data = base64_decode(base64_decode(base64_decode($value
+$data = file_get_contents('php://input')
+$domain:2082
+$domain:2083
+$fc = str_replace('function wp_is_mobile()
+$file_info['is_group_
+$file_info['is_owner_
+$file_info['is_world_
+$fsgw="wpyzsv"
+$func="cr"."eat"."e_fun"."cti"."on";$b374k=
+$_GET['ch']
+$_GET['deld']
+$_GET['delf']
+$_GET['filesrc']
+$_GET['ndir']
+$_GET['tp'] == 'DgxfWBRNXg9BXw==')
+$id=$sr/*+/*+*/("ri"."d_"."si")
+$I=file(__FILE__)
+$indexphp_pass =
+$info .= (
+$is_wp_mobile = ($_SERVER['HTTP_USER_AGENT'] == 'wp_is_mobile')
+$l___J='base'.(128/2).'_de'.'code'
+$l___WP='base'.(128/2).'_de'.'code'
+$lYsVJuM='VN RG.aV9Y+L= 7'
+$msg8873 = "$b75 $a45  $m22"
+$newpass = "Fuck!!NO&&WOSA!!TSWO6&&12"
+$OI0IO10101OI0I01=__FILE__
+$OO00_O_0_O='1'
+$O_OO00O0__
+$pass="0028f8cbf649819ff18dc7b005d550d5"
+$Password="T9HJBPMmBlT1CD3"
+$payload_code
+$payload_write
+$ROCHKoW2uu =
+$services['
+$s = eval(gzuncompress(base64_decode(
+$shell_content1
+$shell_content2
+$shell_content3
+$shell_fake_name
+$shell_name
+$shell_password
+$shell_source5
+$shell_version
+$sp0b39f9
+$sp536e72
+$sp53dcff
+$sp7d2336
+$s_pass = "4421f43ca0a5cc86833ad77e3d68891d"
+$s_pass = "c667028c306083b9636ba9fbf2f1c5ae2591834a"
+$sr="st"./*+/*+*/"rr"/*+/*+*/."ev"
+$style_2020
+$target_host
+$target_port
+$target_uri
+$target_url
+$tmssbn
+$tmzn="sgzms"
+$T=str_replace('RG','','RGcRGrRGeate_fuRGRGncRGtion')
+$UeXploiT
+$vpna
+$W00P0DPDDP
+$WPDD0D0P0P
+$x=$func("
+$x=$func("\$c","e"."v"."al"."('?>'.base"."64"."_dec"."ode(
+$__________________='X19sYW1iZGE='
+$XnNhAWEnhoiqwciqpoHH=file(
+$xyn='tunafeesh'
+$zoUdl1u2MM35rLMf = file_get_contents(trim
+00369e3b2397a9995eb7bbb9f66cba66
+098f6bcd4621d373cade4e832627b4f6
+0d107d09f5bbe40cade3de5c71e9e9b7
+188162e90b88271030885b3bd7cfd523
+2f9631831988616d2435b736bd93d8b9
+3bc810e81a9db01dfc324ae72b4b63a3
+3cixosqnd9vt56jpk2lg8z0ba_e41mfw7yrh-u
+48ba8138756afc71fa1b3c37fa27d2a5
+4b43b0aee35624cd95b910189b3dc231
+4ea4b142c6b0178b8cc3cd73bdc77fef
+4ff9fc6e4e5d5f590c4f2134a8cc96d1
+6bb61e3b7bce0931da574d19d1d82c88
+73fee192744f842a611a5ec336459f5c
+7663f1b3555993ad229183b0efad3261
+7b4939a8af28c814f0c757bb10f40d3d
+8437A170C6AC57C46C4A93808B7557B9
+9aa9b6d702d54e3b55d7f2331b9c6ac7
+abdb392f09c7376fe5ce059f045de38b
+Ce0ec8263a4781af
+class c5f3c34b8786c3
+class c5f5f1526ce348
+class c5f609ac271025
+class c5f87ded995765
+class c5f87dedadf2f0
+class c5fe08a4bd4577
+Class_UC_key(
+copy('/'.$home.'/'.$user.'/
+copy('/var/www/
+count($g) == 8 && $is_wp_mobile)
+default pass:  Dab
+?dir=$dir&to=cmd
+?dir=$dir&to=mass
+?dir=$dir&to=sym
+?dir=$dir&to=zoneh
+download_big__stat.txt
+e1(Array(
+edb52876-33b7-4405-9287-2e4fa382dab0
+edbc761d111e1b86fb47681d9f641468
+ee71530fcc4323331be35082732d2041
+errrrrrrr_big__stat.txt
+?file=/etc/passwd
+?file=/etc/resolv.conf
+?file=/etc/shadow
+file_put_contents($outfilepath
+function actionRC(
+function let_him_in()
+goto JV6mi
+goto QR7wV
+goto Y6MGF
+gryC3yIHUJX
+home$home$usr/.contactemail
+home$home$usr/.cpanel
+home$home$usr/etc
+home$home$usr/etc/shadow
+home$home$usr/mail
+kvs.php?e=
+l1(Array(
+md5($_SERVER['HTTP_USER_AGENT'])
+md5_pass" =>
+md5_user" =>
+mkdir("/home$home$usr/
+oH3Xza@%FlZOLf87&mRr*Pd9xuvktp6gQbs!
+owlClear(
+owlTrim(
+Pass : hacker0882
+Pass : iseeyou1999
+private $r5f5f1526ce3c9
+public function d5f3c34b87876a($spfbd4b0)
+public function d5f5f1526ce44e($s)
+public function d5f609ac271b71($s)
+public function d5f87ded9964c3($s)
+public function d5f87dedae1bdd($s)
+public function d5fe08a4bd61a2($s)
+public function p5f3c34b8786cf()
+public function p5f5f1526ce38c()
+public function p5f609ac27112a()
+public function p5f87ded99588b()
+public function p5f87dedadf632()
+public function p5fe08a4bd47bc()
+p_univ.php [NC]
+0x5a455553.github.io
+109.248.203.114
+162.241.127.123
+185.213.209.151
+198.50.168.213:4563
+208.68.38.81
+7jyewu.cn
+91.193.180.161
+banksstop.tech
+blog.ub.ac.id
+fopo.com.ar
+gailey-white.com
+leafmailer.pw
+lp.kerbermix.com.br
+magichottrade.su
+newzealandpolicy.wang
+owlmailer.io
+pastebin.com/raw/1xZGzW7B
+pastebin.com/raw/6DuKx17b
+pastebin.com/raw/E8J1Rb9v
+pastebin.com/raw/HC4jSj4K
+pastebin.com/raw/NE6MLDK7
+pastebin.com/raw/vDLdynjj
+PHPJiaMi.Com
+$An0n_3xPloiTeR =
+$auth_pass = "2cb00388f2110209ccb15e8ec3ab5835"
+$auth_pass = "58e1e24b2288940ef37472aa267e499e"
+$auth_pass = "59e8d97dbcc1d0f65dea6ecd0e9fbe39"
+$auth_pass = "66e70d37e21ebc3540741373ae51059b"
+$auth_pass = '9aa9b6d702d54e3b55d7f2331b9c6ac7'
+$auth_pass = "c4e46f57b15df77facc8ed29354ec442"
+$auth_pass = "c4e46f57b15df77facc8ed29354ec442"
+$auth_pass = "cfd54d1e84e5fd91a5a5cb6d42d4d997"
+$Err0r =
+$O644264 = O650621($O761536[8]
+$t=base64_decode($t)
+$Th3 =
+$UeXploiT =
+$wp_nonce = "fa085cc2ff83613e562b305a95e343be"
+base64_decode(stream_get_contents(${${
+define('VERSION','kaylin')
+@define('WSO_VERSION'
+eval(base64_decode(II1111I11l($O0OO0OO0OO
+eval(htmlspecialchars_decode(urldecode(base64_decode(
+function uE0in(
+function wsoLogin(
+function wsoPerms(
+function wsoPermsColor(
+function wsoRecursiveGlob(
+function wsoScandir(
+function WSOsetcookie(
+function wsoViewSize(
+function wsoWhich(
+wsoEx(
+wsoFooter(
+wsoHeader(
+wsoSecParam(
+fdgfdhgcx($QA2743
+ipga515($wksh287
+irmcjaowlfxc($gbVclGM7976
+iuqb940($unev273
+yprr503($vcbf840
+pjxzzmih.pw
+res7ock.org
+smarttoolsshop.cc
+smarttoolsshop.com
+tools.niod-tech.com
+uupload.ir
+wziflcey.icu
+zerobyte-id.github.io/PHP-Backdoor/inc
+zone-h.com
+zone-h.org
+q1(Array(
+.substr(sprintf('%o'
+symlink('/'.$home.'/'.$user.'/
+symlink('/var/www/
+urldecode($_COOKIE[
+w1(Array(
+window.location="?hari"
+window.location="?indoxploit"
+WHY MINI SHELL
+X0MB13
+Xai Syndicate
+~xAn0nPH
+X-Blackerz INC.
+xGhost Mailer
+Xpl0!T3r SheLL
+Zerion Mini Shell
+(С) 04.2015 Pirat
+(С) 12.2015 mitryz
+MetroBank RezultX
+METROBANK ACCOUNT
+localheartz.club
+>{keyword}<
+iplocationtools.com
+fopo.com.ar
+coinbase.com
+ci4.googleusercontent.com
+"chat_id"\t\t=>
+By METRI
+"bot_url"\t\t=>
+$soker=rand(0000000, 9999999)
+$sokera=rand(0000000, 9999999)
+$saker=md5($soker)
+$sakera=md5($sokera)
+$rine = sha1($rine)
+$rine=rand(000000, 9999999)
