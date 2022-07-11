@@ -29,7 +29,7 @@ Install the requirements
 ~~~
 pip3 install -r requirements.txt 
 
-download latest version of chromedriver 
+python main.py 
 ~~~
 
 
