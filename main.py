@@ -48,7 +48,7 @@ class Collector(object):
                 return kit
             
             filename = url.split('/')[-1]
-            filepath = '{}/{}'.format(self.config['kit_directory'], pid) + ".html"
+            filepath = '{}/{}'.format(self.config['kit_directory'], pid) + filename
             
             filesize = 0
             
