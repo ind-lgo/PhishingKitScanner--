@@ -5,6 +5,169 @@ calyxinstitute
 cyveillance
 tor-exit
 geoplugin
+$email_body = "private wallet key :  $phrase.\n"
+$email_body = "Private wallet name :  $user.\n"
+$email_body = "Wallet logs from $serial.\n"
+$email_subject = "wallet Log"
+$linkX9
+$pegardados
+$subject = "$ip Coinbase 2FA "
+$tipo = $_POST["tipo"]
+$walletSeed
+A1%ScvQMFtKn
+AAVE.Wallet-Phrase
+Aeternity-Phrase
+Aion-Privatekey
+Aktionariat.Wallet-Phrase
+AtWallet-Phrase
+Authereum-Phrase
+BinanceSmartChain-Privatekey
+Bitkeep-Phrase
+Bitpay.Wallet-Phrase
+bittrex-logo-mark
+BNB-Privatekey
+Callisto-Privatekey
+Coin98Wallet-Privatekey
+Coinbase.Views.Sessions.New
+Cosmos.Wallet-Phrase
+crypkzyy_cbase
+crypkzyy_root
+DefiatWallet-Phrase
+Digitex-Phrase
+Electrum-Privatekey
+Elrond-Privatekey
+Enjin-Phrase
+Ethereum.Classic-Phrase
+Ex6K-hvRIr9b]igc
+Exodus-Privatekey
+ExodusWallet-Phrase
+Filecoin-Phrase
+FIO.Wallet-Phrase
+Flare.Wallet-Phrase
+FortisWallet-Phrase
+Fortmatic-Phrase
+gebruikersnaam
+GochainWallet-Privatekey
+GuardWallet-Privatekey
+Harmony-Privatekey
+ICon.Wallet-Phrase
+id15556965_cbase
+id15556965_root
+Iotex-Privatekey
+Kava-Privatekey
+KIn.Wallet-Phrase
+LedgerWallet-Phrase
+LOG Binance Chain
+login-body btx-intl
+logizdvi_comprei
+LOG Wallet Connect
+Math.Wallet-Phrase
+Nano-Privatekey
+nimiq-ChainWallet-Privatekey
+Ontology-Privatekey
+Polkadot-Privatekey
+ScatterWallet-Phrase
+Skale-Privatekey
+Solana-Phrase
+Stellar-Privatekey
+TezosWallet-Phrase
+Theta-Phrase
+Thunder.Token-Phrase
+Thunder.Token-Privatekey
+Tomo-ChainWallet-Privatekey
+TorusWallet-Privatekey
+TrezorWallet-Privatekey
+Tron-Phrase
+VechainWallet-Privatekey
+Wanchain-Privatekey
+Waves-Phrase
+XRP-Privatekey
+Zelcore-Privatekey
+Zilliqa-Phrase
+#------------------------------------------------------------------------------------------------------------------------
+Atomic Wallet
+Atomic Wallet | Universal Cryptocurrency Wallet
+B10ckcha!n Info
+Binance Smart Chain
+BitKeep
+BitPay
+B&iuml;ttrex.com -
+B<span class="ESC">r</span>it<span class="ESC">r</span>trex
+Callisto
+Coin98
+Cosmos
+Defiat
+Digitex
+Electrum
+Elrond
+Enjin
+Ethereum Classic
+Exodus
+Filecoin
+Flare Wallet
+FortMatic
+GoChain
+Guard Wallet
+Harmony
+Home - B&iuml;ttrex.com
+CIBC
+Citi
+Clydesdale
+Coinbase
+Coinhive
+Commerce Bank
+Contacto BBVA
+Co-operative bank
+Co-operatives
+CREDIT AGRICOLE
+Crédit Agricole
+Crédit Agricole Brie Picardie
+Crédit Mutuel
+CTC Bank of Canada
+D0Nfl0w-WELLS-@donflow
+DBS Bank LTD. Co.
+DBS iBanking
+DBS OTP Vérification
+DCBank
+Desjardins
+EQ Bank
+Fibank
+Fifth Third Bank
+First Islamic Bank Of The World
+First Nations Bank of Canada
+Glacierbank
+Glacier Bank
+Gruppo BPER
+Halifax
+hitBTC
+HLFX-RG
+HMRC
+HMRC Full Info
+HSBC
+HSBC Bank Canada
+Import Wallet
+Kava
+L0gin - Wallet
+MetaMask
+Nebulas
+Nimiq
+Ontology
+Parsiq
+POA Network
+SafeMoon
+Scatter Wallet
+Stellar
+Tezos
+Theta
+Thunder Token
+Tomo Chain
+Trust Vault
+Trust Wallet
+Wallect Connect
+Wallets to Dapps
+Wanchain
+Zelcore
+Zilliqa
 $blocked_words = array(
 gethostbyaddr($ip)
 $bannedIP
@@ -819,6 +982,34 @@ fopo.com.ar
 coinbase.com
 ci4.googleusercontent.com
 "chat_id"\t\t=>
+Correos de Chile
+Correos - Tarifa de envío
+Costco
+eBay
+Etsy
+FedEx
+FEDEX
+F4ceb00k
+Facebook
+Facebook.Info
+Flickr
+LinkedIn
+LinkedIn Result
+match by Brent
+Match-Logs
+OurTime Logs b00merang.cc
+OURtme Detailz
+Hermes
+JT EXPRESS
+kijiji.ca Info
+maerskline
+Maersk Line Shipping
+Maersk Logs||
+Overstock
+RoyalMail
+SF Express Rezult
+Shopify
+Windcave Payment Page
 By METRI
 "bot_url"\t\t=>
 $soker=rand(0000000, 9999999)
