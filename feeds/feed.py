@@ -4,7 +4,7 @@
 class Feed(object):
     '''Base class for implementing a new phishing feed'''
 
-    def get(self):
+    def get(self, offset=0):
         '''
         Returns a list of models.Phish objects representing the new sites we haven't seen
         before
