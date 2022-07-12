@@ -1,5 +1,6 @@
 ''' Creates the models for the phish collector '''
 from datetime import datetime
+from elasticsearch import Elasticsearch
 from urllib.parse import urlparse
 
 class Phish(object):
@@ -23,8 +24,10 @@ class Phish(object):
     @classmethod
     def clean_url(cls, url):
         ''' Cleans the URL provided to be a basic scheme://host/path format.
+
         This removes any params, trailing slashes, etc. to help us remove duplicate
         URLs from our index.
+
         Args:
             url {str} - The URL to search
         '''
@@ -39,6 +42,7 @@ class Phish(object):
 
 class PhishKit(object):
     ''' A class representing phishing kits stored on the filesystem.
+
     Phishkits are stored as child objects in a one-to-many relationship with Phish samples.'''
     _index = 'samples'
     _type = 'kit'
